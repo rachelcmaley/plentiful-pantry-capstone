@@ -16,6 +16,12 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
+CREATE TABLE ingredients (
+	ingredient_name varchar(50) NOT NULL,
+	ingredient_id int NOT NULL,
+	CONSTRAINT PK_ingredient PRIMARY KEY (ingredient_id)
+);
+
 -- Add seed data in the 03_data.sql script file
 
 -- Add Foreign key constraints in the 04_constraints.sql script file
