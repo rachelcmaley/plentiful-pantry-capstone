@@ -1,0 +1,52 @@
+header{
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-top: 200px;
+    color: white;
+}
+
+body{
+    background-image: url("spices.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.box{
+    width: 600px;
+    height: 300px;
+    border: 2px solid rgb(156, 156, 156);
+    margin: auto;
+}
+
+div{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 70px;
+    padding-left: 90px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+}
+
+#userName{
+    display: block;
+    width: 400px;
+    height: 35px;
+    font-size: large;
+}
+
+#password{
+    display: block;
+    width: 400px;
+    height: 35px;
+    font-size: large;
+}
+
+button{
+    color: white;
+    background-color: #0B6E4F;
+    border-color:#0B6E4F;
+    width: 90px;
+    height: 30px;
+}
