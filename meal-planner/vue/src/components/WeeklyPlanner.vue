@@ -8,51 +8,39 @@
     </div>
     <div id="monday">
       <h2>Monday</h2>
-      <div id="meals">
         <p id="firstMon">Breakfast Meal</p>
-        <p id="secondMon">Second Meal</p>
+        <p id="secondMon">Lunch Meal</p>
         <p id="thirdMon">Dinner Meal</p>
-      </div>
     </div>
     <div id="tuesday">
       <h2>Tuesday</h2>
-      <div id="meals">
         <p id="firstTue">Breakfast Meal</p>
         <p id="secondTue">Lunch Meal</p>
         <p id="thirdTue">Dinner Meal</p>
-      </div>
     </div>
     <div id="wednesday">
       <h2>Wednesday</h2>
-      <div id="meals">
         <p id="firstWed">Breakfast Meal</p>
         <p id="secondWed">Lunch Meal</p>
         <p id="thirdWed">Dinner Meal</p>
-      </div>
     </div>
     <div id="thursday">
       <h2>Thursday</h2>
-      <div id="meals">
         <p id="firstThu">Breakfast Chicken Meal</p>
         <p id="secondThu">Lunch Meal</p>
         <p id="thirdThu">Dinner Meal</p>
-      </div>
     </div>
     <div id="friday">
       <h2>Friday</h2>
-      <div id="meals">
         <p id="firstFri">Breakfast Meal</p>
         <p id="secondFri">Lunch Meal</p>
         <p id="thirdFri">Dinner Meal</p>
-      </div>
     </div>
     <div id="saturday">
       <h2>Saturday</h2>
-      <div>
         <p id="firstSat">Breakfast Meal</p>
         <p id="secondSat">Lunch Meal</p>
         <p id="thirdSat">Dinner Meal</p>
-      </div>
     </div>
   </div>
 </template>
@@ -68,13 +56,24 @@ h2 {
 body{
     background: #0b6e4f;
 }
-#sunday {
+#sunday,#monday,
+#tuesday,#wednesday,
+#thursday,#friday{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding-left: 20px;
     background: white;
     border-right: solid 1px grey;
+    height: 80%;
+    flex-direction: column;
+}
+#saturday {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    background: white;
     height: 80%;
     flex-direction: column;
 }
