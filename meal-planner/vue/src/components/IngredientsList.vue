@@ -14,7 +14,7 @@
         name: 'ingredient-list',
         data () {
             return {
-                ingredients []
+                ingredients: []
             };
         },
 

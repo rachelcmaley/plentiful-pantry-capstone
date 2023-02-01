@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import MyPantry from "../components/MyPantry.vue";
 import AddToPantry from "../components/AddToPantry.vue";
 import SuggestedRecipes from "../components/SuggestedRecipes.vue";
 import IngredientsList from "../components/IngredientsList.vue";
