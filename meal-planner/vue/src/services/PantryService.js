@@ -4,8 +4,8 @@ export default {
 
     getIngredients () {
 
-        return axios.get('/pantry/ingredients');
+        return axios.get(`/pantry/ingredients`);
 
     }
 
-}
+};

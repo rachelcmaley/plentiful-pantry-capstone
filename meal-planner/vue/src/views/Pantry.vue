@@ -3,6 +3,7 @@
 <div id="pantry">
         <section id="left-panel">
         <AddToPantry></AddToPantry>
+        <h2 id="my-ingredients-head">My Ingredients</h2>
         <IngredientsList></IngredientsList>
         </section>
         <section id="right-panel">
@@ -37,6 +38,15 @@ body{
 #pantry-body
 #pantry{
     display: flex;
+}
+#left-panel {
+    margin-top: 10px;
+    margin-left: 10px;
+    background: white;
+}
+#my-ingredients-head {
+    margin-top: 30px;
+    text-align: center;
 }
 
 </style>

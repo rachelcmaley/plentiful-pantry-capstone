@@ -1,5 +1,5 @@
 <template>
-  <div class="ingredients-list">
+  <div class="ingredient-list">
     <div v-for="ingredient in ingredients" v-bind:key="ingredient.id" class="ingredient">
         {{ ingredient.name }}
     </div>
@@ -8,7 +8,7 @@
 
 <script>
 
-    import pantryService from '../services/PantryService.vue';
+    import pantryService from '../services/PantryService.js';
 
     export default {
         name: 'ingredient-list',
@@ -22,12 +22,12 @@
 
             const pantryPromise = pantryService.getIngredients();
 
-            pantryPromise.then (response => {
-                this.ingredients = response.data
+            pantryPromise.then ((response) => {
+                this.ingredients = response.data;
 
             });
 
         }
-    };
+    }
 
 </script>
