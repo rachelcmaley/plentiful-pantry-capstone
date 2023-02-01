@@ -11,7 +11,7 @@ public interface PantryDao {
 
     public List<Ingredient> getAllIngredients();
 
-    public boolean addIngredient(String ingredientName, Long ingredientId);
+    public void addIngredient(Ingredient ingredient);
 
-    public boolean removeIngredient(Long ingredientId);
+    public void removeIngredient(Long ingredientId);
 }
