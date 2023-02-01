@@ -23,7 +23,8 @@ public class PantryController {
 
     @GetMapping(path="pantry/ingredients")
     public List<Ingredient> ingredientList() {
-        return pantryDao.getAllIngredients();
+        List<Ingredient> ingredients = pantryDao.getAllIngredients();
+        return ingredients;
     }
 
     @GetMapping("/pantry/{userId}")
