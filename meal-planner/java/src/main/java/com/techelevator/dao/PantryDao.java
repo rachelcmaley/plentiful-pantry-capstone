@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PantryDao {
 
-    public List<Ingredient> getAllIngredientsByPantryId(int pantryId);
+    public List<Ingredient> getAllIngredientsByUserId(int userId);
 
     public List<Ingredient> getAllIngredients();
 
