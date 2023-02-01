@@ -10,7 +10,7 @@
 
     import pantryService from '../services/PantryService.vue';
 
-    export defualt {
+    export default {
         name: 'ingredient-list',
         data () {
             return {

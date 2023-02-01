@@ -3,7 +3,7 @@
 <div id="pantry">
         <section id="left-panel">
         <AddToPantry></AddToPantry>
-        <MyPantry></MyPantry>
+        <IngredientsList></IngredientsList>
         </section>
         <section id="right-panel">
             <SuggestedRecipes></SuggestedRecipes>
@@ -16,12 +16,13 @@
 import MyPantry from "../components/MyPantry.vue";
 import AddToPantry from "../components/AddToPantry.vue";
 import SuggestedRecipes from "../components/SuggestedRecipes.vue";
+import IngredientsList from "../components/IngredientsList.vue";
 
 export default {
     name: "my-pantry",
     components: {
         AddToPantry,
-        MyPantry,
+        IngredientsList,
         SuggestedRecipes
     },
     created(){
