@@ -1,6 +1,6 @@
 <template>
     <div id="AddToPantry">
-        <h2 id="pantry-header">My Pantry</h2>
+        <h2 id="pantry-header">Add To Pantry</h2>
         <div id="types">
         <input type="text" placeholder="Type Ingredient Here">
         <button v-on:click.prevent="saveIngredient()" type="submit" class="button">Add Ingredient</button>
