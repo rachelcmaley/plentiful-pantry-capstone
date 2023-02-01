@@ -49,13 +49,13 @@ public class JdbcPantryDao implements PantryDao {
     }
 
     @Override
-    public boolean addIngredient(String ingredientName, Long ingredientId) {
-        return false;
+    public void addIngredient(Ingredient ingredient) {
+
     }
 
     @Override
-    public boolean removeIngredient(Long ingredientId) {
-        return false;
+    public void removeIngredient(Long ingredientId) {
+
     }
 
     private Ingredient mapRowToIngredient(SqlRowSet rs) {
@@ -63,6 +63,7 @@ public class JdbcPantryDao implements PantryDao {
         ingredient.setIngredientName(rs.getString("ingredient_name"));
         ingredient.setIngredientId(rs.getInt("ingredient_id"));
         return ingredient;
-    };
+    }
+
 
 }
