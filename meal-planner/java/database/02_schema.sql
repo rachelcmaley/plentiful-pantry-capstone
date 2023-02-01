@@ -20,7 +20,12 @@ CREATE TABLE ingredients (
 	ingredient_name varchar(50) NOT NULL,
 	ingredient_id int NOT NULL,
 	CONSTRAINT PK_ingredient PRIMARY KEY (ingredient_id)
-);
+	);
+
+-- CREATE TABLE ingredients (
+-- 	ingredient_name varchar(50) NOT NULL,
+-- 	ingredient_id SEQUENCE PRIMARY KEY
+-- );
 
 CREATE TABLE pantry (
 	pantry_id int NOT NULL PRIMARY KEY,

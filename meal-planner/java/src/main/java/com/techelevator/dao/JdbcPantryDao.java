@@ -15,17 +15,19 @@ public class JdbcPantryDao implements PantryDao {
 
     public JdbcPantryDao(JdbcTemplate jdbcTemplate) { this.jdbcTemplate = jdbcTemplate; }
 
+    //loads all the user's pantry items when they log in
     @Override
-    public List<Ingredient> getAllIngredientsByPantryId(int pantryId) {
+    public List<Ingredient> getAllIngredientsByUserId(int userId) {
         List<Ingredient> ingredients = new ArrayList<>();
-        String sql = "SELECT *" +
+        String sql = "SELECT ingredient_name\n" +
                 "FROM pantry_ingredients as pi\n" +
                 "INNER JOIN pantry as p\n" +
                 "ON pi.pantry_id = p.pantry_id\n" +
+                "INNER JOIN users as u\n" +
+                "ON p.user_id = u.user_id\n" +
                 "INNER JOIN ingredients as i\n" +
-                "ON pi.ingredient_id = i.ingredient_id" +
-                "WHERE pantry_id = ?;";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, pantryId);
+                "ON pi.ingredient_id = i.ingredient_id;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
             Ingredient ingredient = mapRowToIngredient(results);
             ingredients.add(ingredient);
@@ -48,14 +50,23 @@ public class JdbcPantryDao implements PantryDao {
 
     }
 
+    //allows user to add ingredient to pantry
     @Override
-    public boolean addIngredient(String ingredientName, Long ingredientId) {
-        return false;
+    public void addIngredient(Ingredient ingredient) {
+        if(ingredient.getIngredientId() == 0) {
+             int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
+            ingredient.setIngredientId(newId);
+            jdbcTemplate.update("INSERT INTO ingredients(ingredient_name, ingredient_id)\n" +
+                    "\tVALUES (?, ?);",
+                    ingredient.getIngredientId(), ingredient.getIngredientName());
+        }
     }
 
+    // remove ingredient from user's pantry
     @Override
-    public boolean removeIngredient(Long ingredientId) {
-        return false;
+    public void removeIngredient(Long ingredientId) {
+        String sql = "DELETE FROM ingredients WHERE ingredient_id = ?;";
+        jdbcTemplate.update(sql, ingredientId);
     }
 
     private Ingredient mapRowToIngredient(SqlRowSet rs) {
@@ -63,6 +74,7 @@ public class JdbcPantryDao implements PantryDao {
         ingredient.setIngredientName(rs.getString("ingredient_name"));
         ingredient.setIngredientId(rs.getInt("ingredient_id"));
         return ingredient;
-    };
+    }
+
 
 }

@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface PantryDao {
 
-    public List<Ingredient> getAllIngredientsByPantryId(int pantryId);
+    public List<Ingredient> getAllIngredientsByUserId(int userId);
 
     public List<Ingredient> getAllIngredients();
 
-    public boolean addIngredient(String ingredientName, Long ingredientId);
+    public void addIngredient(Ingredient ingredient);
 
-    public boolean removeIngredient(Long ingredientId);
+    public void removeIngredient(Long ingredientId);
 }
