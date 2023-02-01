@@ -4,7 +4,9 @@
         <section id="left-panel">
         <AddToPantry></AddToPantry>
         <h2 id="my-ingredients-head">My Ingredients</h2>
+        <div id="scroll-ingredients">
         <IngredientsList></IngredientsList>
+        </div>
         </section>
         <section id="right-panel">
             <RecipesYouCanMake></RecipesYouCanMake>
@@ -47,6 +49,12 @@ export default {
 }
 #right-panel {
     margin-top: 10px;
+}
+#scroll-ingredients {
+    margin-left: 10px;
+    overflow: auto;
+    overflow-y: scroll;
+    height: 500px;
 }
 
 </style>
