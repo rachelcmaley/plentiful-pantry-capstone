@@ -1,12 +1,66 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+      <NavBar></NavBar>
+      <div class="home-grid">
+      <div id="firstcontainer">
+      <WeeklyPlanner></WeeklyPlanner>
+      </div>
+      <div id="secondcontainer">
+        <MyPantry></MyPantry>
+        <RecommendedRecipes></RecommendedRecipes>
+      </div>
+      </div>
+    <!-- <h1>Home</h1>
+    <p>You must be authenticated to see this or not</p> -->
   </div>
 </template>
 
 <script>
+import NavBar from "../components/NavBar.vue";
+import WeeklyPlanner from "../components/WeeklyPlanner.vue";
+import MyPantry from "../components/MyPantry.vue";
+import RecommendedRecipes from "../components/RecommendedRecipes.vue";
+
 export default {
-  name: "home"
+  name: "home",
+  components: {
+    NavBar,
+    WeeklyPlanner,
+    MyPantry,
+    RecommendedRecipes
+  },
 };
 </script>
+
+<style>
+body{
+background: url("new-image.jpg");
+background-size: cover;
+}
+.home-grid{
+  display:grid;
+
+  grid-template-rows: 1fr 1fr;
+  row-gap: 20px;
+  grid-template-areas:"firstcontainer"
+                      "secondcontainer";
+}
+#firstcontainer{
+  grid-area: firstcontainer;
+}
+#secondcontainer{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "mypantry recommended";
+  gap: 20px;
+  grid-area:secondcontainer;
+  margin: 0px 20px 0px 20px;
+}
+
+MyPantry{
+  grid-area: mypantry;
+}
+RecommendedRecipes{
+  grid-area: recommended;
+}
+</style>

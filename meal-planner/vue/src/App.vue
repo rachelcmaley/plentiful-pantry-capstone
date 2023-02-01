@@ -7,3 +7,9 @@
     <router-view />
   </div>
 </template>
+
+<style>
+#nav{
+  background: white;
+}
+</style>
