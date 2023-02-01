@@ -19,7 +19,8 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    pageClass: 'homePage'
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -37,6 +38,11 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+
+    UPDATE_PAGE(state, page)
+    {
+      state.pageClass = page;
     }
   }
 })

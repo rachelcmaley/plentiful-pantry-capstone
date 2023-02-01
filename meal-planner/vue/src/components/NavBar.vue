@@ -1,7 +1,7 @@
 <template>
     <nav class="container">
         <router-link class="routerlink" v-bind:to="{name: 'past-meal-plans'}">Past Meal Plans</router-link>
-        <router-link class="routerlink" v-bind:to="{name: 'pantry'}">Pantry</router-link>
+        <router-link class="routerlink" v-bind:to="{name: 'my-pantry'}">My Pantry</router-link>
         <router-link class="routerlink" v-bind:to="{name: 'recipes'}">Recipes</router-link>
         <router-link class="routerlink" v-bind:to="{name: 'grocery-list'}">Grocery List</router-link>
         <router-link class="routerlink" v-bind:to="{name: 'profile'}">Profile</router-link>

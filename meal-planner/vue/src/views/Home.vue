@@ -29,12 +29,15 @@ export default {
     MyPantry,
     RecommendedRecipes
   },
+    created(){
+        this.$store.commit('UPDATE_PAGE', 'homePage')
+    }
 };
 </script>
 
 <style>
 body{
-background: url("new-image.jpg");
+/* background: url("home-image.jpg"); */
 background-size: cover;
 }
 .home-grid{
