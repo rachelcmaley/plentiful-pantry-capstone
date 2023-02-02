@@ -10,3 +10,8 @@ ALTER TABLE pantry_ingredients
 ADD CONSTRAINT FK_pantry_ingredients_ingredients
 FOREIGN KEY (ingredient_id)
 REFERENCES ingredients(ingredient_id);
+
+ALTER TABLE meal_plan
+ADD CONSTRAINT FK_meal_plan_users
+FOREIGN KEY (user_id)
+REFERENCES users(user_id);
