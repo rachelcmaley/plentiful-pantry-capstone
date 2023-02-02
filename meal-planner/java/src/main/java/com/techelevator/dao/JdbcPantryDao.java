@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Ingredient;
+import com.techelevator.model.Pantry;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -33,6 +34,25 @@ public class JdbcPantryDao implements PantryDao {
             ingredients.add(ingredient);
         }
         return ingredients;
+    }
+
+    @Override
+    public List<Pantry> getAllPantryIngredientsByUserId(int userId) {
+        List<Pantry> pantrys = new ArrayList<>();
+        String sql = "SELECT ingredient_name\n" +
+                "FROM pantry_ingredients as pi\n" +
+                "INNER JOIN pantry as p\n" +
+                "ON pi.pantry_id = p.pantry_id\n" +
+                "INNER JOIN users as u\n" +
+                "ON p.user_id = u.user_id\n" +
+                "INNER JOIN ingredients as i\n" +
+                "ON pi.ingredient_id = i.ingredient_id;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            Pantry pantry = mapRowPantry(results);
+            pantrys.add(pantry);
+        }
+        return pantrys;
     }
 
     @Override
