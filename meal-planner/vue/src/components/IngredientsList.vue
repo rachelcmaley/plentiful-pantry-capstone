@@ -1,7 +1,7 @@
 <template>
   <div class="ingredient-list">
-    <div v-for="ingredient in ingredients" v-bind:key="ingredient.id" class="ingredient">
-        {{ ingredient.name }}
+    <div v-for="ingredient in ingredients" v-bind:key="ingredient.ingredientId" class="ingredient">
+        {{ ingredient.ingredientName }}
     </div>
   </div>
 </template>

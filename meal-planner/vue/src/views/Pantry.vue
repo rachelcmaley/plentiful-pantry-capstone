@@ -4,10 +4,12 @@
         <section id="left-panel">
         <AddToPantry></AddToPantry>
         <h2 id="my-ingredients-head">My Ingredients</h2>
+        <div id="scroll-ingredients">
         <IngredientsList></IngredientsList>
+        </div>
         </section>
         <section id="right-panel">
-            <SuggestedRecipes></SuggestedRecipes>
+            <RecipesYouCanMake></RecipesYouCanMake>
         </section>
 </div>
 </div>
@@ -15,7 +17,7 @@
 
 <script>
 import AddToPantry from "../components/AddToPantry.vue";
-import SuggestedRecipes from "../components/SuggestedRecipes.vue";
+import RecipesYouCanMake from "../components/RecipesYouCanMake.vue";
 import IngredientsList from "../components/IngredientsList.vue";
 
 export default {
@@ -23,7 +25,7 @@ export default {
     components: {
         AddToPantry,
         IngredientsList,
-        SuggestedRecipes
+        RecipesYouCanMake
     },
     created(){
         this.$store.commit('UPDATE_PAGE', 'pantryPage')
@@ -32,21 +34,27 @@ export default {
 </script>
 
 <style>
-body{
-    /* background: url("pantry-image.jpg"); */
-}
 #pantry-body
 #pantry{
     display: flex;
 }
 #left-panel {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
     background: white;
 }
 #my-ingredients-head {
     margin-top: 30px;
     text-align: center;
+}
+#right-panel {
+    margin-top: 10px;
+}
+#scroll-ingredients {
+    margin-left: 10px;
+    overflow: auto;
+    overflow-y: scroll;
+    height: 500px;
 }
 
 </style>

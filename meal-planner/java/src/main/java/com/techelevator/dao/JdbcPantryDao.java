@@ -39,7 +39,7 @@ public class JdbcPantryDao implements PantryDao {
     public List<Ingredient> getAllIngredients() {
 
         List<Ingredient> ingredients = new ArrayList<>();
-        String sql = "SELECT ingredient_name\n" +
+        String sql = "SELECT ingredient_id, ingredient_name\n" +
                 "FROM ingredients;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {

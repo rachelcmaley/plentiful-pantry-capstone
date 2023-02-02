@@ -21,11 +21,14 @@ public class PantryController {
         this.pantryDao = pantryDao;
     }
 
+    //lists all ingredients from ingredients table in database
     @GetMapping(path="pantry/ingredients")
     public List<Ingredient> ingredientList() {
-        return pantryDao.getAllIngredients();
+        List<Ingredient> ingredients = pantryDao.getAllIngredients();
+        return ingredients;
     }
 
+    //lists a user's pantry ingredients
     @GetMapping("/pantry/{userId}")
     public List<Ingredient> getAllIngredientsByUserId(@PathVariable int userId) { return pantryDao.getAllIngredientsByUserId(userId); }
 
