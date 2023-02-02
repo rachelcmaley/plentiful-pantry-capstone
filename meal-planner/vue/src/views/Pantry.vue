@@ -2,9 +2,11 @@
 <div id="pantry-body">
 <div id="pantry">
         <section id="left-panel">
+            <div id="addpantry">
         <AddToPantry></AddToPantry>
-        <h2 id="my-ingredients-head">My Ingredients</h2>
+            </div>
         <div id="scroll-ingredients">
+            <h2 id="my-ingredients-head">My Ingredients</h2>
         <IngredientsList></IngredientsList>
         </div>
         </section>
@@ -41,7 +43,6 @@ export default {
 #left-panel {
     margin-top: 20px;
     margin-left: 10px;
-    background: white;
 }
 #my-ingredients-head {
     margin-top: 30px;
@@ -50,11 +51,19 @@ export default {
 #right-panel {
     margin-top: 10px;
 }
+#add-pantry{
+    margin: 5px;
+    border: solid lightgrey;
+}
 #scroll-ingredients {
-    margin-left: 10px;
+    background: white;
+    margin: 5px;
+    border: solid lightgrey;
+    padding: 10px;
     overflow: auto;
     overflow-y: scroll;
     height: 500px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 </style>

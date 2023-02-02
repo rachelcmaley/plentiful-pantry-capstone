@@ -1,6 +1,6 @@
 <template>
     <div class="my-pantry">
-        <h2>My Pantry</h2>
+        <h2 id="my-header">My Pantry</h2>
         <ul>
             <li>eggs</li>
             <li>apples</li>
@@ -18,5 +18,8 @@
 .my-pantry{
     background: white;
     border-radius: 10px;
+}
+#my-header {
+    padding-left: 10px;
 }
 </style>
