@@ -3,6 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.JdbcPantryDao;
 import com.techelevator.dao.PantryDao;
 import com.techelevator.model.Ingredient;
+import com.techelevator.model.Pantry;
 import com.techelevator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -29,8 +30,13 @@ public class PantryController {
     }
 
     //lists a user's pantry ingredients
-    @GetMapping("/pantry/{userId}")
-    public List<Ingredient> getAllIngredientsByUserId(@PathVariable int userId) { return pantryDao.getAllIngredientsByUserId(userId); }
+    @GetMapping(path="/pantry/{userId}")
+    public List<Pantry> getAllPantryIngredientsByUserId(@PathVariable int userId) {
+
+        List<Pantry> pantry = pantryDao.getAllPantryIngredientsByUserId(userId);
+        return pantry;
+
+    }
 
 
 

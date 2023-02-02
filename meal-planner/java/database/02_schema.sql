@@ -35,7 +35,6 @@ CREATE TABLE pantry (
 CREATE TABLE pantry_ingredients (
 	pantry_id int NOT NULL,
 	ingredient_id int NOT NULL,
-	amount int NOT NULL,
 	PRIMARY KEY (
 		pantry_id,
 		ingredient_id
