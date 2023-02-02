@@ -1,0 +1,90 @@
+<template>
+
+    <div> 
+        <head>
+            <title>Login Page</title>
+            <header> Welcome Back! </header>
+        </head>
+        <body>
+        <div class="box"> 
+            <div class="loginText">Login to continue </div>
+            <input type="text" id="userName" name="userName" placeholder="Username">
+            <input type="text" id="password" name="password" placeholder="Password">
+            <button>Login</button>
+        </div>
+        </body>
+    </div>
+
+
+</template>
+
+<style>
+
+header{
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-top: 200px;
+    color: white;
+}
+
+body{
+    background-image: url("spices.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.box{
+    width: 600px;
+    height: 300px;
+    border: 2px solid rgb(156, 156, 156);
+    margin: auto;
+}
+
+div{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.loginText{
+    padding-top: 40px;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#userName{
+    display: block;
+    width: 400px;
+    height: 35px;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+#password{
+    display: block;
+    width: 400px;
+    height: 35px;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: #0B6E4F;
+    border-color:#0B6E4F;
+    width: 90px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+
+</style>
+    
