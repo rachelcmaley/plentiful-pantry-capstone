@@ -1,0 +1,83 @@
+header{
+    text-align: center;
+    padding-top: 200px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    color: rgb(7, 85, 7);
+}
+
+body{
+    background-image: url("food.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.box{
+    width: 600px;
+    height: 300px;
+    border: 2px solid rgb(156, 156, 156);
+    margin: auto;
+    background-color: white;
+}
+
+.freeText{
+    padding-left: 40px;
+    padding-top: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.first{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.last{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.firstAndLast{
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+.email{
+    margin-left: 40px;
+    padding-left: 10px;
+    margin-top: 20px;
+    height: 30px;
+    padding-right: 275px;
+    height: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.password{
+    height: 30px;
+    margin-left: 40px;
+    padding-left: 10px;
+    margin-top: 20px;
+    padding-right: 275px;
+    height: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+    margin-top: 20px;
+    color: white;
+    background-color: #0B6E4F;
+    border-color:#0B6E4F;
+    width: 90px;
+    height: 30px;
+}

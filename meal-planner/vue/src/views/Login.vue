@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <h1 id="signInText">Welcome Back! </h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -12,7 +12,7 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
+      <label id="usernameBox" for="username" class="sr-only"></label>
       <input
         type="text"
         id="username"
@@ -22,7 +22,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <label id="passwordBox" for="password" class="sr-only"></label>
       <input
         type="password"
         id="password"
@@ -31,8 +31,8 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      <button id="register" :to="{ name: 'register' }">Register Now</button>
+      <button id="signIn" type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -77,4 +77,91 @@ export default {
     }
   }
 };
+
+
 </script>
+
+<style scoped>
+
+#signInText{
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-top: 200px;
+    color: black;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.box{
+    width: 600px;
+    height: 300px;
+    border: 2px solid rgb(156, 156, 156);
+    margin: auto;
+}
+
+div{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-left: 670px;
+    margin-top: 230px;
+    height: 300px;
+    width: 600px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.loginText{
+    padding-top: 40px;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#usernameBox{
+    display: block;
+    width: 400px;
+    height: 35px;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+#passwordBox{
+    display: block;
+    width: 400px;
+    height: 35px;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+#register{
+  background-color: green;
+  color: white;
+  width: 170px;
+  height: 50px;
+}
+
+#signIn{
+  background-color: white;
+  border-color: green;
+  color: green;
+    width: 100px;
+    height: 50px;
+}
+
+
+</style>
