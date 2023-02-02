@@ -39,6 +39,7 @@
 
 <script>
 import authService from "../services/AuthService";
+import foodService from "../services/SpoonacularService";
 
 export default {
   name: "login",
@@ -51,6 +52,9 @@ export default {
       },
       invalidCredentials: false
     };
+  },
+  created(){
+    foodService.getRecipe(1);
   },
   methods: {
     login() {
