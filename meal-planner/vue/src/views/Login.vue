@@ -83,8 +83,12 @@ export default {
     font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 20px;
     color: black;
+}
+
+#login{
+  background-color: white;
 }
 
 body{
@@ -105,10 +109,11 @@ div{
     font-size: 20px;
     margin-left: 670px;
     margin-top: 230px;
-    height: 300px;
+    height: 350px;
     width: 600px;
     font-weight: bold;
     background-color: white;
+    border-radius: 9px;
 }
 
 .loginText{
@@ -118,45 +123,49 @@ div{
     font-size: 25px;
 }
 
-#usernameBox{
+#username{
     display: block;
     width: 400px;
     height: 35px;
     font-size: large;
     margin-top: 20px;
     margin-left: 40px;
+    padding-right: 110px;
 }
 
-#passwordBox{
-    display: block;
+#password{
+   display: block;
     width: 400px;
     height: 35px;
     font-size: large;
     margin-top: 20px;
     margin-left: 40px;
+    padding-right: 110px;
 }
 
 button{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 6px;
-    margin-top: 20px;
-    margin-left: 40px;
     font-size: 20px;
 }
 
 #register{
-  background-color: green;
-  color: white;
-  width: 170px;
-  height: 50px;
-}
 
-#signIn{
   background-color: white;
   border-color: green;
   color: green;
+  width: 170px;
+  height: 50px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+#signIn{
+  background-color: green;
+  color: white;
     width: 100px;
     height: 50px;
+    margin-left: 250px;
 }
 
 
