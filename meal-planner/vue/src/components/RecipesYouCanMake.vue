@@ -5,9 +5,9 @@
                 <h2 class = "title">Recipes You Can Make</h2>
 
                 <div class = "recipe-search-box">
-                    <input type="text" class = "search-control" 
+                    <input type="text" class = "search-control"  v-model="searchWord"
                         placeholder = "Search" id = "search">
-                        <button type = "submit" class = "search-btn" id = "search-btn">
+                        <button type = "submit" class = "search-btn" id = "search-btn" @click="search">
                             Search
                         </button>
                 </div>
@@ -18,18 +18,18 @@
                     </h2>
                     <div id="recipe">
                         <!-- recipe box -->
-                        <div class="recipe-item">
+                        <div class="recipe-item" v-for="recipe in recipes" :key="recipe.id">
                             <div class="meal-img">
-                                <img class='sgetti' v-bind:src="require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')">
+                                <img class='sgetti' v-bind:src="recipe.image">
                             </div>
                             <div class="recipe-name">
-                                <h3>Scgetti</h3>
-                                <a href="#" class="recipe-btn">Get Recipe</a>
+                                <h3>{{recipe.title}}</h3>
+                                <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
                             </div>
                         </div>
                         <!-- end of recipe box -->
                         <!-- recipe box -->
-                        <div class="recipe-item">
+                        <!-- <div class="recipe-item">
                             <div class="meal-img">
                                 <img class='sgetti' v-bind:src="require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')">
                             </div>
@@ -37,10 +37,10 @@
                                 <h3>Scgetti</h3>
                                 <a href="#" class="recipe-btn">Get Recipe</a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- end of recipe box -->
                         <!-- recipe box -->
-                        <div class="recipe-item">
+                        <!-- <div class="recipe-item">
                             <div class="meal-img">
                                 <img class='sgetti' v-bind:src="require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')">
                             </div>
@@ -48,9 +48,24 @@
                                 <h3>Scgetti</h3>
                                 <a href="#" class="recipe-btn">Get Recipe</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <!-- end of recipe box -->
+                        <!-- recipe box -->
+                        <!-- <div class="recipe-item">
+                            <div class="meal-img">
+                                <img class='sgetti' v-bind:src="require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')">
+                            </div>
+                            <div class="recipe-name">
+                                <h3>Scgetti</h3>
+                                <a href="#" class="recipe-btn">Get Recipe</a>
+                            </div>
+                        </div> -->
                         <!-- end of recipe box -->
                     </div>
+                </div>
+
+                <div>
+                    <p>{{recipeDetails}}</p>
                 </div>
             </div>
         </div>
@@ -68,14 +83,27 @@ export default {
             searchWord: '',
             recipes: [
 
-            ]
+            ],
+            recipeDetails: ''
         };
     },
     created() {
-        spoonacularService.getRecipes().then(response => {
-            this.recipes = response.data;
-        })
+       
     },
+    methods: {
+        search()
+        {
+            spoonacularService.searchRecipes(this.searchWord).then(response => {
+                this.recipes = response.data;
+            })
+        },
+        showRecipe(id)
+        {
+            spoonacularService.getRecipeById(id).then(response => {
+                this.recipeDetails = JSON.stringify(response.data)
+            })
+        }
+    }
 
 };
 </script>
@@ -118,14 +146,15 @@ body{
 }
 
 .container {
-    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    display: flexbox;
 }
 
 .recipe-wrapper{
-    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-    background: #fff;
+    background: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -153,7 +182,7 @@ body{
     color: #FFB20F;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
-
+    transition: all 0.4s linear;
 }
 
 .search-control::placeholder{

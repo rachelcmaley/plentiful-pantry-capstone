@@ -40,8 +40,10 @@ export default {
 }
 #left-panel {
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     width: 30vw;
+    height: 100vh;
     /* background: white; */
 }
 #my-ingredients-head {
@@ -54,11 +56,11 @@ export default {
 }
 #right-panel {
     margin-top: 30px;
+    margin-left: 10px;
     height: 100vh;
     width: 100vw;
-    margin: 30px;
     border-radius: 1rem;
-    overflow: auto;
+    overflow:hidden;
     overflow-y: scroll;
 }
 #scroll-ingredients {
