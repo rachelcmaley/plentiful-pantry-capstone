@@ -22,11 +22,6 @@ CREATE TABLE ingredients (
 	CONSTRAINT PK_ingredient PRIMARY KEY (ingredient_id)
 	);
 
--- CREATE TABLE ingredients (
--- 	ingredient_name varchar(50) NOT NULL,
--- 	ingredient_id SEQUENCE PRIMARY KEY
--- );
-
 CREATE TABLE pantry (
 	pantry_id int NOT NULL PRIMARY KEY,
 	user_id int NOT NULL
@@ -35,12 +30,24 @@ CREATE TABLE pantry (
 CREATE TABLE pantry_ingredients (
 	pantry_id int NOT NULL,
 	ingredient_id int NOT NULL,
-	amount int NOT NULL,
 	PRIMARY KEY (
 		pantry_id,
 		ingredient_id
 	)
 );
+
+CREATE TABLE meal_plan (
+	user_id int NOT NULL,
+	meal_plan_id int NOT NULL,
+	recipe_id int NOT NULL,
+	PRIMARY KEY (
+		user_id,
+		meal_plan_id,
+		recipe_id
+	)
+);
+	
+	
 
 -- Add seed data in the 03_data.sql script file
 
