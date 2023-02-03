@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-bind:class="$store.state.pageClass">
     <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
     </div>
     <router-view />
@@ -15,8 +15,10 @@ export default {
   },
   setup() {
     
-  }
+  },
+ 
 }
+
 </script>
 
 <style>
@@ -44,6 +46,17 @@ body{
 .pantryPage
 {
   background: url("assets/images/pantry-image.jpg");
-  background-size: ;
+  background-size: cover;
 }
+
+.registerPage{
+  background: url("assets/images/food.png");
+  background-size: cover;
+}
+
+.loginPage{
+  background: url("assets/images/home-image.jpg");
+  background-size: cover;
+}
+
 </style>

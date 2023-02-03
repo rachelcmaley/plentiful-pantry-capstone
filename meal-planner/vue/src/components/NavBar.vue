@@ -1,23 +1,44 @@
 <template>
     <nav class="container">
-        <router-link class="routerlink" v-bind:to="{name: 'past-meal-plans'}">Past Meal Plans</router-link>
-        <router-link class="routerlink" v-bind:to="{name: 'my-pantry'}">My Pantry</router-link>
-        <router-link class="routerlink" v-bind:to="{name: 'recipes'}">Recipes</router-link>
-        <router-link class="routerlink" v-bind:to="{name: 'grocery-list'}">Grocery List</router-link>
-        <router-link class="routerlink" v-bind:to="{name: 'profile'}">Profile</router-link>
+        <router-link id="link" class="routerlink" v-bind:to="{name: 'past-meal-plans'}">Past Meal Plans</router-link>
+        <router-link id="link" class="routerlink" v-bind:to="{name: 'my-pantry'}">My Pantry</router-link>
+        <router-link id="link" class="routerlink" v-bind:to="{name: 'recipes'}">Recipes</router-link>
+        <router-link id="link" class="routerlink" v-bind:to="{name: 'grocery-list'}">Grocery List</router-link>
+        <router-link id="link" class="routerlink" v-bind:to="{name: 'profile'}">Profile</router-link>
     </nav>
 </template>
 
+<script>
+export default {
+    setup() {
+        
+    },
+}
+
+</script>
+
+
 <style>
+
+#link{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border: solid green 2px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: white;
+}
 .container {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    background: white;
+    background: rgb(160, 184, 167);
     padding-bottom: 20px;
 }
 .routerlink {
+    
     color: #0b6e4f;
-    padding:0px 30px 0px 30px;
+    padding:0px 10px 0px 10px;
+    margin-right: 15px;
 }
 </style>

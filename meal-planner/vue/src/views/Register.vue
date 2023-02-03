@@ -1,11 +1,32 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
-      <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+      <h1 id="cookingText">Let's get Cooking!</h1>
+    <div class="box">
+      <div  class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <label  for="firstName" class="sr-only"></label>
+      <input
+        type="text"
+        id="firstName"
+        class="form-control"
+        placeholder="First Name"
+        v-model="user.firstName"
+        required
+        autofocus
+      />
+      <label  for="lastName" class="sr-only"></label>
+      <input
+        type="text"
+        id="lastName"
+        class="form-control"
+        placeholder="Last Name"
+        v-model="user.lastName"
+        required
+        autofocus
+      />
+      <label  for="username" class="sr-only"></label>
       <input
         type="text"
         id="username"
@@ -15,7 +36,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <label  for="password" class="sr-only"></label>
       <input
         type="password"
         id="password"
@@ -24,6 +45,7 @@
         v-model="user.password"
         required
       />
+     
       <input
         type="password"
         id="confirmPassword"
@@ -32,10 +54,12 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      <br>
+      <router-link id="loginLink" :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
+    </div>
     </form>
   </div>
 </template>
@@ -87,7 +111,121 @@ export default {
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
   },
+  created(){
+        this.$store.commit('UPDATE_PAGE', 'registerPage')
+    },
 };
 </script>
 
-<style></style>
+<style>
+#cookingText{
+    text-align: center;
+    padding-top: 140px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    color: rgb(7, 85, 7);
+}
+
+body{
+    background-image: src="food.png";
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.box{
+    width: 600px;
+    height: 330px;
+    border: 2px solid rgb(156, 156, 156);
+    margin: auto;
+    background-color: white;
+}
+
+.freeText{
+    padding-left: 40px;
+    padding-top: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#firstName{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 215px;
+    height: 30px;
+    padding-left: 20px;
+    font-size: 15px;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+#lastName{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 215px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+#username{
+    margin-left: 40px;
+    padding-left: 10px;
+    margin-top: 20px;
+    height: 30px;
+    padding-right: 275px;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#confirmPassword{
+  font-size: 15px;
+   height: 30px;
+    margin-left: 40px;
+    padding-left: 10px;
+    margin-top: 20px;
+    padding-right: 275px;
+    height: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#password{
+  font-size: 15px;
+    height: 30px;
+    margin-left: 40px;
+    padding-left: 10px;
+    margin-top: 20px;
+    padding-right: 275px;
+    height: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+    margin-top: 20px;
+    color: white;
+    background-color: #0B6E4F;
+    border-color:#0B6E4F;
+    width: 150px;
+    height: 50px;
+    border: solid green 3px;
+    border-radius: 8px;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+
+#loginLink{
+  margin-left: 40px;
+  margin-right: 150px;
+  font-size: 15px;
+  border: solid green 3px;
+  border-radius: 8px;
+  background-color: white;
+  color: green;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px 10px;
+}
+</style>
