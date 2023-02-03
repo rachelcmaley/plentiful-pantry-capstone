@@ -40,12 +40,17 @@ export default {
 }
 #left-panel {
     margin-top: 30px;
-    margin-left: 10px;
-    background: white;
+    margin-left: 30px;
+    width: 30vw;
+    /* background: white; */
 }
 #my-ingredients-head {
-    margin-top: 30px;
+    margin-top: 20px;
+    /* margin-left: 10px; */
     text-align: center;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 #right-panel {
     margin-top: 30px;
@@ -57,10 +62,13 @@ export default {
     overflow-y: scroll;
 }
 #scroll-ingredients {
-    margin-left: 10px;
+    /* margin-left: 10px; */
     overflow: auto;
     overflow-y: scroll;
     height: 100vh;
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
