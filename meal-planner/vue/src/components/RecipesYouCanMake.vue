@@ -60,8 +60,24 @@
 </template>
 
 <script>
- 
+import spoonacularService from "../services/SpoonacularService.js";
 
+export default {
+    data() {
+        return {
+            searchWord: '',
+            recipes: [
+
+            ]
+        };
+    },
+    created() {
+        spoonacularService.getRecipes().then(response => {
+            this.recipes = response.data;
+        })
+    },
+
+};
 </script>
 
 
@@ -85,11 +101,6 @@ body{
     cursor: pointer;
     outline: 0;
     font-size: 1.05rem;
-}
-
-.suggested{
-    background:white;
-    margin-left: 10px;
 }
 
 .sgetti {

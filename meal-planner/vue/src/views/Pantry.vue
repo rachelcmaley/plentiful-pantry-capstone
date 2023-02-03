@@ -39,7 +39,7 @@ export default {
     display: flex;
 }
 #left-panel {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 10px;
     background: white;
 }
@@ -48,13 +48,20 @@ export default {
     text-align: center;
 }
 #right-panel {
-    margin-top: 10px;
+    margin-top: 30px;
+    height: 100vh;
+    width: 100vw;
+    margin: 30px;
+    border-radius: 1rem;
+    overflow: auto;
+    overflow-y: scroll;
 }
 #scroll-ingredients {
     margin-left: 10px;
     overflow: auto;
     overflow-y: scroll;
-    height: 500px;
+    height: 100vh;
 }
+
 
 </style>

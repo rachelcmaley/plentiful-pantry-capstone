@@ -1,20 +1,23 @@
 import axios from 'axios';
-
-const foodApi ="https://whatever.com"
-const key ="fdswah4e21fd4"
-
-const http = axios.create({
-    baseURL: foodApi
-  });
-
-export default {
-
-    // this is just a demo - change to meet YOUR needs
-  getRecipe(recipeId) {
-    const url = `${foodApi}/recipes/${recipeId}?key=${key}`;
-    console.log(url);
-    return http.get(url);
-  }
-  
-
+export default async function handler(req, res) {
+	const options = {
+		method: 'GET',
+		url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
+		params: {
+			ingredients: '',
+            number: '5',
+		},
+		headers: {
+			'x-rapidapi-host':
+				'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+			'x-rapidapi-key': '19515db714msh0e0fbfab7033a57p1ee74bjsn296510ffd45b'
+		}
+	};
+	try {
+		let response = await axios(options);
+		res.status(200).json(response.data);
+	} catch (error) {
+		console.error(error.response);
+	}
+    
 }
