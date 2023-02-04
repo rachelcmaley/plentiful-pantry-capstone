@@ -1,13 +1,23 @@
 <template>
-    <div id="AddToPantry">
+    <div class="col-auto" id="AddToPantry">
         <h2 id="pantry-header">Add To Pantry</h2>
-        <div id="types">
-            <b-form-input autocomplete="on" list="search-ingredient" type="text" v-model="searchWord" placeholder="Type Ingredient Here"/>
-
-            <datalist id = "search-ingredient">
-                <option v-for="ingredient in ingredients" :key="ingredient.ingredientId"> {{ingredient.ingredientName}} </option>
-            </datalist>
-                   
+        <div class="submit-add">
+            <div class="row gx-2 px-2">
+                <div class="col-auto">
+                    <div class="form-floating">
+                        <b-form-input autocomplete="on" list="search-ingredient" type="text" placeholder="Add Ingredient"/>
+                        <label for="text" class="form-label">Ingredient</label>
+                        <datalist id = "search-ingredient">
+                            <option v-for="ingredient in ingredients" :key="ingredient.ingredientId"> {{ingredient.ingredientName}} </option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-outline-success" @click="addToPantry">
+                        Add
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -41,6 +51,9 @@ export default {
         }
     },
     methods: {
+        addToPantry() {
+            
+        }
 
     }
 };
@@ -53,7 +66,7 @@ export default {
 #AddToPantry{
     background: #A0B8A7;
     border-radius: 10px;
-    height: 14vh
+    height: 16vh
 }
 #pantry-header {
     text-align: center;
@@ -68,7 +81,7 @@ export default {
 #search-box {
     border-radius: 5px;
     width: 85%;
-    height: 40px;
-    padding: 15px
+    height: 40px
+
     }
 </style>
