@@ -1,0 +1,203 @@
+// recipeDetails.
+{
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "dairyFree": false,
+    "veryHealthy": false,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 1,
+    "gaps": "no",
+    "preparationMinutes": 5,
+    "cookingMinutes": 5,
+    "aggregateLikes": 0,
+    "healthScore": 0,
+    "creditsText": "Kraft Recipes",
+    "sourceName": "Kraft Recipes",
+    "pricePerServing": 46.42,
+    "extendedIngredients": [
+        {
+            "id": 9003,
+            "aisle": "Produce",
+            "image": "apple.jpg",
+            "consistency": "SOLID",
+            "name": "apple",
+            "nameClean": "apple",
+            "original": "5 thin apple slices",
+            "originalName": "thin apple slices",
+            "amount": 5,
+            "unit": "slices",
+            "meta": [
+                "thin"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 5,
+                    "unitShort": "slice",
+                    "unitLong": "slices"
+                },
+                "metric": {
+                    "amount": 5,
+                    "unitShort": "slice",
+                    "unitLong": "slices"
+                }
+            }
+        },
+        {
+            "id": 93748,
+            "aisle": "Cheese",
+            "image": "green-onion-cream-cheese-dip.jpg",
+            "consistency": "LIQUID",
+            "name": "philadelphia cream cheese spread",
+            "nameClean": "chive and onion cream cheese spread",
+            "original": "2 Tbsp. PHILADELPHIA Cream Cheese Spread",
+            "originalName": "PHILADELPHIA Cream Cheese Spread",
+            "amount": 2,
+            "unit": "Tbsp",
+            "meta": [],
+            "measures": {
+                "us": {
+                    "amount": 2,
+                    "unitShort": "Tbsps",
+                    "unitLong": "Tbsps"
+                },
+                "metric": {
+                    "amount": 2,
+                    "unitShort": "Tbsps",
+                    "unitLong": "Tbsps"
+                }
+            }
+        },
+        {
+            "id": 10219335,
+            "aisle": "Spices and Seasonings",
+            "image": "cinnamon-sugar.png",
+            "consistency": "SOLID",
+            "name": "cinnamon sugar",
+            "nameClean": "cinnamon sugar",
+            "original": "1/8 tsp. cinnamon sugar",
+            "originalName": "cinnamon sugar",
+            "amount": 0.125,
+            "unit": "tsp",
+            "meta": [],
+            "measures": {
+                "us": {
+                    "amount": 0.125,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.125,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 18621,
+            "aisle": "Savory Snacks",
+            "image": "crackers.jpg",
+            "consistency": "SOLID",
+            "name": "ritz crackers",
+            "nameClean": "crackers",
+            "original": "5 RITZ Crackers",
+            "originalName": "RITZ Crackers",
+            "amount": 5,
+            "unit": "",
+            "meta": [],
+            "measures": {
+                "us": {
+                    "amount": 5,
+                    "unitShort": "",
+                    "unitLong": ""
+                },
+                "metric": {
+                    "amount": 5,
+                    "unitShort": "",
+                    "unitLong": ""
+                }
+            }
+        }
+    ],
+    "id": 276464,
+    "title": "Creamy Apple Bites",
+    "readyInMinutes": 5,
+    "servings": 5,
+    "sourceUrl": "http://www.Kraftrecipes.com/recipes/creamy-apple-bites-76192.aspx",
+    "image": "https://spoonacular.com/recipeImages/276464-556x370.jpg",
+    "imageType": "jpg",
+    "summary": "Creamy Apple Bites might be a good recipe to expand your side dish recipe box. This recipe serves 5. For <b>46 cents per serving</b>, this recipe <b>covers 2%</b> of your daily requirements of vitamins and minerals. One portion of this dish contains around <b>1g of protein</b>, <b>2g of fat</b>, and a total of <b>88 calories</b>. Only a few people made this recipe, and 1 would say it hit the spot. If you have apple, philadelphia cream cheese spread, ritz crackers, and a few other ingredients on hand, you can make it. From preparation to the plate, this recipe takes approximately <b>5 minutes</b>. It is brought to you by Kraft Recipes. Overall, this recipe earns a <b>rather bad spoonacular score of 10%</b>. If you like this recipe, take a look at these similar recipes: <a href=\"https://spoonacular.com/recipes/sweet-n-creamy-bites-275907\">Sweet 'N Creamy Bites</a>, <a href=\"https://spoonacular.com/recipes/creamy-mediterranean-bites-271666\">Creamy Mediterranean Bites</a>, and <a href=\"https://spoonacular.com/recipes/creamy-bacon-bites-133792\">Creamy Bacon Bites</a>.",
+    "cuisines": [],
+    "dishTypes": [
+        "side dish"
+    ],
+    "diets": [],
+    "occasions": [],
+    "winePairing": {
+        "pairedWines": [],
+        "pairingText": "",
+        "productMatches": []
+    },
+    "instructions": "Spread crackers with cream cheese spread; top with apple slices. Sprinkle with cinnamon sugar. Serve immediately.",
+    "analyzedInstructions": [
+        {
+            "name": "",
+            "steps": [
+                {
+                    "number": 1,
+                    "step": "Spread crackers with cream cheese spread; top with apple slices.",
+                    "ingredients": [
+                        {
+                            "id": 0,
+                            "name": "cream cheese spread",
+                            "localizedName": "cream cheese spread",
+                            "image": "cream-cheese.jpg"
+                        },
+                        {
+                            "id": 18621,
+                            "name": "crackers",
+                            "localizedName": "crackers",
+                            "image": "crackers.jpg"
+                        },
+                        {
+                            "id": 0,
+                            "name": "spread",
+                            "localizedName": "spread",
+                            "image": ""
+                        },
+                        {
+                            "id": 9003,
+                            "name": "apple",
+                            "localizedName": "apple",
+                            "image": "apple.jpg"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 2,
+                    "step": "Sprinkle with cinnamon sugar.",
+                    "ingredients": [
+                        {
+                            "id": 10219335,
+                            "name": "cinnamon sugar",
+                            "localizedName": "cinnamon sugar",
+                            "image": "cinnamon-sugar.png"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 3,
+                    "step": "Serve immediately.",
+                    "ingredients": [],
+                    "equipment": []
+                }
+            ]
+        }
+    ],
+    "originalId": null
+}
