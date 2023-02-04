@@ -2,13 +2,12 @@
     <div id="AddToPantry">
         <h2 id="pantry-header">Add To Pantry</h2>
         <div id="types">
-        <input id="search-box" type="text" v-model="searchWord" placeholder="Type Ingredient Here"/>
-        <ul>
-            <li v-for="ingredient in filteredIngredients" :key="ingredient.ingredientId">
-                {{ingredient.ingredientName}}
-            </li>
-        </ul>
-        <!-- <button v-on:click.prevent="saveIngredient()" type="submit" class="button">Add Ingredient</button> -->
+            <b-form-input autocomplete="on" list="search-ingredient" type="text" v-model="searchWord" placeholder="Type Ingredient Here"/>
+
+            <datalist id = "search-ingredient">
+                <option v-for="ingredient in ingredients" :key="ingredient.ingredientId"> {{ingredient.ingredientName}} </option>
+            </datalist>
+                   
         </div>
     </div>
 </template>
