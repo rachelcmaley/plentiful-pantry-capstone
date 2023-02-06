@@ -73,16 +73,6 @@ export default {
     border: solid lightgrey;
 }
 #scroll-ingredients {
-<<<<<<< HEAD
-    background: white;
-    margin: 5px;
-    border: solid lightgrey;
-    padding: 10px;
-    overflow: auto;
-    overflow-y: scroll;
-    height: 500px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-=======
     /* margin-left: 10px; */
     overflow: auto;
     overflow-y: scroll;
@@ -90,7 +80,6 @@ export default {
     background: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
->>>>>>> main
 }
 
 
