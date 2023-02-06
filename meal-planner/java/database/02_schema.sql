@@ -36,14 +36,14 @@ CREATE TABLE pantry_ingredients (
 	)
 );
 
-CREATE TABLE meal_plan (
+CREATE TABLE saved_recipes (
 	user_id int NOT NULL,
-	meal_plan_id int NOT NULL,
 	recipe_id int NOT NULL,
+	recipe_name varchar(50) NOT NULL,
+	meal_date date,
+	meal_type varchar(50),
 	PRIMARY KEY (
-		user_id,
-		meal_plan_id,
-		recipe_id
+		user_id
 	)
 );
 	
