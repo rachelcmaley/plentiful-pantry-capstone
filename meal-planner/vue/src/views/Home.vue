@@ -3,7 +3,7 @@
       <NavBar></NavBar>
       <div class="home-grid">
       <div id="firstcontainer">
-      <WeeklyPlanner></WeeklyPlanner>
+      <MealPlanWeek></MealPlanWeek>
       </div>
       <div id="secondcontainer">
         <MyPantry></MyPantry>
@@ -17,7 +17,7 @@
 
 <script>
 import NavBar from "../components/NavBar.vue";
-import WeeklyPlanner from "../components/WeeklyPlanner.vue";
+import MealPlanWeek from "../components/MealPlanWeek.vue";
 import MyPantry from "../components/MyPantry.vue";
 import RecommendedRecipes from "../components/RecommendedRecipes.vue";
 
@@ -25,7 +25,7 @@ export default {
   name: "home",
   components: {
     NavBar,
-    WeeklyPlanner,
+    MealPlanWeek,
     MyPantry,
     RecommendedRecipes
   },
