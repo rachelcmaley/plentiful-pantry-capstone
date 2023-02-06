@@ -31,7 +31,7 @@
         v-model="user.password"
         required
       />
-      <button id="register" :to="{ name: 'register' }">Register Now</button>
+      <router-link :to="{ name: 'register' }"> <button id="register">Register Now</button> </router-link>
       <button id="signIn" type="submit">Sign in</button>
     </form>
   </div>
@@ -71,7 +71,11 @@ export default {
           }
         });
     }
-  }
+  },
+  created(){
+        this.$store.commit('UPDATE_PAGE', 'loginPage')
+    },
+
 };
 
 
