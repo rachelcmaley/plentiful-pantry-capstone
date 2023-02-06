@@ -25,7 +25,7 @@
         <div class="recipe-result">
           <h2 class="title">
             Your Search Results
-            <!-- test header remove later -->
+            <!-- ^test header remove later - search will use ingredients in user pantry -->
           </h2>
           <div id="recipe">
             <!-- recipe box -->
@@ -39,7 +39,8 @@
                             </div>
                         </div>
             <!-- end of recipe box -->
-            <!-- recipe box -->
+
+            <!-- test box 1 -->
             <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
@@ -54,8 +55,8 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
             </div> -->
-            <!-- end of recipe box -->
-            <!-- recipe box -->
+            <!-- end of test box 1 -->
+            <!-- test box 2 -->
             <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
@@ -70,8 +71,8 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
             </div> -->
-            <!-- end of recipe box -->
-            <!-- recipe box -->
+            <!-- end of test box 2 -->
+            <!-- test box 3 -->
             <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
@@ -86,8 +87,8 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
             </div> -->
-            <!-- end of recipe box -->
-            <!-- recipe box -->
+            <!-- test box 3 -->
+            <!-- test box 4 -->
             <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
@@ -102,62 +103,15 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
             </div> -->
-            <!-- end of recipe box -->
+            <!-- test box 4 -->
           </div>
         </div>
 
 
 
         <!-- POP UP RECIPE DETAILS BOX -->
-        <div class="recipe-details">
-          <!-- recipe close btn -->
-          <button
-            type="button"
-            class="btn recipe-close-btn"
-            id="recipe-close-btn"
-            @click="closeDetails()"
-          >
-            &times;
-          </button>
-
-          <!-- recipe content -->
-          <div class="recipe-details-content">
-            <h2 class="recipe-title">Recipe Title Here</h2>
-            <p class="recipe-category">category name</p>
-            <div class="recipe-instruction">
-              <h3>Instructions:</h3>
-
-                <div>
-                  <p>{{ recipeDetails }}</p>
-                </div>
-
-              <!-- <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Cupiditate dolores nobis ipsa quisquam incidunt officia, unde
-                suscipit saepe ratione, a commodi nostrum ea magni quod omnis!
-                Sunt quasi ducimus tenetur? </p>
-                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Cupiditate dolores nobis ipsa quisquam incidunt officia, unde
-                suscipit saepe ratione, a commodi nostrum ea magni quod omnis!
-                Sunt quasi ducimus tenetur? </p> -->
-            </div>
-            <div class="recipe-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-            </div>
-            <!-- TODO: add toggle 'Unsave recipe' -->
-            <button
-                type="button"
-                class="btn recipe-save-btn"
-                id="recipe-save-btn"
-            >
-                Save Recipe
-            </button>
-          </div>
-        </div>
+        <RecipeDetails v-if="showDetails" :details="recipeDetails" :on-close="closeDetails"></RecipeDetails>
+        
       </div>
     </div>
   </div>
@@ -166,13 +120,18 @@
 
 <script>
 import spoonacularService from "../services/SpoonacularService.js";
+import RecipeDetails from "../components/RecipeDetails.vue";
 
 export default {
+  components: {
+        RecipeDetails
+    },
   data() {
     return {
       searchWord: "",
       recipes: [],
-      recipeDetails: "",
+      recipeDetails: null,
+      showDetails: false
     };
   },
   created() {},
@@ -184,13 +143,12 @@ export default {
     },
     showRecipe(id) {
         spoonacularService.getRecipeById(id).then((response) => {
-        this.recipeDetails = JSON.stringify(response.data);
-
-        document.querySelector('.recipe-details').style.display = 'block';
+        this.recipeDetails = response.data;
+        this.showDetails = true;
       });
     },
     closeDetails(){
-        document.querySelector('.recipe-details').style.display = 'none';
+        this.showDetails = false;
     }
   },
 };
@@ -338,101 +296,6 @@ body {
 
 .recipe-btn:hover {
   background: #d39000;
-}
-
-
-/*recipe details */
-.recipe-details{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255);
-    background: #ffb20f;
-    border-radius: 1rem;
-    width: 90%;
-    height: 90%;
-    overflow-y: scroll;
-    display: none;
-    padding: 2rem 0;
-}
-
-/* cute scrollbar */
-.recipe-details::-webkit-scrollbar{
-    width: 10px;
-}
-.recipe-details::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 2rem;
-}
-
-/*js related*/
-.showRecipe{
-    display: block;
-}
-
-.recipe-details-content{
-    margin: 2rem;
-}
-
-.recipe-details-content p:not(.recipe-category){
-    padding: 1rem 0;
-}
-
-.recipe-close-btn {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    font-size: 20px;
-    border: none;
-    width: 32px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: flex-end;              /* TODO: position botton at bottom of box*/
-    justify-content: center;
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-.recipe-title{
-    letter-spacing: 1px;
-    padding-bottom: 1rem;
-}
-
-.recipe-category{
-    background: #fff;
-    font-weight: 600;
-    color: #ffb20f;
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.3rem;
-}
-
-.recipe-instruction{
-    padding: 1rem 0;
-}
-
-.recipe-img img{
-    margin: 0 auto;
-    display: block;
-}
-
-.recipe-save-btn {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-weight: 1.1rem;
-  padding: 0.75rem 0;
-  display: block;
-  width: 175px;
-  margin: 1rem auto;
-  border-radius: 2rem;
-  transition: all 0.4s linear;
-  border: none;
-}
-
-.recipe-save-btn:hover{
-    background: #074431;
 }
 
 /* MEDIA QUERIES */
