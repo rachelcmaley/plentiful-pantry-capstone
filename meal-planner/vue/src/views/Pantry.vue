@@ -43,13 +43,10 @@ export default {
 #left-panel {
     margin-top: 30px;
     margin-left: 10px;
-<<<<<<< HEAD
-=======
     margin-bottom: 10px;
     width: 30vw;
     height: 100vh;
     /* background: white; */
->>>>>>> main
 }
 #my-ingredients-head {
     margin-top: 20px;
