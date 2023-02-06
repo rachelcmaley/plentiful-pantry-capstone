@@ -2,9 +2,11 @@
 <div id="pantry-body">
 <div id="pantry">
         <section id="left-panel">
+            <div id="addpantry">
         <AddToPantry></AddToPantry>
-        <h2 id="my-ingredients-head">My Ingredients</h2>
+            </div>
         <div id="scroll-ingredients">
+            <h2 id="my-ingredients-head">My Ingredients</h2>
         <IngredientsList></IngredientsList>
         </div>
         </section>
@@ -64,6 +66,10 @@ export default {
     border-top-right-radius: 10px;
     overflow:hidden;
     overflow-y: scroll;
+}
+#add-pantry{
+    margin: 5px;
+    border: solid lightgrey;
 }
 #scroll-ingredients {
     /* margin-left: 10px; */

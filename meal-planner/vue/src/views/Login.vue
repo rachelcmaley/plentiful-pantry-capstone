@@ -74,7 +74,7 @@ export default {
   },
   created(){
         this.$store.commit('UPDATE_PAGE', 'loginPage')
-    },
+    }
 
 };
 
