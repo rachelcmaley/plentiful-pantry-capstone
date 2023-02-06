@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="recipe-wrapper">
       <div class="recipe-search">
-        <h2 class="title">Recipes You Can Make</h2>
+        <h2 class="title">Saved Recipes</h2>
 
-        <div class="recipe-search-box">
+        <!-- <div class="recipe-search-box">
           <input
             type="text"
             class="search-control"
@@ -20,12 +20,12 @@
           >
             Test Search
           </button>
-        </div>
+        </div> -->
 
         <div class="recipe-result">
           <div id="recipe">
             <!-- recipe box -->
-            <div class="recipe-item" v-for="recipe in recipes" :key="recipe.id">
+            <!-- <div class="recipe-item" v-for="recipe in recipes" :key="recipe.id">
                             <div class="meal-img">
                                 <img class='sgetti' v-bind:src="recipe.image">
                             </div>
@@ -33,11 +33,11 @@
                                 <h3>{{recipe.title}}</h3>
                                 <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
                             </div>
-                        </div>
+                        </div> -->
             <!-- end of recipe box -->
 
             <!-- test box 1 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -50,10 +50,10 @@
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
-            </div> -->
+            </div>
             <!-- end of test box 1 -->
             <!-- test box 2 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -66,10 +66,10 @@
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
-            </div> -->
+            </div>
             <!-- end of test box 2 -->
             <!-- test box 3 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -82,10 +82,10 @@
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
-            </div> -->
+            </div>
             <!-- test box 3 -->
             <!-- test box 4 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -98,7 +98,7 @@
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
               </div>
-            </div> -->
+            </div>
             <!-- test box 4 -->
           </div>
         </div>
@@ -110,7 +110,7 @@
         
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 
@@ -193,8 +193,9 @@ body {
 }
 
 .recipe-wrapper {
-  margin: 0 auto;
+  margin: 2rem;
   width: 100vw;
+  height: 100vw;
   padding-right: 2rem;
   background: rgb(255, 255, 255);
   text-align: center;
