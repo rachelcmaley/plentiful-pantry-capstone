@@ -11,7 +11,7 @@
 <style>
 .recommended{
     background: white;
-    border: solid green 2px;
+    border: solid green 3px;
     border-radius: 10px;
     
 }

@@ -26,6 +26,7 @@
 
 <style>
 .my-pantry{
+    border: solid green 3px;
     background: white;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

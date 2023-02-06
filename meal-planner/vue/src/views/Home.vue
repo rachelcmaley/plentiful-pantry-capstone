@@ -37,11 +37,11 @@ export default {
 
 <style>
 body{
+
     background-image: src="food.png";
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
 .home-grid{

@@ -11,7 +11,7 @@ ADD CONSTRAINT FK_pantry_ingredients_ingredients
 FOREIGN KEY (ingredient_id)
 REFERENCES ingredients(ingredient_id);
 
-ALTER TABLE meal_plan
-ADD CONSTRAINT FK_meal_plan_users
+ALTER TABLE saved_recipes
+ADD CONSTRAINT FK_save_recipes_users
 FOREIGN KEY (user_id)
 REFERENCES users(user_id);
