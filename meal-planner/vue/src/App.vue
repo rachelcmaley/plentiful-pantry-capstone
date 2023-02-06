@@ -40,7 +40,7 @@ body{
 
 .homePage
 {
-  background: url("assets/images/home-image.jpg");
+  background: url("assets/images/home-image2.jpg");
   background-size: cover;
 }
 .pantryPage

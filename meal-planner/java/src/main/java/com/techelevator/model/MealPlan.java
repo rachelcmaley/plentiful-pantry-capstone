@@ -10,10 +10,12 @@ public class MealPlan {
     public int getMealPlanId() {
         return mealPlanId;
     }
+
     public void setMealPlanId(int mealPlanId)
     {
         this.mealPlanId = mealPlanId;
     }
+
     public int getUserId(){
         return userId;
     }
@@ -21,6 +23,7 @@ public class MealPlan {
     {
         this.userId = userId;
     }
+
     public int getRecipeId(){
         return recipeId;
     }

@@ -1,10 +1,6 @@
 <template>
     <div class="my-pantry">
-<<<<<<< HEAD
-        <h2 id="my-header">My Pantry</h2>
-=======
         <h2 id="pantry">My Pantry</h2>
->>>>>>> main
         <ul>
             <li>eggs</li>
             <div id="underline"> </div>
@@ -33,11 +29,6 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
 }
-<<<<<<< HEAD
-#my-header {
-    padding-left: 10px;
-}
-=======
 
 #underline{
     border-bottom: solid 2px grey;
@@ -59,5 +50,4 @@ li{
     margin-left: 50px;
 }
 
->>>>>>> main
 </style>

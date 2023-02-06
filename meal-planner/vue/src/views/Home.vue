@@ -37,7 +37,6 @@ export default {
 
 <style>
 body{
-/* background: url("home-image.jpg"); */
 background-size: cover;
 }
 .home-grid{
