@@ -1,6 +1,8 @@
 <template>
     <div class="my-pantry">
+        <div id="space">  </div>
         <h2 id="pantry">My Pantry</h2>
+        <div id="space"> </div>
         <ul>
             <li>eggs</li>
             <div id="underline"> </div>
@@ -31,7 +33,7 @@
 }
 
 #underline{
-    border-bottom: solid 2px grey;
+    border-bottom: solid 2px rgb(164, 162, 236);
     margin-right: 90px;
 }
 
@@ -48,6 +50,10 @@
 
 li{
     margin-left: 50px;
+}
+
+#space{
+    padding-top: 15px;
 }
 
 </style>

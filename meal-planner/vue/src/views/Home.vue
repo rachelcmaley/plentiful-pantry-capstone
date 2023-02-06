@@ -37,27 +37,31 @@ export default {
 
 <style>
 body{
-/* background: url("home-image.jpg"); */
-background-size: cover;
+    background-image: src="food.png";
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
 }
+
 .home-grid{
   display:grid;
-
   grid-template-rows: 1fr 1fr;
-  row-gap: 20px;
   grid-template-areas:"firstcontainer"
                       "secondcontainer";
 }
+
 #firstcontainer{
   grid-area: firstcontainer;
 }
+
 #secondcontainer{
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-areas: "mypantry recommended";
-  gap: 20px;
+  gap: 50px;
   grid-area:secondcontainer;
-  margin: 0px 20px 0px 20px;
+  margin: 0px 50px 0px 50px;
 }
 
 MyPantry{
