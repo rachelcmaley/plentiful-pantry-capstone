@@ -32,6 +32,7 @@
                             <div class="recipe-name">
                                 <h3>{{recipe.title}}</h3>
                                 <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
+                                <button class="add-meal-btn">Add to Meal Plan</button>
                             </div>
                         </div> -->
             <!-- end of recipe box -->
@@ -49,6 +50,7 @@
               <div class="recipe-name">
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
             </div>
             <!-- end of test box 1 -->
@@ -65,6 +67,7 @@
               <div class="recipe-name">
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
             </div>
             <!-- end of test box 2 -->
@@ -81,6 +84,7 @@
               <div class="recipe-name">
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
             </div>
             <!-- test box 3 -->
@@ -97,6 +101,7 @@
               <div class="recipe-name">
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
             </div>
             <!-- test box 4 -->
@@ -108,6 +113,9 @@
         <!-- POP UP RECIPE DETAILS BOX -->
         <RecipeDetails v-if="showDetails" :details="recipeDetails" :on-close="closeDetails"></RecipeDetails>
         
+        <!-- POP UP ADD TO MEAL PLAN FORM -->
+        <AddToMealPlan ></AddToMealPlan>
+
       </div>
     </div>
   <!-- </div> -->
@@ -117,10 +125,12 @@
 <script>
 import spoonacularService from "../services/SpoonacularService.js";
 import RecipeDetails from "../components/RecipeDetails.vue";
+import AddToMealPlan from "../components/AddToMealPlan.vue";
 
 export default {
   components: {
-        RecipeDetails
+        RecipeDetails,
+        AddToMealPlan
     },
   data() {
     return {
@@ -185,6 +195,8 @@ body {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: start;
+  color: #0B6E4F;
+  padding-top: 20px;
 }
 
 .container {
@@ -293,6 +305,24 @@ body {
 
 .recipe-btn:hover {
   background: #d39000;
+}
+
+.add-meal-btn {
+  text-decoration: none;
+  color: #fff;
+  background: #0B6E4F;
+  font-weight: 1.1rem;
+  padding: 0.75rem 0;
+  display: block;
+  width: 175px;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+  border: none;
+}
+
+.add-meal-btn:hover {
+  background: #074733;
 }
 
 /* MEDIA QUERIES */
