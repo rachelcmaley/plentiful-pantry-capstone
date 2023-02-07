@@ -42,7 +42,7 @@ public class JdbcPantryDao implements PantryDao {
         List<Pantry> pantrys = new ArrayList<>();
         String sql = "SELECT ingredient_name " +
                 ", pi.ingredient_id " +
-                ", i.ingredient_name " +
+                ", p.pantry_id " +
                 "FROM pantry_ingredients AS pi " +
                 "INNER JOIN pantry AS p " +
                 "ON pi.pantry_id = p.pantry_id " +
@@ -77,13 +77,15 @@ public class JdbcPantryDao implements PantryDao {
     @Override
     public void addIngredient(Ingredient ingredient) {
         if(ingredient.getIngredientId() == 0) {
-             int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
+            int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
             ingredient.setIngredientId(newId);
             jdbcTemplate.update("INSERT INTO ingredients(ingredient_name, ingredient_id)\n" +
                     "\tVALUES (?, ?);",
                     ingredient.getIngredientId(), ingredient.getIngredientName());
         }
     }
+
+
 
     // remove ingredient from user's pantry
     @Override

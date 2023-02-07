@@ -1,8 +1,5 @@
-<!--
-
 <template>
     <div class="my-pantry">
-        <div id="space">  </div>
         <h2 id="pantry">My Pantry</h2>
         <div class="ingredient-list">
             <div v-for="ingredient in pantryIngredients" v-bind:key="ingredient.ingredientId" class="ingredient">
@@ -28,7 +25,7 @@
 
         created () {
 
-            const pantryPromise = pantryService.getIngredientsByPantryId();
+            const pantryPromise = pantryService.getPantryIngredients();
 
             pantryPromise.then ((response) => {
                 this.pantryIngredients = response.data;
@@ -39,8 +36,6 @@
     }
 
 </script>
- 
- -->
 
 
 

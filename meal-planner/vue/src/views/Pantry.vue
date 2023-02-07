@@ -6,7 +6,7 @@
         <AddToPantry></AddToPantry>
             </div>
         <div id="scroll-ingredients">
-        <IngredientsList></IngredientsList>
+        <MyPantry></MyPantry>
         </div>
         </section>
         <section id="right-panel">
@@ -19,15 +19,16 @@
 <script>
 import AddToPantry from "../components/AddToPantry.vue";
 import RecipesYouCanMake from "../components/RecipesYouCanMake.vue";
-// import MyPantry from "../components/MyPantry.vue";
-import IngredientsList from '../components/IngredientsList.vue';
+import MyPantry from "../components/MyPantry.vue";
+// import IngredientsList from '../components/IngredientsList.vue';
 
 export default {
     name: "my-pantry",
     components: {
         AddToPantry,
+        MyPantry,
         RecipesYouCanMake,
-        IngredientsList
+        // IngredientsList
     },
     created(){
         this.$store.commit('UPDATE_PAGE', 'pantryPage')

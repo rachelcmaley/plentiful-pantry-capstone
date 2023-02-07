@@ -14,6 +14,11 @@ export default {
             ingredientName: ingredientName
         }
         return axios.post(`/pantry/${userId}/ingredients`, body);
+    },
+
+    getPantryIngredients(userId) {
+
+        return axios.get(`/pantry/${userId}`)
     }
 
 };
