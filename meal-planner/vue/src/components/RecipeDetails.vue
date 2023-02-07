@@ -14,7 +14,7 @@
     <div class="recipe-details-content">
       <h2 class="recipe-title">{{ recipeDetails.title }}</h2>
         <!-- TODO: add toggle 'Unsave recipe' -->
-      <button type="button" class="recipe-save-btn" id="recipe-save-btn">
+      <button type="button" class="recipe-save-btn" id="recipe-save-btn" @click="saveRecipe()">
         Save Recipe
       </button>
       <div v-if="recipeDetails.cuisines != null" >
@@ -120,16 +120,13 @@ export default {
 
 .recipe-close-btn {
   position: fixed;
-  right: 2rem;
+  right: .5rem;
   top: .5rem;
   font-size: 30px;
   border: none;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  /* display: center; */
-  /* align-items: center;  */
-  /* justify-content: center;  */
+  color:#fff;
   transition: all 0.4s linear;
   opacity: 0.9; 
   cursor: pointer;
@@ -180,6 +177,7 @@ export default {
 .recipe-save-btn {
   text-decoration: none;
   color: rgb(255, 255, 255);
+  background-color: #0b6e4f;
   font-weight: 1.1rem;
   padding: 0.5rem 0;
   display: block;
