@@ -31,6 +31,8 @@
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
+    height: 360px;
+    width: 320px;
 }
 
 #underline{
@@ -44,10 +46,7 @@
     color: green;
 }
 
-#paperLine{
-    border-left: solid rgb(25, 25, 129) 2px;
-    margin-left: 10px;
-}
+
 
 li{
     margin-left: 50px;
@@ -55,6 +54,7 @@ li{
 
 #space{
     padding-top: 15px;
+    
 }
 
 </style>

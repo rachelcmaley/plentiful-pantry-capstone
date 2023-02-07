@@ -1,14 +1,23 @@
 <template>
-  <div class="home">
-      <NavBar></NavBar>
+  <div>
       <div class="home-grid">
-      <div id="firstcontainer">
-      <MealPlanWeek></MealPlanWeek>
-      </div>
-      <div id="secondcontainer">
-        <MyPantry></MyPantry>
-        <RecommendedRecipes></RecommendedRecipes>
-      </div>
+
+        <header>
+          <NavBar></NavBar>
+        </header>
+
+        <main>
+        <MealPlanWeek></MealPlanWeek>
+        </main>
+
+        <aside>  
+          <MyPantry></MyPantry>
+        </aside>
+
+        <footer> 
+          <RecommendedRecipes></RecommendedRecipes>
+        </footer>
+
       </div>
     <!-- <h1>Home</h1>
     <p>You must be authenticated to see this or not</p> -->
@@ -36,38 +45,42 @@ export default {
 </script>
 
 <style>
-body{
-
-    background-image: src="food.png";
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
 
 .home-grid{
   display:grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:"firstcontainer"
-                      "secondcontainer";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "navBar navBar navBar navBar"
+  "mpw mpw mpw mpw "
+  "pantry pantry recipies recipies"
 }
 
-#firstcontainer{
-  grid-area: firstcontainer;
+header{
+  grid-area: navBar;
+  margin-top: 40px;
+  height: 50px;
 }
 
-#secondcontainer{
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-areas: "mypantry recommended";
-  gap: 50px;
-  grid-area:secondcontainer;
-  margin: 0px 50px 0px 50px;
+
+main{
+  grid-area: mpw;
+  width: 1600px;
+  margin: auto;
+  margin-top: 25px;
 }
 
-MyPantry{
-  grid-area: mypantry;
+aside{
+  grid-area: pantry;
+  margin-top: 25px;
+  margin:auto;
 }
-RecommendedRecipes{
-  grid-area: recommended;
+
+footer{
+  grid-area: recipies;
+  margin-top: 25px;
+  margin:auto;
+
 }
+
+
 </style>

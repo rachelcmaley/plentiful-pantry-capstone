@@ -1,8 +1,8 @@
 <template>
   <div id="app" v-bind:class="$store.state.pageClass">
     <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <router-link id="nav" v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
+      <router-link id="nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
     </div>
     <router-view />
   </div>
@@ -23,8 +23,21 @@ export default {
 
 <style>
 #nav{
-  background: white;
+  background: rgb(145, 185, 157);
+  color: rgb(255, 255, 255);
 }
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none;}
+
+
+a:active { text-decoration: none; }
+
 /* #app{
   background: url("pantry-image.jpg");
   height: 100vh;
@@ -40,7 +53,7 @@ body{
 
 .homePage
 {
-  background: url("assets/images/home-image2.jpg");
+  background: url('assets/images/home-image2.jpg') no-repeat center fixed;
   background-size: cover;
 }
 .pantryPage
