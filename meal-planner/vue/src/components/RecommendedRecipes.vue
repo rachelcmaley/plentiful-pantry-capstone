@@ -1,20 +1,20 @@
 <template>
-<div class="recommended">
+<div class="background">
     <h2 id="subTitle">Recommended Recipes</h2>
 
     
 
-    </div>
+</div>
 
 </template>
 
 <style>
-.recommended{
+.background{
     background: white;
-    border: solid green 3px;
+    border: solid rgb(95, 156, 95) 3px;
     border-radius: 10px;
-    height: auto;
-    width: auto;
+    height: 360px;
+    width: 1130px;
 }
 
 #subTitle{

@@ -39,17 +39,15 @@
 
 
 
-
-
 <style>
 .my-pantry{
-    border: solid green 3px;
+    border: solid rgb(95, 156, 95) 3px;
     background: white;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     height: 360px;
-    width: 320px;
+    width: 450px;
 }
 
 #underline{
@@ -71,7 +69,6 @@ li{
 
 #space{
     padding-top: 15px;
-    
 }
 
 </style>
