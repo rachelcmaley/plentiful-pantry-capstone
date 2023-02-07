@@ -140,31 +140,31 @@
 }
 #sunday{
   grid-area: sunday;
-  color:rgb(144, 238, 144);
+  color:rgb(255, 140, 211);
 }
 #monday{
   grid-area: monday;
-  color: rgb(103, 216, 154);
+  color: rgb(255, 93, 241);
 }
 #tuesday{
   grid-area: tuesday;
-  color: rgb(52, 190, 165);
+  color: rgb(255, 30, 218);
 }
 #wednesday{
   grid-area: wednesday;
-  color: rgb(30, 169, 172);
+  color: rgb(215, 0, 138);
 }
 #thursday{
   grid-area: thursday;
-  color: rgb(29, 128, 175);
+  color: rgb(179, 0, 65);
 }
 #friday{
   grid-area: friday;
-  color:rgb(28, 97, 177);
+  color:rgb(135, 0, 9);
 }
 #saturday{
   grid-area: saturday;
-  color: rgb(14, 63, 167);
+  color: rgb(109, 7, 7);
 }
 
 .day{

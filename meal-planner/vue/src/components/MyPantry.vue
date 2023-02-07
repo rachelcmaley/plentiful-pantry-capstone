@@ -1,6 +1,6 @@
 <template>
     <div class="my-pantry">
-        <h2 id="pantry">My Pantry</h2>
+        <h2 id="homePantry">My Pantry</h2>
         <div class="ingredient-list">
             <div v-for="ingredient in pantryIngredients" v-bind:key="ingredient.ingredientId" class="ingredient">
                 {{ ingredient.ingredientName }}
@@ -40,7 +40,7 @@
 
 
 <style>
-.my-pantry{
+.homePantryBox{
     border: solid rgb(95, 156, 95) 3px;
     background: white;
     border-radius: 10px;
@@ -55,7 +55,7 @@
     margin-right: 90px;
 }
 
-#pantry{
+#homePantry{
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: green;

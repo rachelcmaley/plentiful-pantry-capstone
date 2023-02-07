@@ -20,31 +20,31 @@
             >
             <li class="list">
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Monday
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Tuesday
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Wednesday
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Thursday
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Friday
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Saturday
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="weekdays"/>
                 Sunday
               </ul>
             </li>
@@ -55,15 +55,15 @@
             >
             <li class="list">
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="mealType"/>
                 Breakfast
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="mealType"/>
                 Lunch
               </ul>
               <ul class="radio">
-                <input type="radio" />
+                <input type="radio" name="mealType"/>
                 Dinner
               </ul>
             </li>
@@ -113,7 +113,7 @@
   width: 40%;
   height: 90%;
   overflow-y: scroll;
-  display: block;
+  display: none;
   padding: 2rem 0;
 }
 
@@ -194,12 +194,12 @@
   transition: all 0.4s linear;
   cursor: pointer;
   margin-top: 3rem;
-  margin-bottom: 1rem;
 }
 
 .submit-btn {
   border: none;
   margin-right: 3rem;
+  background: #0b6e4f;
 }
 
 .submit-btn:hover{
