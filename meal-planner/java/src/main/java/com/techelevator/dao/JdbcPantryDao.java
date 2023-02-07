@@ -42,7 +42,7 @@ public class JdbcPantryDao implements PantryDao {
         List<Pantry> pantrys = new ArrayList<>();
         String sql = "SELECT ingredient_name " +
                 ", pi.ingredient_id " +
-                ", p.pantry_id " +
+//                ", p.pantry_id " +
                 "FROM pantry_ingredients AS pi " +
                 "INNER JOIN pantry AS p " +
                 "ON pi.pantry_id = p.pantry_id " +
@@ -75,14 +75,15 @@ public class JdbcPantryDao implements PantryDao {
 
     //allows user to add ingredient to pantry
     @Override
-    public void addIngredient(Ingredient ingredient) {
-        if(ingredient.getIngredientId() == 0) {
-            int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
-            ingredient.setIngredientId(newId);
-            jdbcTemplate.update("INSERT INTO ingredients(ingredient_name, ingredient_id)\n" +
-                    "\tVALUES (?, ?);",
-                    ingredient.getIngredientId(), ingredient.getIngredientName());
-        }
+    public void addIngredient(int userId, String ingredientName) {
+        String sql = "INSERT INTO user_ingredient (user_id, ingredient_name) VALUES (?,?)";
+//        if(ingredient.getIngredientId() == 0) {
+//            int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
+//            ingredient.setIngredientId(newId);
+//            jdbcTemplate.update("INSERT INTO ingredients(ingredient_name, ingredient_id)\n" +
+//                    "\tVALUES (?, ?);",
+//                    ingredient.getIngredientId(), ingredient.getIngredientName());
+//        }
     }
 
 
@@ -104,7 +105,7 @@ public class JdbcPantryDao implements PantryDao {
     private Pantry mapRowToPantry(SqlRowSet results) {
         Pantry pantry = new Pantry();
         pantry.setIngredientName(results.getString("ingredient_name"));
-        pantry.setPantryId(results.getInt("pantry_id"));
+//        pantry.setPantryId(results.getInt("pantry_id"));
         pantry.setIngredientId(results.getInt("ingredient_id"));
         return pantry;
     }

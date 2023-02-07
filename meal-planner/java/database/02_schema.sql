@@ -17,22 +17,17 @@ CREATE TABLE users (
 );
 
 CREATE TABLE ingredients (
-	ingredient_name varchar(50) NOT NULL,
 	ingredient_id int NOT NULL,
+	ingredient_name varchar(50) NOT NULL,
 	CONSTRAINT PK_ingredient PRIMARY KEY (ingredient_id)
 	);
 
-CREATE TABLE pantry (
-	pantry_id int NOT NULL PRIMARY KEY,
-	user_id int NOT NULL
-);
-
-CREATE TABLE pantry_ingredients (
-	pantry_id int NOT NULL,
-	ingredient_id int NOT NULL,
+CREATE TABLE user_ingredients (
+	user_id int NOT NULL,
+	ingredient_name varchar(50) NOT NULL,
 	PRIMARY KEY (
-		pantry_id,
-		ingredient_id
+		user_id,
+		ingredient_name
 	)
 );
 

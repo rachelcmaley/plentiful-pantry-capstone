@@ -1,15 +1,10 @@
 -- add database constraints here - such as foreign key constraints
 -- very common to add constraints AFTER bulk loading data
 
-ALTER TABLE pantry_ingredients
-ADD CONSTRAINT FK_pantry_ingredients_pantry
+ALTER TABLE user_ingredients
+ADD CONSTRAINT FK_user_ingredients_users
 FOREIGN KEY (pantry_id)
 REFERENCES pantry(pantry_id);
-
-ALTER TABLE pantry_ingredients
-ADD CONSTRAINT FK_pantry_ingredients_ingredients
-FOREIGN KEY (ingredient_id)
-REFERENCES ingredients(ingredient_id);
 
 ALTER TABLE saved_recipes
 ADD CONSTRAINT FK_save_recipes_users

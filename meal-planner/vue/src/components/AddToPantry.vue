@@ -1,11 +1,11 @@
 <template>
     <div class="col-auto" id="AddToPantry">
         <h2 id="pantry-header">Add To Pantry</h2>
-        <form class="submit-add">
+        <form class="submit-add" @submit.prevent="addToPantry">
             <div class="row gx-2 px-2">
                 <div class="col-auto">
                     <div class="form-floating">
-                        <input autocomplete="on" list="search-ingredient" type="text" class ="form-control" placeholder="Add Ingredient"/>
+                        <input v-model="ingredient" list="search-ingredient" type="text" class ="form-control" placeholder="Add Ingredient"/>
                         <label for="text" class="form-label">Ingredient</label>
                         <datalist id = "search-ingredient">
                             <option v-for="ingredient in ingredients" :key="ingredient.ingredientId"> {{ingredient.ingredientName}} </option>
@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-outline-success" @submit="addToPantry">
+                    <button type="submit" class="btn btn-outline-success">
                         Add
                     </button>
                 </div>
@@ -28,7 +28,7 @@ import pantryService from "../services/PantryService.js";
 export default {
     data() {
         return {
-            searchWord: "",
+            ingredient: "",
             ingredients: [],
             pantryIngredients: []
         };
@@ -38,25 +38,23 @@ export default {
             this.ingredients = response.data;
         });
 
-        // pantryService.getIngredientsByPantryId().then(response => {
-        //     this.pantryIngredients = response.data;
-        // })
+        pantryService.getPantryIngredients().then(response => {
+            this.pantryIngredients = response.data;
+        })
     },
-    // calculated: {
-    //     filteredIngredients() {
-    //         if(this.searchWord.length == 0)
-    //         {
-    //             return [];
-    //         }
-
-    //         return this.ingredients.filter(ingredient => {
-    //             return ingredient.ingredientName.toLowerCase().includes(this.searchWord.toLowerCase())
-    //         });
-
-    //     }
-    // },
     methods: {
-    
+
+        addToPantry() {
+
+            const userId = this.$store.state.user.id;
+            pantryService
+            .addIngredient(userId, this.ingredient)
+            .then(()=> {
+                this.ingredient="";
+                // this.$router.push(`/pantry`);
+            });
+        }
+
 
     }
 };
