@@ -1,3 +1,5 @@
+<!--
+
 <template>
     <div class="my-pantry">
         <div id="space">  </div>
@@ -9,6 +11,7 @@
         </div>
     </div>
 </template>
+
 
 
 <script>
@@ -36,7 +39,8 @@
     }
 
 </script>
-
+ 
+ -->
 
 
 
