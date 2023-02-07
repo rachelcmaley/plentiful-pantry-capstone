@@ -4,7 +4,7 @@ public class Pantry {
 
     private String ingredientName;
 //    private int pantryId;
-    private int ingredientId;
+    private int userId;
 
     public String getIngredientName() {
         return ingredientName;
@@ -14,20 +14,12 @@ public class Pantry {
         this.ingredientName = ingredientName;
     }
 
-//    public int getPantryId() {
-//        return pantryId;
-//    }
-
-//    public void setPantryId(int pantryId) {
-//        this.pantryId = pantryId;
-//    }
-
-    public int getIngredientId() {
-        return ingredientId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setIngredientId(int ingredientId) {
-        this.ingredientId = ingredientId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
 }

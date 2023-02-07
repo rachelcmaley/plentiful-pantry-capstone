@@ -76,7 +76,11 @@ public class JdbcPantryDao implements PantryDao {
     //allows user to add ingredient to pantry
     @Override
     public void addIngredient(int userId, String ingredientName) {
-        String sql = "INSERT INTO user_ingredient (user_id, ingredient_name) VALUES (?,?)";
+        String sql = "INSERT INTO user_ingredients (user_id, ingredient_name) VALUES (?,?)";
+
+        jdbcTemplate.update(sql, userId, ingredientName);
+
+
 //        if(ingredient.getIngredientId() == 0) {
 //            int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
 //            ingredient.setIngredientId(newId);
@@ -85,8 +89,6 @@ public class JdbcPantryDao implements PantryDao {
 //                    ingredient.getIngredientId(), ingredient.getIngredientName());
 //        }
     }
-
-
 
     // remove ingredient from user's pantry
     @Override
@@ -106,7 +108,7 @@ public class JdbcPantryDao implements PantryDao {
         Pantry pantry = new Pantry();
         pantry.setIngredientName(results.getString("ingredient_name"));
 //        pantry.setPantryId(results.getInt("pantry_id"));
-        pantry.setIngredientId(results.getInt("ingredient_id"));
+        pantry.setUserId(results.getInt("user_id"));
         return pantry;
     }
 

@@ -54,8 +54,6 @@ export default {
                 // this.$router.push(`/pantry`);
             });
         }
-
-
     }
 };
 </script>
