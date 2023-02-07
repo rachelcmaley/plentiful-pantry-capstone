@@ -3,7 +3,7 @@ package com.techelevator.model;
 public class Pantry {
 
     private String ingredientName;
-    private int pantryId;
+//    private int pantryId;
     private int ingredientId;
 
     public String getIngredientName() {
@@ -14,13 +14,13 @@ public class Pantry {
         this.ingredientName = ingredientName;
     }
 
-    public int getPantryId() {
-        return pantryId;
-    }
+//    public int getPantryId() {
+//        return pantryId;
+//    }
 
-    public void setPantryId(int pantryId) {
-        this.pantryId = pantryId;
-    }
+//    public void setPantryId(int pantryId) {
+//        this.pantryId = pantryId;
+//    }
 
     public int getIngredientId() {
         return ingredientId;
