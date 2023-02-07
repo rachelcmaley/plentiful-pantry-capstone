@@ -6,6 +6,12 @@ export default {
 
         return axios.get(`/pantry/ingredients`);
 
+    },
+
+    getIngredientsByPantryId(id) {
+
+        return axios.get(`/pantry/ingredients/${id}`);
+
     }
 
     

@@ -29,31 +29,34 @@ export default {
     data() {
         return {
             searchWord: "",
-            ingredients: []
+            ingredients: [],
+            pantryIngredients: []
         };
     },
     created() {
         pantryService.getIngredients().then(response => {
             this.ingredients = response.data;
-        })
-    },
-    calculated: {
-        filteredIngredients() {
-            if(this.searchWord.length == 0)
-            {
-                return [];
-            }
+        });
 
-            return this.ingredients.filter(ingredient => {
-                return ingredient.ingredientName.toLowerCase().includes(this.searchWord.toLowerCase())
-            });
-
-        }
+        // pantryService.getIngredientsByPantryId().then(response => {
+        //     this.pantryIngredients = response.data;
+        // })
     },
+    // calculated: {
+    //     filteredIngredients() {
+    //         if(this.searchWord.length == 0)
+    //         {
+    //             return [];
+    //         }
+
+    //         return this.ingredients.filter(ingredient => {
+    //             return ingredient.ingredientName.toLowerCase().includes(this.searchWord.toLowerCase())
+    //         });
+
+    //     }
+    // },
     methods: {
-        addToPantry() {
-            
-        }
+    
 
     }
 };
