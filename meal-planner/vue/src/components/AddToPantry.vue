@@ -51,7 +51,6 @@ export default {
             .addIngredient(userId, this.ingredient)
             .then(()=> {
                 this.ingredient="";
-                // this.$router.push(`/pantry`);
             });
         }
 
