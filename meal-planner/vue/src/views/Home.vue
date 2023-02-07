@@ -52,7 +52,7 @@ export default {
   grid-template-areas: 
   "navBar navBar navBar navBar"
   "mpw mpw mpw mpw "
-  "pantry pantry recipies recipies"
+  "pantry recipies recipies recipies";
 }
 
 header{
@@ -72,14 +72,14 @@ main{
 aside{
   grid-area: pantry;
   margin-top: 25px;
-  margin:auto;
+  margin-left: 160px;
 }
 
 footer{
   grid-area: recipies;
   margin-top: 25px;
-  margin:auto;
-
+  margin-left: 20px;
+  
 }
 
 

@@ -42,6 +42,7 @@ a:active { text-decoration: none; }
   background: url("pantry-image.jpg");
   height: 100vh;
 } */
+
 body{
   margin: 0;
 }
@@ -53,8 +54,10 @@ body{
 
 .homePage
 {
-  background: url('assets/images/home-image2.jpg') no-repeat center fixed;
+  background: url('assets/images/home-image2.jpg') ;
   background-size: cover;
+  background-repeat: no-repeat;
+  overflow: no-repeat;
 }
 .pantryPage
 {

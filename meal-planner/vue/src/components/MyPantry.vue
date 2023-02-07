@@ -1,6 +1,5 @@
 <template>
     <div class="my-pantry">
-        <div id="space">  </div>
         <h2 id="pantry">My Pantry</h2>
         <div class="ingredient-list">
             <div v-for="ingredient in pantryIngredients" v-bind:key="ingredient.ingredientId" class="ingredient">
@@ -9,6 +8,7 @@
         </div>
     </div>
 </template>
+
 
 
 <script>
@@ -25,7 +25,7 @@
 
         created () {
 
-            const pantryPromise = pantryService.getIngredientsByPantryId();
+            const pantryPromise = pantryService.getPantryIngredients();
 
             pantryPromise.then ((response) => {
                 this.pantryIngredients = response.data;
@@ -39,17 +39,15 @@
 
 
 
-
-
 <style>
 .my-pantry{
-    border: solid green 3px;
+    border: solid rgb(95, 156, 95) 3px;
     background: white;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     height: 360px;
-    width: 320px;
+    width: 450px;
 }
 
 #underline{
@@ -71,7 +69,6 @@ li{
 
 #space{
     padding-top: 15px;
-    
 }
 
 </style>

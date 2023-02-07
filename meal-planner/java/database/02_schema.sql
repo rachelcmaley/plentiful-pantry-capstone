@@ -46,7 +46,7 @@ CREATE TABLE saved_recipes (
 		user_id
 	)
 );
-	
+
 	
 
 -- Add seed data in the 03_data.sql script file

@@ -20,13 +20,15 @@
 import AddToPantry from "../components/AddToPantry.vue";
 import RecipesYouCanMake from "../components/RecipesYouCanMake.vue";
 import MyPantry from "../components/MyPantry.vue";
+// import IngredientsList from '../components/IngredientsList.vue';
 
 export default {
     name: "my-pantry",
     components: {
         AddToPantry,
         MyPantry,
-        RecipesYouCanMake
+        RecipesYouCanMake,
+        // IngredientsList
     },
     created(){
         this.$store.commit('UPDATE_PAGE', 'pantryPage')
@@ -39,6 +41,7 @@ export default {
 #pantry{
     display: flex;
 }
+
 #left-panel {
     margin-top: 30px;
     margin-left: 10px;
