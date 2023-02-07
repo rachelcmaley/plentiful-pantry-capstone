@@ -41,6 +41,7 @@ export default {
 #pantry{
     display: flex;
 }
+
 #left-panel {
     margin-top: 30px;
     margin-left: 10px;

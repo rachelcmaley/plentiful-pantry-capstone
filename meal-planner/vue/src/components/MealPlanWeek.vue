@@ -1,160 +1,203 @@
 <template>
-  <div id="weekly-grid">
-    <div id="sunday">
-      <h2 class="day">Sunday</h2>
-      <p id="firstSun">Breakfast meal</p>
-      <p id="secondSun">Lunch Meal</p>
-      <p id="thirdSun">Dinner Meal</p>
-    </div>
-    <div id="monday">
-      <h2 class="day">Monday</h2>
-      <p id="firstMon">Breakfast Meal</p>
-      <p id="secondMon">Lunch Meal</p>
-      <p id="thirdMon">Dinner Meal</p>
-    </div>
-    <div id="tuesday">
-      <h2 class="day">Tuesday</h2>
-      <p id="firstTue">Breakfast Meal</p>
-      <p id="secondTue">Lunch Meal</p>
-      <p id="thirdTue">Dinner Meal</p>
-    </div>
-    <div id="wednesday">
-      <h2 class="day">Wednesday</h2>
-      <p id="firstWed">Breakfast Meal</p>
-      <p id="secondWed">Lunch Meal</p>
-      <p id="thirdWed">Dinner Meal</p>
-    </div>
-    <div id="thursday">
-      <h2 class="day">Thursday</h2>
-      <p id="firstThu">Breakfast Meal</p>
-      <p id="secondThu">Lunch Meal</p>
-      <p id="thirdThu">Dinner Meal</p>
-    </div>
-    <div id="friday">
-      <h2 class="day">Friday</h2>
-      <p id="firstFri">Breakfast Meal</p>
-      <p id="secondFri">Lunch Meal</p>
-      <p id="thirdFri">Dinner Meal</p>
-    </div>
-    <div id="saturday">
-      <h2 class="day">Saturday</h2>
-      <p id="firstSat">Breakfast Meal</p>
 
-      <p id="secondSat">Lunch Meal</p>
-      <p id="thirdSat">Dinner Meal</p>
+  <div id="weekly-grid">
+    <div>
+      <h2 class="day" id="sunday">Sunday</h2>
+        <div id="line">
+          <p  id="fSu">Breakfast meal</p>
+          <p id="sSu">Lunch Meal</p>
+          <p id="tSu">Dinner Meal</p>
+        </div>
+    </div>
+    <div>
+      <h2 class="day" id="monday">Monday</h2>
+        <div id="line">
+            <p id="fMo">Breakfast Meal</p>
+            <p id="sMo">Lunch Meal</p>
+            <p id="tMo">Dinner Meal</p>
+        </div>
+    </div>
+    <div >
+        <h2 class="day" id="tuesday">Tuesday</h2>
+          <div id="line">
+            <p id="fTu">Breakfast Meal</p>
+            <p id="sTu">Lunch Meal</p>
+            <p id="tTu">Dinner Meal</p>
+          </div>
+    </div>
+    <div >
+      <h2 class="day" id="wednesday">Wednesday</h2>
+        <div id="line"> 
+          <p id="fWe">Breakfast Meal</p>
+          <p id="sWe">Lunch Meal</p>
+          <p id="tWe">Dinner Meal</p>
+         </div>
+    </div>
+    <div >
+      <h2 class="day" id="thursday">Thursday</h2>
+          <div id="line">
+            <p id="fTh">Breakfast Meal</p>
+            <p id="sTh">Lunch Meal</p>
+            <p id="tTh">Dinner Meal</p>
+          </div>
+    </div>
+    <div >
+      <h2 class="day" id="friday">Friday</h2>
+          <div id="line">
+          <p id="fFr">Breakfast Meal</p>
+          <p id="sFr">Lunch Meal</p>
+          <p id="tFr">Dinner Meal</p>
+          </div>
+    </div>
+    <div>
+      <h2 class="day" id="saturday">Saturday</h2>
+      <p id="fSa">Breakfast Meal</p>
+      <p id="sSa">Lunch Meal</p>
+      <p id="tSa">Dinner Meal</p>
     </div>
   </div>
 </template>
 
+
 <style>
 
-.day {
-    margin-left: 25px;
-    color: rgb(13, 117, 36);
-    font-weight: bold;
-    font-size: 25px;
+/*
+      Grid names are broken into two parts
+      the first letter signifies if its the First Second or Third meal. F, S, or T.
+      The last two letters are the first two letters of the day of the week.
+
+      for example,  
+      *F* irst    *Su* nday = fSu
+      *S* second  *Mo* nday = sMo
+  */
+
+
+
+#fSu {grid-area: fSu;
+}
+#sSu {
+  grid-area: sSu;
+}
+#tSu {
+  grid-area: tSu;
+}
+#fMo{
+  grid-area: fMo;
+}
+#sMo{
+  grid-area: sMo;
+}
+#tMo{
+  grid-area: tMo;
+}
+#fTu {
+  grid-area: fTu;
+}
+#sTu {
+  grid-area: sTu;
+  
+}
+#tTu {
+  grid-area: tTu;
+}
+#fWe {
+  grid-area: fWe;
+}
+#sWe {
+  grid-area: sWe;
+}
+#tWe {
+  grid-area: tWe;
+}
+#fTh {
+  grid-area: fTh;
+}
+#sTh {
+  grid-area: sTh;
+  
+}
+#tTh {
+  grid-area: tTh;
+}
+#fFr {
+  grid-area: fFr;
+}
+#sFr {
+  grid-area: sFr;
+  
+}
+#tFr{
+  grid-area: tFr;
+}
+#fSa {
+  grid-area: fSa;
+}
+#sSa {
+  grid-area: sSa;
+}
+#tSa {
+  grid-area: tSa;
+}
+#sunday{
+  grid-area: sunday;
+  color:rgb(144, 238, 144);
+}
+#monday{
+  grid-area: monday;
+  color: rgb(103, 216, 154);
+}
+#tuesday{
+  grid-area: tuesday;
+  color: rgb(52, 190, 165);
+}
+#wednesday{
+  grid-area: wednesday;
+  color: rgb(30, 169, 172);
+}
+#thursday{
+  grid-area: thursday;
+  color: rgb(29, 128, 175);
+}
+#friday{
+  grid-area: friday;
+  color:rgb(28, 97, 177);
+}
+#saturday{
+  grid-area: saturday;
+  color: rgb(14, 63, 167);
 }
 
-#sunday,
-#monday,
-#tuesday,
-#wednesday,
-#thursday,
-#friday {
-  display: flex;
-  justify-content: space-evenly;
-  height: 80%;
-  flex-direction: column;
+.day{
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid rgb(95, 156, 95) 3px;
+}
+
+#line{
+  border-right: solid rgb(180, 180, 180) 3px;
+}
+
+p{
   text-align: center;
 }
-#saturday {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-}
-#firstSun {
-  grid-area: firstSun;
-}
-#secondSun {
-  grid-area: secondSun;
-
-}
-#thirdSun {
-  grid-area: thirdSun;
-}
-#firstMon {
-  grid-area: firstMon;
-}
-#secondMon {
-  grid-area: secondMon;
-}
-#thirdMon {
-  grid-area: thirdMon;
-}
-#firstTue {
-  grid-area: firstTue;
-}
-#secondTue {
-  grid-area: secondTue;
-  
-}
-#thirdTue {
-  grid-area: thirdTue;
-}
-#firstWed {
-  grid-area: firstWed;
-}
-#secondWed {
-  grid-area: secondWed;
-}
-#thirdWed {
-  grid-area: thirdWed;
-}
-#firstThu {
-  grid-area: firstThu;
-}
-#secondThu {
-  grid-area: secondThu;
-  
-}
-#thirdThu {
-  grid-area: thirdThu;
-}
-#firstFri {
-  grid-area: firstFri;
-}
-#secondFri {
-  grid-area: secondFri;
-  
-}
-#thirdFri {
-  grid-area: thirdFri;
-}
-#firstSat {
-  grid-area: firstSat;
-}
-#secondSat {
-  grid-area: secondSat;
-  
-}
-#thirdSat {
-  grid-area: thirdSat;
-}
-
 
 #weekly-grid {
- background-color: rgb(255, 255, 255);
- border: solid green 3px;
+ background-color: white;
+ border: solid rgb(95, 156, 95) 3px;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  border-radius: 20px;
+ padding: 45px 20px 30px 20px;
  font-size: 20px;
- margin: 50px 40px;
-  display: grid;
+ display: grid;
+ height: 280px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
   grid-template-areas:
-    "firstSun firstMon firstTue firstWed firstThu firstFri firstSat"
-    "secondSun secondMon secondTue secondWed secondThu secondFri secondSat"
-    "thirdSun thirdMon thirdTue thirdWed thirdThu thirdFri thirdSat";
-  align-items: center;
+    "sunday monday tuesday wednesday thursday friday saturday"
+    "fSu fMo fTu fWe fTh fFr fSa"
+    "sSu sMo sTu sWe sTh sFr sSa"
+    "tSu tMo tTu tWe tTh tFr tSa";
 }
+
+
 </style>

@@ -39,14 +39,15 @@
 
 
 
-
 <style>
 .my-pantry{
-    border: solid green 3px;
+    border: solid rgb(95, 156, 95) 3px;
     background: white;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
+    height: 360px;
+    width: 450px;
 }
 
 #underline{
@@ -60,10 +61,7 @@
     color: green;
 }
 
-#paperLine{
-    border-left: solid rgb(25, 25, 129) 2px;
-    margin-left: 10px;
-}
+
 
 li{
     margin-left: 50px;
