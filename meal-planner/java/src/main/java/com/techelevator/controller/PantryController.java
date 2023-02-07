@@ -41,11 +41,10 @@ public class PantryController {
 
 
     //TODO: complete request method
-//    @RequestMapping(path = "/pantry/{userId}/addIngredientToPantry", method = RequestMethod.POST)
-//    public void addIngredient(@PathVariable String userId) {
-//        int ingredientId =
-//
-//       Ingredient ingredient = new Ingredient();
-//       ingredient.setIngredientName();
-//    }
+    @PostMapping(path = "/pantry/{userId}/ingredients")
+    public void addIngredient(@PathVariable String userId, @RequestBody Ingredient ingredient) {
+        System.out.println(ingredient);
+
+       // save to database
+    }
 }

@@ -6,9 +6,15 @@ export default {
 
         return axios.get(`/pantry/ingredients`);
 
-    }
+    },
 
-    
+    addIngredient(userId, ingredientName)
+    {
+        const body = {
+            ingredientName: ingredientName
+        }
+        return axios.post(`/pantry/${userId}/ingredients`, body);
+    }
 
 };
 
