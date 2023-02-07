@@ -3,7 +3,7 @@ package com.techelevator.model;
 public class Ingredient {
 
     private String ingredientName;
-    private int ingredientId;
+    private int ingredientId = 0;
 
     public String getIngredientName() {
         return ingredientName;
