@@ -74,7 +74,7 @@ export default {
   },
   created(){
         this.$store.commit('UPDATE_PAGE', 'loginPage')
-    },
+    }
 
 };
 
@@ -129,20 +129,18 @@ div{
 
 #username{
     display: block;
-    width: 400px;
+    width: 500px;
     height: 35px;
     font-size: large;
-    margin-top: 20px;
     margin-left: 40px;
     padding-right: 110px;
 }
 
 #password{
    display: block;
-    width: 400px;
+    width: 500px;
     height: 35px;
     font-size: large;
-    margin-top: 20px;
     margin-left: 40px;
     padding-right: 110px;
 }
@@ -160,7 +158,6 @@ button{
   color: green;
   width: 170px;
   height: 50px;
-  margin-left: 40px;
   margin-top: 20px;
 }
 
@@ -169,7 +166,7 @@ button{
   color: white;
     width: 100px;
     height: 50px;
-    margin-left: 250px;
+    margin-left: 80px;
 }
 
 

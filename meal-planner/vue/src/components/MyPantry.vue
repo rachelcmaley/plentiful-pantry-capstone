@@ -1,5 +1,6 @@
 <template>
     <div class="my-pantry">
+        <div id="space">  </div>
         <h2 id="pantry">My Pantry</h2>
         <div class="ingredient-list">
             <div v-for="ingredient in pantryIngredients" v-bind:key="ingredient.ingredientId" class="ingredient">
@@ -42,6 +43,7 @@
 
 <style>
 .my-pantry{
+    border: solid green 3px;
     background: white;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -49,7 +51,7 @@
 }
 
 #underline{
-    border-bottom: solid 2px grey;
+    border-bottom: solid 2px rgb(164, 162, 236);
     margin-right: 90px;
 }
 
@@ -66,6 +68,10 @@
 
 li{
     margin-left: 50px;
+}
+
+#space{
+    padding-top: 15px;
 }
 
 </style>

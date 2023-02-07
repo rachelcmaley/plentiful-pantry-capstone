@@ -2,8 +2,9 @@
 <div id="pantry-body">
 <div id="pantry">
         <section id="left-panel">
+            <div id="addpantry">
         <AddToPantry></AddToPantry>
-        <h2 id="my-ingredients-head">My Ingredients</h2>
+            </div>
         <div id="scroll-ingredients">
         <MyPantry></MyPantry>
         </div>
@@ -42,7 +43,7 @@ export default {
     margin-top: 30px;
     margin-left: 10px;
     margin-bottom: 10px;
-    width: 30vw;
+    width: 25vw;
     height: 100vh;
     /* background: white; */
 }
@@ -57,11 +58,17 @@ export default {
 #right-panel {
     margin-top: 30px;
     margin-left: 10px;
+    background: white;
     height: 100vh;
-    width: 100vw;
-    border-radius: 1rem;
+    width: 75vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     overflow:hidden;
     overflow-y: scroll;
+}
+#add-pantry{
+    margin: 5px;
+    border: solid lightgrey;
 }
 #scroll-ingredients {
     /* margin-left: 10px; */

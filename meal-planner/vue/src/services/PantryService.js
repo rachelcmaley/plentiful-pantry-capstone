@@ -8,13 +8,13 @@ export default {
 
     },
 
-    getIngredientsByPantryId(id) {
-
-        return axios.get(`/pantry/ingredients/${id}`);
-
+    addIngredient(userId, ingredientName)
+    {
+        const body = {
+            ingredientName: ingredientName
+        }
+        return axios.post(`/pantry/${userId}/ingredients`, body);
     }
-
-    
 
 };
 

@@ -16,7 +16,7 @@
         required
         autofocus
       />
-      <label  for="lastName" class="sr-only"></label>
+      <label id="lastName" for="lastName" class="sr-only"></label>
       <input
         type="text"
         id="lastName"
@@ -26,7 +26,7 @@
         required
         autofocus
       />
-      <label  for="username" class="sr-only"></label>
+      <label  id="username" for="username" class="sr-only"></label>
       <input
         type="text"
         id="username"
@@ -36,7 +36,7 @@
         required
         autofocus
       />
-      <label  for="password" class="sr-only"></label>
+      <label  id="password" for="password" class="sr-only"></label>
       <input
         type="password"
         id="password"
@@ -56,7 +56,7 @@
       />
       <br>
       <router-link id="loginLink" :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button id="createAccount" class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
     </div>
@@ -135,10 +135,11 @@ body{
 
 .box{
     width: 600px;
-    height: 330px;
-    border: 2px solid rgb(156, 156, 156);
+    height: 450px;
+    border: 3px solid green;
     margin: auto;
     background-color: white;
+    border-radius:9px;
 }
 
 .freeText{
@@ -151,57 +152,51 @@ body{
 
 #firstName{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 215px;
+    width: 500px;
     height: 30px;
-    padding-left: 20px;
+    padding-left: 10px;
     font-size: 15px;
     margin-left: 40px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 20px;
 }
 
 #lastName{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 215px;
+    width: 500px;
     height: 30px;
     padding-left: 10px;
     font-size: 15px;
+    margin-left: 40px;
 }
 
 #username{
     margin-left: 40px;
     padding-left: 10px;
-    margin-top: 20px;
-    height: 30px;
-    padding-right: 275px;
+    width: 500px;
     height: 30px;
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #confirmPassword{
-  font-size: 15px;
+   margin-left: 40px;
+   padding-left: 10px;
    height: 30px;
-    margin-left: 40px;
-    padding-left: 10px;
-    margin-top: 20px;
-    padding-right: 275px;
-    height: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   width: 500px;
+   margin-top: 30px;
 }
 
 #password{
-  font-size: 15px;
+    font-size: 15px;
     height: 30px;
     margin-left: 40px;
     padding-left: 10px;
-    margin-top: 20px;
-    padding-right: 275px;
-    height: 30px;
+    width:500px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-button{
+#createAccount{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-left: 40px;
     margin-top: 20px;
@@ -218,7 +213,6 @@ button{
 
 
 #loginLink{
-  margin-left: 40px;
   margin-right: 150px;
   font-size: 15px;
   border: solid green 3px;
@@ -228,4 +222,5 @@ button{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 10px 10px;
 }
+
 </style>
