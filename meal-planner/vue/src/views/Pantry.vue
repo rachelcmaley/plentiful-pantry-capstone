@@ -6,8 +6,7 @@
         <AddToPantry></AddToPantry>
             </div>
         <div id="scroll-ingredients">
-            <h2 id="my-ingredients-head">My Ingredients</h2>
-        <IngredientsList></IngredientsList>
+        <MyPantry></MyPantry>
         </div>
         </section>
         <section id="right-panel">
@@ -20,13 +19,13 @@
 <script>
 import AddToPantry from "../components/AddToPantry.vue";
 import RecipesYouCanMake from "../components/RecipesYouCanMake.vue";
-import IngredientsList from "../components/IngredientsList.vue";
+import MyPantry from "../components/MyPantry.vue";
 
 export default {
     name: "my-pantry",
     components: {
         AddToPantry,
-        IngredientsList,
+        MyPantry,
         RecipesYouCanMake
     },
     created(){

@@ -2,27 +2,44 @@
     <div class="my-pantry">
         <div id="space">  </div>
         <h2 id="pantry">My Pantry</h2>
-        <div id="space"> </div>
-        <ul>
-            <li>eggs</li>
-            <div id="underline"> </div>
-            <li>apples</li>
-             <div id="underline"> </div>
-            <li>pears</li>
-             <div id="underline"> </div>
-            <li>tortillas</li>
-             <div id="underline"> </div>
-            <li>beans</li>
-             <div id="underline"> </div>
-            <li>oranges</li>
-             <div id="underline"> </div>
-            <li>cucumber</li>
-             <div id="underline"> </div>
-            <li>meat</li>
-             <div id="underline"> </div>
-        </ul>
+        <div class="ingredient-list">
+            <div v-for="ingredient in pantryIngredients" v-bind:key="ingredient.ingredientId" class="ingredient">
+                {{ ingredient.ingredientName }}
+            </div>
+        </div>
     </div>
 </template>
+
+
+<script>
+
+    import pantryService from '../services/PantryService.js';
+
+    export default {
+        name: 'my-pantry',
+        data () {
+            return {
+                pantryIngredients: []
+            };
+        },
+
+        created () {
+
+            const pantryPromise = pantryService.getIngredientsByPantryId();
+
+            pantryPromise.then ((response) => {
+                this.pantryIngredients = response.data;
+
+            });
+
+        }
+    }
+
+</script>
+
+
+
+
 
 <style>
 .my-pantry{
