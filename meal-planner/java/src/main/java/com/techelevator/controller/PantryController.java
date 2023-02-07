@@ -38,13 +38,12 @@ public class PantryController {
 
     }
 
-
-
     //TODO: complete request method
     @PostMapping(path = "/pantry/{userId}/ingredients")
     public void addIngredient(@PathVariable String userId, @RequestBody Ingredient ingredient) {
         System.out.println(ingredient);
 
        // save to database
+        pantryDao.addIngredient(userId, ingredient.getIngredientName());
     }
 }
