@@ -140,7 +140,7 @@ export default {
       })
     },
     search() {
-      spoonacularService.searchRecipes(this.ingredients).then((response) => {
+      spoonacularService.searchRecipes(this.searchWord).then((response) => {
         this.recipes = response.data;
       });
     },

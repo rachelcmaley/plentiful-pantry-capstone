@@ -36,10 +36,29 @@ public class JdbcSavedRecipesDao implements SavedRecipesDao {
         return recipes;
     }
 
+
+
     @Override
     public void addRecipe(int userId, int recipeId, String recipeName) {
         String sql = "INSERT INTO saved_recipes (user_id, recipe_id, recipe_name) VALUES (?, ?, ?);";
         jdbcTemplate.update(sql, userId, recipeId, recipeName);
+    }
+
+    @Override
+    public List<Integer> getRecipeIdByUserId(int userId) {
+
+        List<Integer> recipeIds = new ArrayList<>();
+
+        String sql = "SELECT recipe_id " +
+                "FROM saved_recipes " +
+                "WHERE user_id = ?; ";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            int recipeId = results.getInt("recipe_id");
+            recipeIds.add(recipeId);
+        }
+        return recipeIds;
     }
 
     private SavedRecipes mapRowToSavedRecipes(SqlRowSet rs) {
