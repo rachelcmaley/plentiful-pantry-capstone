@@ -1,6 +1,10 @@
 <template>
 <div id="pantry-body">
-<div id="pantry">
+
+    <header>
+        <NavBar></NavBar>
+    </header>
+    <div id="pantry">
         <section id="left-panel">
             <div id="addpantry">
         <AddToPantry></AddToPantry>
@@ -17,6 +21,8 @@
 </template>
 
 <script>
+
+import NavBar from "../components/NavBar.vue";
 import AddToPantry from "../components/AddToPantry.vue";
 import RecipesYouCanMake from "../components/RecipesYouCanMake.vue";
 import MyPantry from "../components/MyPantry.vue";
@@ -26,7 +32,8 @@ export default {
     components: {
         AddToPantry,
         MyPantry,
-        RecipesYouCanMake
+        RecipesYouCanMake,
+        NavBar
     },
     created(){
         this.$store.commit('UPDATE_PAGE', 'pantryPage')
