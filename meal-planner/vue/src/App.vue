@@ -66,6 +66,7 @@ html{
   background-repeat: no-repeat;
   overflow: no-repeat;
 }
+
 .pantryPage
 {
   background: url("assets/images/cookingTools.jpeg");
@@ -88,6 +89,16 @@ html{
 }
 
 .loginPage{
+  background: url("assets/images/ramen.png");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: no-repeat;
+}
+
+.mealPlannerPage{
   background: url("assets/images/ramen.png");
   background-size: cover;
   background-position: center;

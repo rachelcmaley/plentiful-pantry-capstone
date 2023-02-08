@@ -43,6 +43,7 @@ public class PantryController {
         System.out.println(ingredient.getIngredientName());
 
        // save to database
+
         //pantryDao.addIngredient(userId, ingredient.getIngredientName());
     }
 

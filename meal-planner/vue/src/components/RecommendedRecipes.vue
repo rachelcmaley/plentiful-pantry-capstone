@@ -10,7 +10,7 @@
 
 <style>
 .background{
-    background: white;
+    background: rgba(255, 255, 255, 0.61);
     border: solid rgb(95, 156, 95) 3px;
     border-radius: 10px;
     height: 360px;

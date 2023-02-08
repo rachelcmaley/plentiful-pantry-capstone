@@ -117,6 +117,7 @@
 <script>
 import spoonacularService from "../services/SpoonacularService.js";
 import RecipeDetails from "../components/RecipeDetails.vue";
+import pantryService from "../services/PantryService.js";
 
 export default {
   components: {
@@ -127,13 +128,19 @@ export default {
       searchWord: "",
       recipes: [],
       recipeDetails: null,
-      showDetails: false
+      showDetails: false,
+      ingredients: '',
     };
   },
   created() {},
   methods: {
+    getIngredients() {
+      pantryService.getPantryIngredients(this.$store.state.user.id).then((response) => {
+        this.ingredients = response.data;
+      })
+    },
     search() {
-      spoonacularService.searchRecipes(this.searchWord).then((response) => {
+      spoonacularService.searchRecipes(this.ingredients).then((response) => {
         this.recipes = response.data;
       });
     },
