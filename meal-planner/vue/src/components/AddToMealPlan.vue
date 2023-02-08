@@ -15,7 +15,7 @@
       <div class="input-wrapper">
         <div class="form-boxes">
           <div class="form-box-one">
-            <label for="dayOfTheWeek" class="form-subheader"
+            <label for="dayOfTheWeek" class="form-subheader" required
               >Please select day to add to:</label
             >
             <li class="list">
@@ -50,7 +50,7 @@
             </li>
           </div>
           <div class="form-box-two">
-            <label for="mealType" class="form-subheader"
+            <label for="mealType" class="form-subheader" required
               >Which meal will this be?</label
             >
             <li class="list">
@@ -144,7 +144,7 @@
   padding-bottom: 1rem;
   font-weight: 700;
   font-size: 2rem;
-  color: #0b6e4f
+  color: #0b6e4f;
 }
 
 .form-boxes {

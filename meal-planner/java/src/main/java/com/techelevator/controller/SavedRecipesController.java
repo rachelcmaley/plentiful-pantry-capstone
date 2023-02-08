@@ -3,10 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.SavedRecipesDao;
 import com.techelevator.model.SavedRecipes;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,11 @@ public class SavedRecipesController {
     {
         List<SavedRecipes> recipes = savedRecipesDao.getRecipesByUserId(userId);
         return recipes;
+    }
+
+    //save (add) recipe to DB
+    @PostMapping(path= "/recipes/{userId}/saved")
+    public void addRecipe(@PathVariable int userId, @RequestBody SavedRecipes savedRecipes) {
+        savedRecipesDao.addRecipe(userId, savedRecipes.getRecipeId(), savedRecipes.getRecipeName());
     }
 }

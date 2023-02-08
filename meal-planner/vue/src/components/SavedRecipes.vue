@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="container"> -->
-    <div class="recipe-wrapper">
+    <div class="saved-recipe-wrapper">
       <div class="recipe-search">
         <h2 class="title">Saved Recipes</h2>
 
@@ -88,6 +88,40 @@
               </div>
             </div>
             <!-- test box 3 -->
+            <!-- test box 4 -->
+            <div class="recipe-item">
+              <div class="meal-img">
+                <img
+                  class="sgetti"
+                  v-bind:src="
+                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
+                  "
+                />
+              </div>
+              <div class="recipe-name">
+                <h3>Scgetti</h3>
+                <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
+              </div>
+            </div>
+            <!-- test box 4 -->
+            <!-- test box 4 -->
+            <div class="recipe-item">
+              <div class="meal-img">
+                <img
+                  class="sgetti"
+                  v-bind:src="
+                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
+                  "
+                />
+              </div>
+              <div class="recipe-name">
+                <h3>Scgetti</h3>
+                <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
+              </div>
+            </div>
+            <!-- test box 4 -->
             <!-- test box 4 -->
             <div class="recipe-item">
               <div class="meal-img">
@@ -193,10 +227,11 @@ body {
 
 .title {
   font-size: 2rem;
-  margin-bottom: 1rem;
   text-align: start;
   color: #0B6E4F;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 1rem;
+  border-bottom: solid #ffb20f;
 }
 
 .container {
@@ -204,68 +239,34 @@ body {
   width: 100vw;
 }
 
-.recipe-wrapper {
-  margin: 2rem;
+.saved-recipe-wrapper {
   width: 100vw;
-  height: 100vw;
-  padding-right: 2rem;
+  height: 66vh;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
   background: rgb(255, 255, 255);
   text-align: center;
+  overflow-y: scroll;
+  margin-top: 20px;
+  border: solid rgb(95, 156, 95) 3px;
+    border-radius: 10px;
 }
 
-.recipe-search {
-  margin: 2rem;
+/* cute scrollbar */
+.recipe-wrapper::-webkit-scrollbar {
+  width: 10px;
 }
-
-.recipe-search-box {
-  margin: 1.2rem 0;
-  display: flex;
-  align-items: stretch;
-}
-
-.search-control,
-.search-button {
-  width: 100%;
-}
-
-.search-control {
-  padding: 0 1rem;
-  font-size: 1.1rem;
-  font-family: inherit;
-  outline: 0;
-  border: 1px solid #ffb20f;
-  color: #ffb20f;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-  transition: all 0.4s linear;
-}
-
-.search-control::placeholder {
-  color: #ffb20f;
-}
-
-.search-btn {
-  width: 55px;
-  height: 25px;
-  font-size: 0.75rem;
-  background: #ffb20f;
-  color: rgb(78, 78, 78);
-  border: none;
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  transition: all 0.4s linear;
-}
-
-.search-btn:hover {
-  background: #d39000;
+.recipe-wrapper::-webkit-scrollbar-thumb {
+  background: #074733;
+  border-radius: 2rem;
 }
 
 .recipe-result {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 #recipe {
-  margin: 2.4rem 0;
+  margin: 0;
 }
 
 .recipe-item {
@@ -274,6 +275,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
   margin: 2rem 0;
+  margin-bottom: 1rem;
 }
 
 .meal-img img {
@@ -283,6 +285,7 @@ body {
 
 .recipe-name {
   padding: 1.5rem 0.5rem;
+  color: #074733;
 }
 
 .meal-name h3 {
@@ -349,10 +352,10 @@ body {
   
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
   #recipe {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
   }
 }
 </style>
