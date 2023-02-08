@@ -42,7 +42,7 @@ CREATE TABLE saved_recipes (
 saved_recipe_id int DEFAULT nextval('seq_saved_recipe_id'::regclass) NOT NULL,
 	user_id int NOT NULL,
 	recipe_id int NOT NULL,
-	recipe_name varchar(50) NOT NULL,
+	recipe_name varchar(150) NOT NULL,
 	meal_day varchar(50),
 	meal_type varchar(50),
 	PRIMARY KEY (
