@@ -174,7 +174,7 @@
 }
 
 #line{
-  border-right: solid rgb(180, 180, 180) 3px;
+  border-right: solid green 3px;
 }
 
 p{
@@ -182,7 +182,7 @@ p{
 }
 
 #weekly-grid {
- background-color: white;
+ background-color: rgba(255, 255, 255, 0.719);
  border: solid rgb(95, 156, 95) 3px;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  border-radius: 20px;
