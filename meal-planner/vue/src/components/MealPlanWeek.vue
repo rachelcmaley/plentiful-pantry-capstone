@@ -90,6 +90,7 @@ export default{
   },
 created(){
   this.addToMealPlan()
+  
 },
 
 methods: {
