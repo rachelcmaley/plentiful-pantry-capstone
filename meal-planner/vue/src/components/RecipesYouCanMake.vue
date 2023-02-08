@@ -4,7 +4,7 @@
       <div class="recipe-search">
         <h2 class="title">Recipes You Can Make</h2>
 
-        <div class="recipe-search-box">
+        <!-- <div class="recipe-search-box">
           <input
             type="text"
             class="search-control"
@@ -20,7 +20,7 @@
           >
             Test Search
           </button>
-        </div>
+        </div> -->
 
         <div class="recipe-result">
           <div id="recipe">
@@ -130,20 +130,51 @@ export default {
       recipeDetails: null,
       showDetails: false,
       ingredients: '',
+      ingredientsList: []
     };
+  
   },
-  created() {},
-  methods: {
-    getIngredients() {
-      pantryService.getPantryIngredients(this.$store.state.user.id).then((response) => {
-        this.ingredients = response.data;
-      })
-    },
-    search() {
-      spoonacularService.searchRecipes(this.ingredients).then((response) => {
+  created() {
+
+    pantryService.getPantryIngredients(this.$store.state.user.id).then((response) => {
+      const ingredientList = response.data.map(ingredient => ingredient.ingredientName);
+      const ingredients = ingredientList.join(',');
+
+      spoonacularService.searchRecipes(ingredients).then((response) => {
         this.recipes = response.data;
       });
+    });
+    
+
+  },
+  methods: {
+    // getIngredients() {
+    //   pantryService.getPantryIngredients(this.$store.state.user.id).then((response) => {
+    //     this.ingredients = response.data;
+    //   })
+    // },
+    // search() {
+    //   spoonacularService.searchRecipes(this.ingredients).then((response) => {
+    //     this.recipes = response.data;
+    //   });
+    // },
+
+    stringIngredients() {
+
+      if(this.ingredientsList.length == 1) {
+        this.ingredients = this.ingredientsList[0];
+      }
+
+      this.ingredients = this.ingredientsList.join(",");
+
+      // this.ingredientsList.forEach(item => {
+        
+      //   this.ingredients = this.ingredients + item;
+        
+      // });
+      
     },
+
     showRecipe(id) {
         spoonacularService.getRecipeById(id).then((response) => {
         this.recipeDetails = response.data;
