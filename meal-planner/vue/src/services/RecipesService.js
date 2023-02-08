@@ -5,6 +5,10 @@ export default {
         return axios.get(`/recipes/${userId}`);
     },
 
+    getDummyRecipes(){
+        return axios.get(`/recipes/1`);
+    },
+
     addRecipe(userId, recipeId, recipeName) {
         const body = {
             recipeId: recipeId,

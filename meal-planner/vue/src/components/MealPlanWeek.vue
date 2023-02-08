@@ -4,56 +4,56 @@
     <div>
       <h2 class="day" id="sunday">Sunday</h2>
         <div id="line">
-          <p  id="fSu">Breakfast meal</p>
-          <p id="sSu">Lunch Meal</p>
-          <p id="tSu">Dinner Meal</p>
+          <p  id="fSu">{{mealPlanRecipes[0].recipeName}}</p>
+          <p id="sSu">{{mealPlanRecipes[1].recipeName}}</p>
+          <p id="tSu">{{mealPlanRecipes[2].recipeName}}</p>
         </div>
     </div>
     <div>
       <h2 class="day" id="monday">Monday</h2>
         <div id="line">
-            <p id="fMo">Breakfast Meal</p>
-            <p id="sMo">Lunch Meal</p>
-            <p id="tMo">Dinner Meal</p>
+            <p id="fMo">{{mealPlanRecipes[3].recipeName}}</p>
+            <p id="sMo">{{mealPlanRecipes[4].recipeName}}</p>
+            <p id="tMo">{{mealPlanRecipes[5].recipeName}}</p>
         </div>
     </div>
     <div >
         <h2 class="day" id="tuesday">Tuesday</h2>
           <div id="line">
-            <p id="fTu">Breakfast Meal</p>
-            <p id="sTu">Lunch Meal</p>
-            <p id="tTu">Dinner Meal</p>
+            <p id="fTu">{{mealPlanRecipes[6].recipeName}}</p>
+            <p id="sTu">{{mealPlanRecipes[7].recipeName}}</p>
+            <p id="tTu">{{mealPlanRecipes[8].recipeName}}</p>
           </div>
     </div>
     <div >
       <h2 class="day" id="wednesday">Wednesday</h2>
         <div id="line"> 
-          <p id="fWe">Breakfast Meal</p>
-          <p id="sWe">Lunch Meal</p>
-          <p id="tWe">Dinner Meal</p>
+          <p id="fWe">{{mealPlanRecipes[9].recipeName}}</p>
+          <p id="sWe">{{mealPlanRecipes[10].recipeName}}</p>
+          <p id="tWe">{{mealPlanRecipes[11].recipeName}}</p>
          </div>
     </div>
     <div >
       <h2 class="day" id="thursday">Thursday</h2>
           <div id="line">
-            <p id="fTh">Breakfast Meal</p>
-            <p id="sTh">Lunch Meal</p>
-            <p id="tTh">Dinner Meal</p>
+            <p id="fTh">{{mealPlanRecipes[12].recipeName}}</p>
+            <p id="sTh">{{mealPlanRecipes[13].recipeName}}</p>
+            <p id="tTh">{{mealPlanRecipes[14].recipeName}}</p>
           </div>
     </div>
     <div >
       <h2 class="day" id="friday">Friday</h2>
           <div id="line">
-          <p id="fFr">Breakfast Meal</p>
-          <p id="sFr">Lunch Meal</p>
-          <p id="tFr">Dinner Meal</p>
+          <p id="fFr">{{mealPlanRecipes[15].recipeName}}</p>
+          <p id="sFr">{{mealPlanRecipes[16].recipeName}}</p>
+          <p id="tFr">{{mealPlanRecipes[17].recipeName}}</p>
           </div>
     </div>
     <div>
       <h2 class="day" id="saturday">Saturday</h2>
-      <p id="fSa">Breakfast Meal</p>
-      <p id="sSa">Lunch Meal</p>
-      <p id="tSa">Dinner Meal</p>
+      <p id="fSa">{{mealPlanRecipes[18].recipeName}}</p>
+      <p id="sSa">{{mealPlanRecipes[19].recipeName}}</p>
+      <p id="tSa">{{mealPlanRecipes[20].recipeName}}</p>
     </div>
   </div>
 </template>
@@ -65,6 +65,11 @@
 export default{
   data() {
     return {
+      // sunday : {
+      //   breakfast :"",
+      //   lunch:"",
+      //   dinner:""
+      // },
       days:[
         "Sunday",
         "Monday",
@@ -83,11 +88,13 @@ export default{
       test: ""
     };
   },
-
+created(){
+  this.addToMealPlan()
+},
 
 methods: {
   addToMealPlan() {
-  RecipesService.getRecipes()
+  RecipesService.getDummyRecipes()
   .then((response)=> {
     this.mealPlanRecipes = response.data;
     // this.days.forEach(day =>{
