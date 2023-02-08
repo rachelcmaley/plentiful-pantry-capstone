@@ -71,7 +71,7 @@
         </div>
 
         <div class="buttons">
-          <button type="button" class="cancel-btn" id="cancel-btn">
+          <button type="button" class="cancel-btn" id="cancel-btn" @click="closeForm()">
             Cancel
           </button>
           <button type="button" class="submit-btn" id="submit-btn">
@@ -84,21 +84,15 @@
 </template>
 
 <script>
-// export default {
-//   props: ["details", "onClose"],
-//   created() {},
-//   methods: {
-//     closeDetails() {
-//       this.onClose();
-//     },
-//   },
-//   data() {
-//     return {
-//       recipeDetails: this.details,
-//       diets: [],
-//     };
-//   },
-// };
+export default {
+  props: ["form", "onClose"],
+  
+  methods: {
+    closeForm() {
+      this.onClose();
+    },
+  },
+};
 </script>
 
 <style>
@@ -113,7 +107,7 @@
   width: 40%;
   height: 90%;
   overflow-y: scroll;
-  display: none;
+  /* display: block; */
   padding: 2rem 0;
 }
 

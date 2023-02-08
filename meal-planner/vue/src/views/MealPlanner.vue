@@ -1,5 +1,8 @@
 <template>
   <div id="page-container">
+      <header>
+          <NavBar></NavBar>
+      </header>
       <section class="top-panel" id="topPanel">
           <MealPlanWeek></MealPlanWeek>
       </section>
@@ -10,6 +13,7 @@
 </template>
 
 <script>
+import NavBar from "../components/NavBar.vue";
 import MealPlanWeek from "../components/MealPlanWeek.vue"
 import SavedRecipes from "../components/SavedRecipes.vue"
 
@@ -17,7 +21,8 @@ export default {
     name: "meal-planner",
     components: {
         MealPlanWeek,
-        SavedRecipes
+        SavedRecipes,
+        NavBar
     }
 
 }

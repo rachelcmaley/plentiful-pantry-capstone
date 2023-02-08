@@ -2,7 +2,19 @@ import axios from "axios";
 
 export default {
     getRecipes(userId) {
-        return axios.get(`/recipes/${userId}`);
+        let response = axios.get(`/recipes/${userId}`);
+        // console.log(response);
+        return response;
+    },
+
+    getRecipeIdByUserId(userId) {
+        let response = axios.get(`/recipes/recipeId/${userId}`);
+        // console.log(response);
+        return response;
+    },
+
+    getDummyRecipes(){
+        return axios.get(`/recipes/1`);
     },
 
     addRecipe(userId, recipeId, recipeName) {

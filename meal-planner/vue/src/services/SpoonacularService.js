@@ -33,7 +33,6 @@ export default {
 
 
 		const url = `${baseUrl}/recipes/findByIngredients?ingredients=${ingredients}&number=5&ignorePantry=true&ranking=1`;
-		console.log(ingredients)
 		return api.get(url)
 		
 

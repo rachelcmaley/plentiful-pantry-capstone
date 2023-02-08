@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Pantry from '../views/Pantry.vue'
 import MealPlanner from '../views/MealPlanner.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(Router)
 
@@ -67,6 +68,14 @@ const router = new Router({
       path: "/mealplanner",
       name: "meal-planner",
       component: MealPlanner,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      component: Profile,
       meta: {
         requiresAuth: true
       }
