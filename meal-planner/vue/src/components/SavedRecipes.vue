@@ -4,24 +4,6 @@
       <div class="recipe-search">
         <h2 class="title">Saved Recipes</h2>
 
-        <!-- <div class="recipe-search-box">
-          <input
-            type="text"
-            class="search-control"
-            v-model="searchWord"
-            placeholder="Search"
-            id="search"
-          />
-          <button
-            type="submit"
-            class="search-btn"
-            id="search-btn"
-            @click="search"
-          >
-            Test Search
-          </button>
-        </div> -->
-
         <div class="recipe-result">
           <div id="recipe">
             <!-- recipe box -->
@@ -38,7 +20,7 @@
             <!-- end of recipe box -->
 
             <!-- test box 1 -->
-            <div class="recipe-item">
+            <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -47,36 +29,34 @@
                   "
                 />
               </div>
-                  <div class="recipe-name">
-                    <h3>Scgetti</h3>
-                    <a href="#" class="recipe-btn">Get Recipe</a>
-                    <button class="add-meal-btn">Add to Meal Plan</button>
-                  </div>
-                </div>
-                <!-- end of test box 1 -->
-
-
-                <!-- test box 2 -->
-                <div class="recipe-item">
-                  <div class="meal-img">
-                    <img
-                      class="sgetti"
-                      v-bind:src="
-                        require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                      "
-                    />
+              <div class="recipe-name">
+                <h3>Scgetti</h3>
+                <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
+              </div>
+            </div> -->
+            <!-- end of test box 1 -->
+            <!-- test box 2 -->
+            <!-- <div class="recipe-item">
+              <div class="meal-img">
+                <img
+                  class="sgetti"
+                  v-bind:src="
+                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
+                  "
+                />
               </div>
               <div class="recipe-name">
                 <h3>Scgetti</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div>
+            </div> -->
             <!-- end of test box 2 -->
 
 
             <!-- test box 3 -->
-            <div class="recipe-item">
+            <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -90,32 +70,12 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div>
+            </div> -->
             <!-- test box 3 -->
 
 
             <!-- test box 4 -->
-           
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <a id="recipeBox"> 
-                <div class="recipe-name">
-                  <h3>Scgetti</h3>
-                  <a href="#" class="recipe-btn">Get  Recipe</a>
-                  <button class="add-meal-btn">Add to Meal Plan</button>
-                </div>
-              </a>
-            </div>
-            <!-- test box 4 -->
-            <!-- test box 4 -->
-            <div class="recipe-item">
+            <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -129,10 +89,10 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div>
+            </div> -->
             <!-- test box 4 -->
             <!-- test box 4 -->
-            <div class="recipe-item">
+            <!-- <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -146,7 +106,24 @@
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div>
+            </div> -->
+            <!-- test box 4 -->
+            <!-- test box 4 -->
+            <!-- <div class="recipe-item">
+              <div class="meal-img">
+                <img
+                  class="sgetti"
+                  v-bind:src="
+                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
+                  "
+                />
+              </div>
+              <div class="recipe-name">
+                <h3>Scgetti</h3>
+                <a href="#" class="recipe-btn">Get Recipe</a>
+                <button class="add-meal-btn">Add to Meal Plan</button>
+              </div>
+            </div> -->
             <!-- test box 4 -->
           </div>
         </div>
