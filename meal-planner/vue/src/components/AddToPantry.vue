@@ -32,7 +32,7 @@ export default {
         return {
             ingredient: "",
             ingredients: [],
-            pantryIngredients: []
+            // pantryIngredients: []
         };
     },
     created() {
@@ -40,9 +40,9 @@ export default {
             this.ingredients = response.data;
         });
 
-        pantryService.getPantryIngredients().then(response => {
-            this.pantryIngredients = response.data;
-        })
+        // pantryService.getPantryIngredients().then(response => {
+        //     this.pantryIngredients = response.data;
+        // })
     },
     methods: {
 
@@ -53,8 +53,20 @@ export default {
             .addIngredient(userId, this.ingredient)
             .then(()=> {
                 this.ingredient="";
-                // this.$router.push(`/pantry`);
+                this.reloadPantry();
             });
+            // this.$router.push(`/pantry/${userId}`);
+            this.$forceUpdate();
+        },
+        reloadPantry()
+        {
+                const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
+
+                pantryPromise.then ((response) => {
+
+                    this.$store.commit("LOAD_PANTRY", response.data);
+
+                });
         }
     }
 };

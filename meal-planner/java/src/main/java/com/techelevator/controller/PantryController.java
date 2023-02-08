@@ -42,7 +42,6 @@ public class PantryController {
     @PostMapping(path = "/pantry/{userId}/ingredients")
     public void addIngredient(@PathVariable int userId, @RequestBody Ingredient ingredient) {
         System.out.println(ingredient.getIngredientName());
-//        System.out.println(userId);
 
        // save to database
         pantryDao.addIngredient(userId, ingredient.getIngredientName());

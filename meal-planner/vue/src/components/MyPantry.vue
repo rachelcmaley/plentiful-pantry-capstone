@@ -2,7 +2,7 @@
     <div class="my-pantry">
         <h2 id="homePantry">My Pantry</h2>
         <div class="ingredient-list">
-            <div v-for="ingredient in pantryIngredients" v-bind:key="ingredient.ingredientId" class="ingredient">
+            <div v-for="ingredient in $store.state.pantry" :key="ingredient.userId" class="ingredient">
                 {{ ingredient.ingredientName }}
             </div>
         </div>
@@ -19,20 +19,24 @@
         name: 'my-pantry',
         data () {
             return {
-                pantryIngredients: []
             };
         },
 
         created () {
+            if(this.$store.state.pantry.length == 0)
+            {
 
-            const pantryPromise = pantryService.getPantryIngredients();
+                const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
 
-            pantryPromise.then ((response) => {
-                this.pantryIngredients = response.data;
+                pantryPromise.then ((response) => {
 
-            });
+                    this.$store.commit("LOAD_PANTRY", response.data);
 
-        }
+                });
+            }
+
+        },
+
     }
 
 </script>

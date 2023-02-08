@@ -40,16 +40,10 @@ public class JdbcPantryDao implements PantryDao {
     @Override
     public List<Pantry> getAllPantryIngredientsByUserId(int userId) {
         List<Pantry> pantrys = new ArrayList<>();
-        String sql = "SELECT ingredient_name " +
-                ", pi.ingredient_id " +
-//                ", p.pantry_id " +
-                "FROM pantry_ingredients AS pi " +
-                "INNER JOIN pantry AS p " +
-                "ON pi.pantry_id = p.pantry_id " +
-                "INNER JOIN users AS u " +
-                "ON p.user_id = u.user_id " +
-                "INNER JOIN ingredients AS i " +
-                "ON pi.ingredient_id = i.ingredient_id;";
+        String sql = "select user_id " +
+                ", ingredient_name " +
+                " from user_ingredients" +
+                " WHERE user_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
             Pantry pantry = mapRowToPantry(results);
@@ -107,7 +101,6 @@ public class JdbcPantryDao implements PantryDao {
     private Pantry mapRowToPantry(SqlRowSet results) {
         Pantry pantry = new Pantry();
         pantry.setIngredientName(results.getString("ingredient_name"));
-//        pantry.setPantryId(results.getInt("pantry_id"));
         pantry.setUserId(results.getInt("user_id"));
         return pantry;
     }

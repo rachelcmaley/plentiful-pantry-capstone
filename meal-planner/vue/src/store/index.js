@@ -20,7 +20,9 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    pageClass: 'homePage'
+    pageClass: 'homePage',
+    pantry:[]
+
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -43,6 +45,10 @@ export default new Vuex.Store({
     UPDATE_PAGE(state, page)
     {
       state.pageClass = page;
+    },
+    LOAD_PANTRY(state, pantry)
+    {
+      state.pantry = pantry;
     }
   }
 })

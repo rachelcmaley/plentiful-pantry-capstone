@@ -3,8 +3,8 @@
 
 ALTER TABLE user_ingredients
 ADD CONSTRAINT FK_user_ingredients_users
-FOREIGN KEY (pantry_id)
-REFERENCES pantry(pantry_id);
+FOREIGN KEY (user_id)
+REFERENCES users(user_id);
 
 ALTER TABLE saved_recipes
 ADD CONSTRAINT FK_save_recipes_users
