@@ -1,11 +1,8 @@
 import axios from "axios";
 
 export default {
-    // getRecipes(userId) {
-    //     return axios.get(`/recipes/${userId}`);
-    // },
-    getRecipes() {
-        return axios.get(`/recipes/1`);
+    getRecipes(userId) {
+        return axios.get(`/recipes/${userId}`);
     },
 
     addRecipe(userId, recipeId, recipeName) {

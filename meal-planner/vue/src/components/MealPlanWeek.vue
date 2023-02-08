@@ -89,7 +89,7 @@ methods: {
   addToMealPlan() {
   RecipesService.getRecipes()
   .then((response)=> {
-    this.mealPlanRecipes = response.data
+    this.mealPlanRecipes = response.data;
     // this.days.forEach(day =>{
     //   this.meals.forEach(meal => {
     //     const foundRecipe = this.mealPlanRecipes.find(recipe=>{
