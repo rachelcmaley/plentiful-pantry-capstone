@@ -72,14 +72,20 @@ main{
 aside{
   grid-area: pantry;
   margin-top: 25px;
-  margin-left: 160px;
+  margin-left: 190px;
+  border: solid rgb(194, 174, 0) 3px;
+  background-color: rgb(255, 254, 184);
+  color: rgb(110, 110, 110);
+  font-family:  Arial, Helvetica, sans-serif;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: lightblue;
 }
 
 footer{
   grid-area: recipies;
   margin-top: 25px;
-  margin-left: 20px;
-  
+  margin-left: 125px;
 }
 
 

@@ -26,7 +26,7 @@ public class SavedRecipesController {
     }
 
     //save (add) recipe to DB
-    @PostMapping(path= "/recipes/{userId}/saved")
+    @PostMapping(path= "/recipes/{userId}")
     public void addRecipe(@PathVariable int userId, @RequestBody SavedRecipes savedRecipes) {
         savedRecipesDao.addRecipe(userId, savedRecipes.getRecipeId(), savedRecipes.getRecipeName());
     }

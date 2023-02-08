@@ -5,11 +5,20 @@ import java.util.Date;
 
 public class SavedRecipes {
 
+    private int savedRecipeId;
     private String recipeName;
     private int userId;
     private int recipeId;
-    private Date mealDate;
+    private String mealDay;
     private String mealType;
+
+    public int getSavedRecipeId() {
+        return savedRecipeId;
+    }
+
+    public void setSavedRecipeId(int savedRecipeId) {
+        this.savedRecipeId = savedRecipeId;
+    }
 
     public String getRecipeName()
     {
@@ -37,12 +46,12 @@ public class SavedRecipes {
         this.recipeId = recipeId;
     }
 
-    public void setMealDate(Date mealDate)
+    public void setMealDay(String mealDay)
     {
-        this.mealDate = mealDate;
+        this.mealDay = mealDay;
     }
-    public Date getMealDate() {
-        return mealDate;
+    public String getMealDay() {
+        return mealDay;
     }
 
     public String getMealType() {

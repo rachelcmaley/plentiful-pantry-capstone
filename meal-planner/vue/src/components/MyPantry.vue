@@ -1,6 +1,6 @@
 <template>
-    <div class="my-pantry">
-        <h2 id="homePantry">My Pantry</h2>
+    <div class="my-pantry" id="pantryBox">
+        <h2 id="pantryText">My Pantry</h2>
         <div class="ingredient-list">
             <div class="list-group">
                 <div v-for="ingredient in $store.state.pantry" :key="ingredient.userId" class="ingredient list-group-item">
@@ -73,7 +73,6 @@
 <style>
 .homePantryBox{
     border: solid rgb(95, 156, 95) 3px;
-    background: white;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
@@ -86,12 +85,16 @@
     margin-right: 90px;
 }
 
-#homePantry{
+#pantryText{
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: green;
+    padding-top: 10px;
 }
 
+#pantryBox{
+    background-color: rgba(255, 242, 168, 0);
+    height: 400px;
+    width: 300px;
+}
 
 
 li{

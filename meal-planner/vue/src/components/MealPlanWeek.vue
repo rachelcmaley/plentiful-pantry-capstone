@@ -59,6 +59,51 @@
 </template>
 
 
+<script>
+ import RecipesService from '../services/RecipesService.js';
+
+export default{
+  data() {
+    return {
+      days:[
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      meals:[
+        "Breakfast",
+        "Lunch",
+        "Dinner"
+      ],
+      mealPlanRecipes: [],
+      test: ""
+    };
+  },
+
+
+methods: {
+  addToMealPlan() {
+  RecipesService.getRecipes()
+  .then((response)=> {
+    this.mealPlanRecipes = response.data
+    // this.days.forEach(day =>{
+    //   this.meals.forEach(meal => {
+    //     const foundRecipe = this.mealPlanRecipes.find(recipe=>{
+    //       if(recipe.mealDay)
+    //     })
+    //   })
+    // })
+  })
+}
+}
+};
+</script>
+
+
 <style>
 
 /*
@@ -174,7 +219,7 @@
 }
 
 #line{
-  border-right: solid rgb(180, 180, 180) 3px;
+  border-right: solid green 3px;
 }
 
 p{
@@ -182,7 +227,7 @@ p{
 }
 
 #weekly-grid {
- background-color: white;
+ background-color: rgba(255, 255, 255, 0.719);
  border: solid rgb(95, 156, 95) 3px;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  border-radius: 20px;

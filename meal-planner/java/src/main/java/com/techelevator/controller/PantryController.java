@@ -43,7 +43,8 @@ public class PantryController {
         System.out.println(ingredient.getIngredientName());
 
        // save to database
-        pantryDao.addIngredient(userId, ingredient.getIngredientName());
+
+        //pantryDao.addIngredient(userId, ingredient.getIngredientName());
     }
 
     @DeleteMapping(path = "/pantry/{userId}")

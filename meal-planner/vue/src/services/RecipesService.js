@@ -10,6 +10,6 @@ export default {
             recipeId: recipeId,
             recipeName: recipeName
         }
-        return axios.post(`/recipes/${userId}/saved`, body)
+        return axios.post(`/recipes/${userId}`, body)
     }
 }
