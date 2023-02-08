@@ -60,13 +60,13 @@ export default {
 
         reloadPantry()
         {   
-                const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
+            const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
 
-                pantryPromise.then ((response) => {
+            pantryPromise.then ((response) => {
 
-                    this.$store.commit("LOAD_PANTRY", response.data);
+                this.$store.commit("LOAD_PANTRY", response.data);
 
-                });
+            });
         }
     }
 };
