@@ -12,7 +12,7 @@
                                 <img class='sgetti' v-bind:src="recipe.image">
                             </div>
                             <div class="recipe-name">
-                                <h3>{{recipe.title}}</h3>
+                                <h4 class="recipe-card-title">{{recipe.title}}</h4>
                                 <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
                                 <button class="add-meal-btn">Add to Meal Plan</button>
                             </div>
@@ -20,7 +20,7 @@
             <!-- end of recipe box -->
 
             <!-- test box 1 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -30,14 +30,14 @@
                 />
               </div>
               <div class="recipe-name">
-                <h3>Scgetti</h3>
+                <h3>Test</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div> -->
+            </div>
             <!-- end of test box 1 -->
             <!-- test box 2 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -47,16 +47,16 @@
                 />
               </div>
               <div class="recipe-name">
-                <h3>Scgetti</h3>
+                <h3>Test</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div> -->
+            </div>
             <!-- end of test box 2 -->
 
 
             <!-- test box 3 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -66,16 +66,16 @@
                 />
               </div>
               <div class="recipe-name">
-                <h3>Scgetti</h3>
+                <h3>Test</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div> -->
+            </div>
             <!-- test box 3 -->
 
 
             <!-- test box 4 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -85,14 +85,14 @@
                 />
               </div>
               <div class="recipe-name">
-                <h3>Scgetti</h3>
+                <h3>Test</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div> -->
+            </div>
             <!-- test box 4 -->
             <!-- test box 4 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -102,14 +102,14 @@
                 />
               </div>
               <div class="recipe-name">
-                <h3>Scgetti</h3>
+                <h3>Test</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div> -->
+            </div>
             <!-- test box 4 -->
             <!-- test box 4 -->
-            <!-- <div class="recipe-item">
+            <div class="recipe-item">
               <div class="meal-img">
                 <img
                   class="sgetti"
@@ -119,11 +119,11 @@
                 />
               </div>
               <div class="recipe-name">
-                <h3>Scgetti</h3>
+                <h3>Test</h3>
                 <a href="#" class="recipe-btn">Get Recipe</a>
                 <button class="add-meal-btn">Add to Meal Plan</button>
               </div>
-            </div> -->
+            </div>
             <!-- test box 4 -->
           </div>
         </div>
@@ -234,69 +234,45 @@ body {
   font-size: 1.05rem;
 }
 
-.sgetti {
-}
-
 .text {
   opacity: 0.8;
 }
 
 .title {
   font-size: 2rem;
-
-  /* margin-bottom: 1rem;
-  text-align: center;
-  color: #f5f5f5;
-  padding: 10px;
-  background-color: rgb(43, 92, 57);
-  width:250px;
-  border-radius: 6px;
-  margin-left: auto;
-  margin-right: auto;
-   */
   text-align: start;
   color: #0B6E4F;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   padding-bottom: 1rem;
   border-bottom: solid #ffb20f;
-
 }
 
 .container {
   height: 100vh;
-  
   width: 100vw;
 }
 
-
-/* .recipe-wrapper {
-  background: rgba(255, 255, 255, 0.781);
-  text-align: center;
-  height: 570px;
-  width:1500px;
-  margin-left: auto;
-  margin-right: auto; 
-} */ 
-
-
 .saved-recipe-wrapper {
-  width: 100vw;
-  height: 66vh;
-  padding-bottom: 1rem;
-  padding-left: 3rem;
-  background: rgb(255, 255, 255);
+  width: auto;
+  height: 54vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #FFFDFA;
+  /* opacity: .95; */
   text-align: center;
   overflow-y: scroll;
   margin-top: 20px;
+  margin-left: 75px;
+  margin-right: 75px;
   border: solid rgb(95, 156, 95) 3px;
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* cute scrollbar */
-.recipe-wrapper::-webkit-scrollbar {
+.saved-recipe-wrapper::-webkit-scrollbar {
   width: 10px;
 }
-.recipe-wrapper::-webkit-scrollbar-thumb {
+.saved-recipe-wrapper::-webkit-scrollbar-thumb {
   background: #074733;
   border-radius: 2rem;
 }
@@ -306,7 +282,7 @@ body {
 }
 
 #recipe {
-  margin-left: 40px;
+  margin-left: 8px;
 }
 
 .recipe-item {
@@ -315,24 +291,19 @@ body {
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
   margin-right: auto;
   margin-left: 90px;
-  background-color: white;
+  background-color: #FFFDFA;
+}
+
+.recipe-card-title {
+  color: #0B6E4F
 }
 
 .meal-img img {
   display: block;
 }
 
-.recipe-name {
-}
-
 .meal-name h3 {
   font-size: 1.4rem;
-}
-
-.recipe-btn {
-}
-
-.recipe-btn:hover {
 }
 
 .add-meal-btn {
@@ -380,7 +351,8 @@ body {
 @media screen and (min-width: 1025px) {
   #recipe {
     grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 3rem;
   }
 }
 </style>
