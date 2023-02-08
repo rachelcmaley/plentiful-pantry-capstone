@@ -7,7 +7,7 @@
         <div class="recipe-result">
           <div id="recipe">
             <!-- recipe box -->
-            <!-- <div class="recipe-item" v-for="recipe in recipes" :key="recipe.id">
+            <div class="recipe-item" v-for="recipe in recipes" :key="recipe.id">
                             <div class="meal-img">
                                 <img class='sgetti' v-bind:src="recipe.image">
                             </div>
@@ -16,7 +16,7 @@
                                 <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
                                 <button class="add-meal-btn">Add to Meal Plan</button>
                             </div>
-                        </div> -->
+                        </div>
             <!-- end of recipe box -->
 
             <!-- test box 1 -->
@@ -146,6 +146,7 @@
 import spoonacularService from "../services/SpoonacularService.js";
 import RecipeDetails from "../components/RecipeDetails.vue";
 import AddToMealPlan from "../components/AddToMealPlan.vue";
+import recipesService from "../services/RecipesService.js";
 
 export default {
   components: {
@@ -157,11 +158,34 @@ export default {
       searchWord: "",
       recipes: [],
       recipeDetails: null,
-      showDetails: false
+      showDetails: false,
+      recipeIds: []
     };
   },
-  created() {},
+  created() {
+      this.getRecipes();
+  },
   methods: {
+    //second step: use recipe id to search API
+    // for each recipeId in recipeIds[], search recipeId in API and add to recipes[]
+    getRecipes() {
+
+      recipesService.getRecipeIdByUserId(this.$store.state.user.id).then((response) => {
+          this.recipeIds = response.data;
+          this.recipeIds.forEach((recipeId) => {
+          spoonacularService.getRecipeById(recipeId).then((response) => {
+            this.recipes.push(response.data)
+          })
+        });
+      })
+     
+    },
+    //first step: get recipe ID from database
+    getRecipeId() {
+      recipesService.getRecipeIdByUserId(this.$store.state.user.id).then((response) => {
+        this.recipeIds = response.data;
+      })
+    },
     search() {
       spoonacularService.searchRecipes(this.searchWord).then((response) => {
         this.recipes = response.data;
