@@ -30,4 +30,11 @@ public class SavedRecipesController {
     public void addRecipe(@PathVariable int userId, @RequestBody SavedRecipes savedRecipes) {
         savedRecipesDao.addRecipe(userId, savedRecipes.getRecipeId(), savedRecipes.getRecipeName());
     }
+
+    @GetMapping(path="/recipes/recipeId/{userId}")
+    public List<Integer> getRecipeIdByUserId(@PathVariable int userId)
+    {
+        List<Integer> recipeIds = savedRecipesDao.getRecipeIdByUserId(userId);
+        return recipeIds;
+    }
 }

@@ -50,7 +50,7 @@ public class PantryController {
     @DeleteMapping(path = "/pantry/{userId}")
     public void removeIngredient(@PathVariable int userId) {
 
-        //pantryDao.removeIngredient(userId);
+        pantryDao.removeIngredient(userId);
 
     }
 }
