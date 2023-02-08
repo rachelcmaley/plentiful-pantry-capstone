@@ -1,9 +1,9 @@
 <template>
   <div id="page-container">
-      <section id="top-panel">
+      <section class="top-panel">
           <MealPlanWeek></MealPlanWeek>
       </section>
-      <section id="bottom-panel">
+      <section class="bottom-panel">
           <SavedRecipes></SavedRecipes>
       </section>
   </div>
@@ -25,6 +25,5 @@ export default {
 
 
 <style>
-
 
 </style>
