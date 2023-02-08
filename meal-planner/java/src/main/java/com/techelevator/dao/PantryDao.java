@@ -16,5 +16,5 @@ public interface PantryDao {
 
     public void addIngredient(int userId, String ingredientName);
 
-    public void removeIngredient(String ingredientName);
+    public void removeIngredient(int userId, String ingredientName);
 }

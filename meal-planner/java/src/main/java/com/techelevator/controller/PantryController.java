@@ -47,12 +47,10 @@ public class PantryController {
         //pantryDao.addIngredient(userId, ingredient.getIngredientName());
     }
 
-    @DeleteMapping(path = "/pantry/{ingredientName")
-    public void removeIngredient(@PathVariable String ingredientName) {
+    @DeleteMapping(path = "/pantry/{userId}")
+    public void removeIngredient(@PathVariable int userId) {
 
-        System.out.println(ingredientName);
-
-        pantryDao.removeIngredient(ingredientName);
+        pantryDao.removeIngredient(userId);
 
     }
 }

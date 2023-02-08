@@ -78,12 +78,11 @@ public class JdbcPantryDao implements PantryDao {
 
     // remove ingredient from user's pantry
     @Override
-    public void removeIngredient(String ingredientName) {
+    public void removeIngredient(int userId, String ingredientName) {
         String sql = "DELETE FROM user_ingredients WHERE ingredient_name = ?;";
 
-        
 
-        jdbcTemplate.update(sql, ingredientName);
+        jdbcTemplate.update(sql, userId);
     }
 
     private Ingredient mapRowToIngredient(SqlRowSet rs) {
