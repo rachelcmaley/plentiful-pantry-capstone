@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import RecipesService from "../services/RecipesService.js";
+import recipesService from "../services/RecipesService.js";
 
 export default {
   data() {
@@ -80,11 +80,9 @@ export default {
 
     saveRecipe() {
       const userId = this.$store.state.user.id;
-      RecipesService
-      .addRecipe(userId, this.recipeDetails.id, this.recipeDetails.title)
-      .then(() => {
-        this.$router.push({ name: 'my-pantry' })
-      })
+      recipesService
+      .addRecipe(userId, this.recipeDetails.id, this.recipeDetails.title);
+      document.getElementById('recipe-save-btn').innerHTML = "Recipe Saved!"
     },
   }, 
 };
