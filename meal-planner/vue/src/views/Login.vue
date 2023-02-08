@@ -117,6 +117,7 @@ div{
     width: 600px;
     font-weight: bold;
     background-color: white;
+    border: solid green 4px;
     border-radius: 9px;
 }
 

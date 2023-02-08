@@ -5,7 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-import MyPantry from '../views/Pantry.vue'
+import Pantry from '../views/Pantry.vue'
 import MealPlanner from '../views/MealPlanner.vue'
 
 Vue.use(Router)
@@ -58,7 +58,7 @@ const router = new Router({
     {
       path: "/pantry",
       name: "my-pantry",
-      component: MyPantry,
+      component: Pantry,
       meta: {
         requiresAuth: true
       }

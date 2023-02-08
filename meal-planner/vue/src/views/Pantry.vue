@@ -23,7 +23,7 @@ import MyPantry from "../components/MyPantry.vue";
 // import IngredientsList from '../components/IngredientsList.vue';
 
 export default {
-    name: "my-pantry",
+    name: "pantry",
     components: {
         AddToPantry,
         MyPantry,

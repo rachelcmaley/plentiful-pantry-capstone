@@ -45,6 +45,10 @@ a:active { text-decoration: none; }
 
 body{
   margin: 0;
+  height: 100%;
+}
+html{
+  height: 100%;
 }
 #app
 {
@@ -54,25 +58,43 @@ body{
 
 .homePage
 {
-  background: url('assets/images/home-image2.jpg') ;
+  background: url('assets/images/cheesecake.png') ;
   background-size: cover;
+  background-position: center;
+  position: fixed;
+  height: 100%;
   background-repeat: no-repeat;
   overflow: no-repeat;
 }
 .pantryPage
 {
-  background: url("assets/images/pantry-image.jpg");
+  background: url("assets/images/cookingTools.jpeg");
   background-size: cover;
+  background-position: center;
+  position: fixed;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: no-repeat;
 }
 
 .registerPage{
   background: url("assets/images/food.png");
   background-size: cover;
+  background-position: center;
+  position: fixed;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: no-repeat;
 }
 
 .loginPage{
-  background: url("assets/images/home-image.jpg");
+  background: url("assets/images/ramen.png");
   background-size: cover;
+  background-position: center;
+  position: fixed;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: no-repeat;
 }
 
 </style>
