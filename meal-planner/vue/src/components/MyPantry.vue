@@ -2,8 +2,10 @@
     <div class="my-pantry">
         <h2 id="homePantry">My Pantry</h2>
         <div class="ingredient-list">
-            <div v-for="ingredient in $store.state.pantry" :key="ingredient.userId" class="ingredient">
-                {{ ingredient.ingredientName }}
+            <div class="list-group">
+                <div v-for="ingredient in $store.state.pantry" :key="ingredient.userId" class="ingredient list-group-item">
+                    {{ ingredient.ingredientName }} <button type="button" class="btn-close" aria-label="Close" @click="deleteFromPantry(ingredient.ingredientName)"></button>
+                </div>
             </div>
         </div>
     </div>
@@ -37,7 +39,32 @@
 
         },
 
+        methods: {
+            
+            deleteFromPantry(ingredientName) {
+
+                pantryService
+                .deleteIngredient(ingredientName)
+                .then(() => {
+                    this.reloadPantry()
+                })
+
+            },
+
+             reloadPantry() {   
+
+                const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
+
+                pantryPromise.then ((response) => {
+
+                    this.$store.commit("LOAD_PANTRY", response.data);
+
+                });
+
+            }
+        }
     }
+
 
 </script>
 
@@ -74,5 +101,6 @@ li{
 #space{
     padding-top: 15px;
 }
+
 
 </style>
