@@ -180,6 +180,9 @@ export default {
       })
      
     },
+
+    
+
     //first step: get recipe ID from database
     getRecipeId() {
       recipesService.getRecipeIdByUserId(this.$store.state.user.id).then((response) => {

@@ -9,7 +9,7 @@ export default {
 
     getRecipeIdByUserId(userId) {
         let response = axios.get(`/recipes/recipeId/${userId}`);
-        console.log(response);
+        // console.log(response);
         return response;
     },
 

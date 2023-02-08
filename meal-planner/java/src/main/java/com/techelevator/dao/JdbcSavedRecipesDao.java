@@ -45,9 +45,9 @@ public class JdbcSavedRecipesDao implements SavedRecipesDao {
     }
 
     @Override
-    public List<SavedRecipes> getRecipeIdByUserId(int userId) {
+    public List<Integer> getRecipeIdByUserId(int userId) {
 
-        List<SavedRecipes> recipeIds = new ArrayList<>();
+        List<Integer> recipeIds = new ArrayList<>();
 
         String sql = "SELECT recipe_id " +
                 "FROM saved_recipes " +
@@ -55,7 +55,7 @@ public class JdbcSavedRecipesDao implements SavedRecipesDao {
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
-            SavedRecipes recipeId = mapRowToSavedRecipes(results);
+            int recipeId = results.getInt("recipe_id");
             recipeIds.add(recipeId);
         }
         return recipeIds;

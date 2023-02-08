@@ -8,5 +8,5 @@ public interface SavedRecipesDao {
 
     public void addRecipe(int userId, int recipeId, String recipeName);
 
-    List<SavedRecipes> getRecipeIdByUserId(int userId);
+    List<Integer> getRecipeIdByUserId(int userId);
 }
