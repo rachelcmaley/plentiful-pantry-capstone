@@ -14,7 +14,7 @@
                             <div class="recipe-name">
                                 <h4 class="recipe-card-title">{{recipe.title}}</h4>
                                 <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
-                                <button class="add-meal-btn">Add to Meal Plan</button>
+                                <button class="add-meal-btn" @click="showAddMealForm()">Add to Meal Plan</button>
                             </div>
                         </div>
             <!-- end of recipe box -->
@@ -134,7 +134,7 @@
         <RecipeDetails v-if="showDetails" :details="recipeDetails" :on-close="closeDetails"></RecipeDetails>
         
         <!-- POP UP ADD TO MEAL PLAN FORM -->
-        <AddToMealPlan ></AddToMealPlan>
+        <AddToMealPlan v-if="showForm" :form="addToMealPlan" :on-close="closeForm"></AddToMealPlan>
 
       </div>
     </div>
@@ -159,7 +159,8 @@ export default {
       recipes: [],
       recipeDetails: null,
       showDetails: false,
-      recipeIds: []
+      recipeIds: [],
+      showForm: false,
     };
   },
   created() {
@@ -199,6 +200,12 @@ export default {
         this.recipeDetails = response.data;
         this.showDetails = true;
       });
+    },
+    showAddMealForm() {
+      this.showForm = true;
+    },
+    closeForm() {
+      this.showForm = false;
     },
     closeDetails(){
         this.showDetails = false;
