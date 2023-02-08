@@ -50,6 +50,11 @@ saved_recipe_id int DEFAULT nextval('seq_saved_recipe_id'::regclass) NOT NULL,
 	)
 );
 
+CREATE TABLE user_profile(
+    user_id int NOT NULL,
+    profile_pic_id int,
+    name varchar(100)
+)
 	
 
 -- Add seed data in the 03_data.sql script file

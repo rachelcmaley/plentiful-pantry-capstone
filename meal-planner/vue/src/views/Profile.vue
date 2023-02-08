@@ -3,22 +3,22 @@
         <header>
             <NavBar></NavBar>
         </header>
-        <section>
-            <FileUpload></FileUpload>
-        </section>
+        
+        <ChooseProfilePicture/>
+        
     </div>
 </template>
 
 <script>
 
 import NavBar from "../components/NavBar.vue";
-import FileUpload from "@/components/FileUpload.vue";
+import ChooseProfilePicture from "../components/ChooseProfileImage.vue";
 
 export default {
   name: "profile",
   components: {
     NavBar,
-    FileUpload
+   ChooseProfilePicture
   },
 
 };
