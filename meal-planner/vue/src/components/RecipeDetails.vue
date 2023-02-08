@@ -14,7 +14,7 @@
     <div class="recipe-details-content">
       <h2 class="recipe-title">{{ recipeDetails.title }}</h2>
         <!-- TODO: add toggle 'Unsave recipe' -->
-      <button type="button" class="recipe-save-btn" id="recipe-save-btn" @click="saveRecipe()">
+      <button type="button" class="recipe-save-btn" id="recipe-save-btn" @click.prevent="saveRecipe()">
         Save Recipe
       </button>
       <div v-if="recipeDetails.cuisines != null" >
@@ -62,20 +62,31 @@
 </template>
 
 <script>
+import RecipesService from "../services/RecipesService.js";
+
 export default {
-  props: ["details", "onClose"],
-  created() {},
-  methods: {
-    closeDetails() {
-      this.onClose();
-    },
-  },
   data() {
     return {
       recipeDetails: this.details,
       diets: [],
     };
   },
+  props: ["details", "onClose"],
+  methods: {
+
+    closeDetails() {
+      this.onClose();
+    },
+
+    saveRecipe() {
+      const userId = this.$store.state.user.id;
+      RecipesService
+      .addRecipe(userId, this.recipeDetails.id, this.recipeDetails.title)
+      .then(() => {
+        this.$router.push({ name: 'my-pantry' })
+      })
+    },
+  }, 
 };
 </script>
 
