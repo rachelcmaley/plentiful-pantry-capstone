@@ -59,6 +59,51 @@
 </template>
 
 
+<script>
+ import RecipesService from '../services/RecipesService.js';
+
+export default{
+  data() {
+    return {
+      days:[
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      meals:[
+        "Breakfast",
+        "Lunch",
+        "Dinner"
+      ],
+      mealPlanRecipes: [],
+      test: ""
+    };
+  },
+
+
+methods: {
+  addToMealPlan() {
+  RecipesService.getRecipes()
+  .then((response)=> {
+    this.mealPlanRecipes = response.data
+    // this.days.forEach(day =>{
+    //   this.meals.forEach(meal => {
+    //     const foundRecipe = this.mealPlanRecipes.find(recipe=>{
+    //       if(recipe.mealDay)
+    //     })
+    //   })
+    // })
+  })
+}
+}
+};
+</script>
+
+
 <style>
 
 /*

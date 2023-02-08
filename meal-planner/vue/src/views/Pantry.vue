@@ -22,7 +22,7 @@ import RecipesYouCanMake from "../components/RecipesYouCanMake.vue";
 import MyPantry from "../components/MyPantry.vue";
 
 export default {
-    name: "my-pantry",
+    name: "pantry",
     components: {
         AddToPantry,
         MyPantry,

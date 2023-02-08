@@ -40,16 +40,10 @@ public class JdbcPantryDao implements PantryDao {
     @Override
     public List<Pantry> getAllPantryIngredientsByUserId(int userId) {
         List<Pantry> pantrys = new ArrayList<>();
-        String sql = "SELECT ingredient_name " +
-                ", pi.ingredient_id " +
-//                ", p.pantry_id " +
-                "FROM pantry_ingredients AS pi " +
-                "INNER JOIN pantry AS p " +
-                "ON pi.pantry_id = p.pantry_id " +
-                "INNER JOIN users AS u " +
-                "ON p.user_id = u.user_id " +
-                "INNER JOIN ingredients AS i " +
-                "ON pi.ingredient_id = i.ingredient_id;";
+        String sql = "select user_id " +
+                ", ingredient_name " +
+                " from user_ingredients" +
+                " WHERE user_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
             Pantry pantry = mapRowToPantry(results);
@@ -76,23 +70,20 @@ public class JdbcPantryDao implements PantryDao {
     //allows user to add ingredient to pantry
     @Override
     public void addIngredient(int userId, String ingredientName) {
-        String sql = "INSERT INTO user_ingredient (user_id, ingredient_name) VALUES (?,?)";
-//        if(ingredient.getIngredientId() == 0) {
-//            int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
-//            ingredient.setIngredientId(newId);
-//            jdbcTemplate.update("INSERT INTO ingredients(ingredient_name, ingredient_id)\n" +
-//                    "\tVALUES (?, ?);",
-//                    ingredient.getIngredientId(), ingredient.getIngredientName());
-//        }
+        String sql = "INSERT INTO user_ingredients (user_id, ingredient_name) VALUES (?,?)";
+
+        jdbcTemplate.update(sql, userId, ingredientName);
+
     }
-
-
 
     // remove ingredient from user's pantry
     @Override
-    public void removeIngredient(Long ingredientId) {
-        String sql = "DELETE FROM ingredients WHERE ingredient_id = ?;";
-        jdbcTemplate.update(sql, ingredientId);
+    public void removeIngredient(String ingredientName) {
+        String sql = "DELETE FROM user_ingredients WHERE ingredient_name = ?;";
+
+        
+
+        jdbcTemplate.update(sql, ingredientName);
     }
 
     private Ingredient mapRowToIngredient(SqlRowSet rs) {
@@ -105,8 +96,7 @@ public class JdbcPantryDao implements PantryDao {
     private Pantry mapRowToPantry(SqlRowSet results) {
         Pantry pantry = new Pantry();
         pantry.setIngredientName(results.getString("ingredient_name"));
-//        pantry.setPantryId(results.getInt("pantry_id"));
-        pantry.setIngredientId(results.getInt("ingredient_id"));
+        pantry.setUserId(results.getInt("user_id"));
         return pantry;
     }
 

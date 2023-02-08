@@ -1,11 +1,18 @@
 DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS seq_user_id;
+DROP SEQUENCE IF EXISTS seq_saved_recipe_id;
 
 CREATE SEQUENCE seq_user_id
   INCREMENT BY 1
   NO MAXVALUE
   NO MINVALUE
   CACHE 1;
+
+  CREATE SEQUENCE seq_saved_recipe_id
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
 
 
 CREATE TABLE users (
@@ -32,13 +39,14 @@ CREATE TABLE user_ingredients (
 );
 
 CREATE TABLE saved_recipes (
+saved_recipe_id int DEFAULT nextval('seq_saved_recipe_id'::regclass) NOT NULL,
 	user_id int NOT NULL,
 	recipe_id int NOT NULL,
 	recipe_name varchar(50) NOT NULL,
-	meal_date date,
+	meal_day varchar(50) NOT NULL,
 	meal_type varchar(50),
 	PRIMARY KEY (
-		user_id
+		saved_recipe_id
 	)
 );
 

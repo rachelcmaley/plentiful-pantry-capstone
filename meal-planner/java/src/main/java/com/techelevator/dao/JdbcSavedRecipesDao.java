@@ -24,10 +24,8 @@ public class JdbcSavedRecipesDao implements SavedRecipesDao {
         List<SavedRecipes> recipes = new ArrayList<>();
 
         String sql = "SELECT * " +
-                "FROM saved_recipes AS sr " +
-                "INNER JOIN users AS u " +
-                "ON sr.user_id = u.user_id"+
-                "WHERE sr.user_id = ? ";
+                "FROM saved_recipes " +
+                "WHERE user_id = ? ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
@@ -37,12 +35,19 @@ public class JdbcSavedRecipesDao implements SavedRecipesDao {
         return recipes;
     }
 
-        private SavedRecipes mapRowToSavedRecipes(SqlRowSet rs) {
+    @Override
+    public void addRecipe(int userId, int recipeId, String recipeName) {
+        String sql = "INSERT INTO saved_recipes (user_id, recipe_id, recipe_name) VALUES (?, ?, ?);";
+        jdbcTemplate.update(sql, userId, recipeId, recipeName);
+    }
+
+    private SavedRecipes mapRowToSavedRecipes(SqlRowSet rs) {
             SavedRecipes savedRecipes = new SavedRecipes();
+            savedRecipes.setSavedRecipeId(rs.getInt("saved_recipe_id"));
             savedRecipes.setUserId((rs.getInt("user_id")));
             savedRecipes.setRecipeId(rs.getInt("recipe_id"));
             savedRecipes.setRecipeName((rs.getString("recipe_name")));
-            savedRecipes.setMealDate(rs.getDate("meal_date"));
+            savedRecipes.setMealDay(rs.getString("meal_day"));
             savedRecipes.setMealType((rs.getString("meal_type")));
             return savedRecipes;
         }

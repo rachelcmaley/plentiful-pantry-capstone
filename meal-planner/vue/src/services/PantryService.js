@@ -19,6 +19,12 @@ export default {
     getPantryIngredients(userId) {
 
         return axios.get(`/pantry/${userId}`)
+    },
+
+    deleteIngredient(ingredientName) {
+
+        return axios.delete(`/pantry/${ingredientName}`)
+
     }
 
 };
