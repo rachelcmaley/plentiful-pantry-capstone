@@ -53,6 +53,8 @@
               </div>
             </div> -->
             <!-- end of test box 2 -->
+
+
             <!-- test box 3 -->
             <!-- <div class="recipe-item">
               <div class="meal-img">
@@ -70,6 +72,8 @@
               </div>
             </div> -->
             <!-- test box 3 -->
+
+
             <!-- test box 4 -->
             <!-- <div class="recipe-item">
               <div class="meal-img">
@@ -184,6 +188,11 @@ export default {
   box-sizing: border-box;
 }
 
+#recipeBox{
+  background-color: rgb(172, 87, 87);
+  border-radius: 10px;
+}
+
 body {
   font-weight: 300;
   font-size: 1.05rem;
@@ -199,8 +208,6 @@ body {
 }
 
 .sgetti {
-  height: 200px;
-  width: auto;
 }
 
 .text {
@@ -209,17 +216,41 @@ body {
 
 .title {
   font-size: 2rem;
+
+  /* margin-bottom: 1rem;
+  text-align: center;
+  color: #f5f5f5;
+  padding: 10px;
+  background-color: rgb(43, 92, 57);
+  width:250px;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+   */
   text-align: start;
   color: #0B6E4F;
   padding-top: 10px;
   padding-bottom: 1rem;
   border-bottom: solid #ffb20f;
+
 }
 
 .container {
   height: 100vh;
+  
   width: 100vw;
 }
+
+
+/* .recipe-wrapper {
+  background: rgba(255, 255, 255, 0.781);
+  text-align: center;
+  height: 570px;
+  width:1500px;
+  margin-left: auto;
+  margin-right: auto; 
+} */ 
+
 
 .saved-recipe-wrapper {
   width: 100vw;
@@ -244,30 +275,27 @@ body {
 }
 
 .recipe-result {
-  margin-top: 3rem;
+  margin-top: 5px;
 }
 
 #recipe {
-  margin: 0;
+  margin-left: 40px;
 }
 
 .recipe-item {
-  width: 300px;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
-  margin: 2rem 0;
-  margin-bottom: 1rem;
+  margin-right: auto;
+  margin-left: 90px;
+  background-color: white;
 }
 
 .meal-img img {
-  width: 100%;
   display: block;
 }
 
 .recipe-name {
-  padding: 1.5rem 0.5rem;
-  color: #074733;
 }
 
 .meal-name h3 {
@@ -275,21 +303,9 @@ body {
 }
 
 .recipe-btn {
-  text-decoration: none;
-  color: #fff;
-  background: #ffb20f;
-  font-weight: 1.1rem;
-  padding: 0.75rem 0;
-  display: block;
-  width: 175px;
-  margin: 1rem auto;
-  border-radius: 2rem;
-  transition: all 0.4s linear;
-  border: none;
 }
 
 .recipe-btn:hover {
-  background: #d39000;
 }
 
 .add-meal-btn {

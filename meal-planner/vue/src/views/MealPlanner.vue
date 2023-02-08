@@ -1,9 +1,9 @@
 <template>
   <div id="page-container">
-      <section class="top-panel">
+      <section class="top-panel" id="topPanel">
           <MealPlanWeek></MealPlanWeek>
       </section>
-      <section class="bottom-panel">
+      <section  class="bottom-panel" id="bottomPanel">
           <SavedRecipes></SavedRecipes>
       </section>
   </div>
@@ -25,5 +25,14 @@ export default {
 
 
 <style>
+        #topPanel{
+            width: 1400px;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top: 40px;
+        }
 
+        #bottomPanel{
+            height: 9px;
+        }
 </style>

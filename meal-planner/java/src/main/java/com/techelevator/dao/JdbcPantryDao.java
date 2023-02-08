@@ -74,21 +74,16 @@ public class JdbcPantryDao implements PantryDao {
 
         jdbcTemplate.update(sql, userId, ingredientName);
 
-
-//        if(ingredient.getIngredientId() == 0) {
-//            int newId = 0;                                //TODO: How to create an ingredient_id for a new Ingredient?
-//            ingredient.setIngredientId(newId);
-//            jdbcTemplate.update("INSERT INTO ingredients(ingredient_name, ingredient_id)\n" +
-//                    "\tVALUES (?, ?);",
-//                    ingredient.getIngredientId(), ingredient.getIngredientName());
-//        }
     }
 
     // remove ingredient from user's pantry
     @Override
-    public void removeIngredient(Long ingredientId) {
-        String sql = "DELETE FROM ingredients WHERE ingredient_id = ?;";
-        jdbcTemplate.update(sql, ingredientId);
+    public void removeIngredient(String ingredientName) {
+        String sql = "DELETE FROM user_ingredients WHERE ingredient_name = ?;";
+
+        
+
+        jdbcTemplate.update(sql, ingredientName);
     }
 
     private Ingredient mapRowToIngredient(SqlRowSet rs) {

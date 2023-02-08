@@ -56,10 +56,10 @@ export default {
                 this.reloadPantry();
             });
             // this.$router.push(`/pantry/${userId}`);
-            this.$forceUpdate();
         },
+
         reloadPantry()
-        {
+        {   
                 const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
 
                 pantryPromise.then ((response) => {
