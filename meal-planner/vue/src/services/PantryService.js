@@ -8,6 +8,14 @@ export default {
 
     },
 
+    getPantryIngredients(userId) {
+        
+        let response = axios.get(`/pantry/${userId}`)
+        console.log(response)
+        return response;
+
+    },
+
     addIngredient(userId, ingredientName)
     {
         const body = {
@@ -16,24 +24,15 @@ export default {
         return axios.post(`/pantry/${userId}/ingredients`, body);
     },
 
-    getPantryIngredients(userId) {
-        
+    deleteIngredient(userId, ingredientName) {
 
-        let response = axios.get(`/pantry/${userId}`)
-        console.log(response)
-        return response;
-
-
-
-    },
-
-    deleteIngredient(userId) {
-
-        return axios.delete(`/pantry/${userId}`)
+        // const body = {
+        //     ingredientName: ingredientName
+        // }
+        // const body = ingredientName
+        return axios.delete(`/pantry/${userId}/ingredients/${ingredientName}`)
 
     }
-
-    
 
 };
 

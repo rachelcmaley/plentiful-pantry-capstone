@@ -1,17 +1,10 @@
 <template>
   <div class="add-meal-content">
-    <!-- <h2 class="recipe-title">Add {{ recipeDetails.title }} to this Week</h2>
+    <h2 class="form-header">Add {{ recipeInfo.title }} to this Week</h2>
     <div class="recipe-details-img">
-        <img class="sgetti" v-bind:src="recipeDetails.image" />
-    </div> -->
-    <h2 class="form-header">Add Scgetti to this Week</h2>
-    <img
-      class="sgetti"
-      v-bind:src="
-        require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-      "
-    />
-    <form class="form-add-meal" @submit.prevent="addToMealPlan">
+      <img class="sgetti" v-bind:src="recipeInfo.image" />
+    </div>
+    <form class="form-add-meal" >
       <div class="input-wrapper">
         <div class="form-boxes">
           <div class="form-box-one">
@@ -20,31 +13,31 @@
             >
             <li class="list">
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('monday')"  name="weekdays" />
                 Monday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('tuesday')" name="weekdays" />
                 Tuesday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('wednesday')" name="weekdays" />
                 Wednesday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('thursday')" name="weekdays" />
                 Thursday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('friday')" name="weekdays" />
                 Friday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('saturday')" name="weekdays" />
                 Saturday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" @change="changeWeekday('sunday')" name="weekdays" />
                 Sunday
               </ul>
             </li>
@@ -55,15 +48,15 @@
             >
             <li class="list">
               <ul class="radio">
-                <input type="radio" name="mealType"/>
+                <input type="radio" @change="changeMeal('breakfast')" name="mealType" />
                 Breakfast
               </ul>
               <ul class="radio">
-                <input type="radio" name="mealType"/>
+                <input type="radio" @change="changeMeal('lunch')" name="mealType" />
                 Lunch
               </ul>
               <ul class="radio">
-                <input type="radio" name="mealType"/>
+                <input type="radio" @change="changeMeal('dinner')" name="mealType" />
                 Dinner
               </ul>
             </li>
@@ -71,10 +64,15 @@
         </div>
 
         <div class="buttons">
-          <button type="button" class="cancel-btn" id="cancel-btn" @click="closeForm()">
+          <button
+            type="button"
+            class="cancel-btn"
+            id="cancel-btn"
+            @click="closeForm()"
+          >
             Cancel
           </button>
-          <button type="button" class="submit-btn" id="submit-btn">
+          <button type="submit" class="submit-btn" id="submit-btn" @click.prevent="addMealPlan">
             Submit
           </button>
         </div>
@@ -84,14 +82,55 @@
 </template>
 
 <script>
+// import recipesService from "../services/RecipesService.js"
+
 export default {
-  props: ["form", "onClose"],
-  
+  data() {
+    return {
+      recipeInfo: this.recipe,
+      newMealPlan: {
+        userId: this.$store.state.user.id,
+        recipeName: '',                     
+        mealDate: '',
+        mealType: ''
+      },
+
+    };
+  },
+
+  props: ["recipe", "onClose"],
+
   methods: {
     closeForm() {
       this.onClose();
     },
+    addMealPlan() {
+      this.newMealPlan.recipeName = this.recipeInfo.title;
+      this.$store.commit("ADD_MEAL_PLAN", this.newMealPlan);
+      this.closeForm();
+    },
+    changeWeekday(day)
+    {
+      this.newMealPlan.mealDate = day;
+    },
+    changeMeal(meal)
+    {
+      this.newMealPlan.mealType = meal;
+    }
   },
+
+  //update recipe in DB - incomplete
+  // updateRecipe() {
+  //   const userId = this.$store.state.user.id;
+  //   recipesService
+  //   .updateRecipe(userId, this.recipeInfo.id, this.mealDate, this.mealType)
+  //   .then(() => {
+  //     this.mealDate = '';
+  //     this.mealType = '';
+  //     this.closeForm();
+  //   });
+  // },
+
 };
 </script>
 
@@ -107,7 +146,7 @@ export default {
   width: 40%;
   height: 90%;
   overflow-y: scroll;
-  /* display: block; */
+  display: block;
   padding: 2rem 0;
 }
 
@@ -142,10 +181,10 @@ export default {
 }
 
 .form-boxes {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 30px;
 }
 
 .form-subheader {
@@ -156,7 +195,7 @@ export default {
   margin-bottom: 20px;
   font-size: 1.1rem;
   font-weight: 500;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 0.5rem;
 }
 
@@ -196,8 +235,8 @@ export default {
   background: #0b6e4f;
 }
 
-.submit-btn:hover{
-    background: #084935;
+.submit-btn:hover {
+  background: #084935;
 }
 
 .cancel-btn {
@@ -208,7 +247,7 @@ export default {
   margin-left: 3rem;
 }
 
-.cancel-btn:hover{
-    background: #b47f0c;
+.cancel-btn:hover {
+  background: #b47f0c;
 }
 </style>

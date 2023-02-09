@@ -1,13 +1,12 @@
 <template>
-    <div class="my-pantry" >
-        
-            <h2 id="pantryText">My Pantry</h2>
-            <text id="underline"></text>
-            <div class="ingredient-list">
-                <div class="list-group">
-                    <div v-for="ingredient in $store.state.pantry" :key="ingredient.id" id="userIngredienstPantry" class="ingredient list-group-item">
-                        {{ ingredient.ingredientName }} <button type="button" class="btn-close" aria-label="Close" @click="deleteFromPantry(ingredient.ingredientName)"></button>
-                    </div>
+
+    <div class="my-pantry" id="pantryBox">
+        <h2 id="pantryText">My Pantry</h2>
+        <div class="ingredient-list">
+            <div class="list-group">
+                <div v-for="ingredient in $store.state.pantry" :key="ingredient.id" class="ingredient list-group-item">
+                    {{ ingredient.ingredientName }} <button type="button" class="btn-close" aria-label="Close" @click="deleteFromPantry(ingredient)"></button>
+
                 </div>
             </div>
        
@@ -38,19 +37,23 @@
                     this.$store.commit("LOAD_PANTRY", response.data);
 
                 });
+
             }
 
         },
 
         methods: {
             
-            deleteFromPantry(userId) {
+            deleteFromPantry(ingredientName) {
 
+
+                const userId = this.$store.state.user.id;
                 pantryService
-                .deleteIngredient(userId)
+                .deleteIngredient(userId, ingredientName)
                 .then(() => {
                     this.reloadPantry()
                 })
+
 
             },
 

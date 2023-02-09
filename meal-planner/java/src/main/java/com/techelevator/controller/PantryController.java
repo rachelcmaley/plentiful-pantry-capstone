@@ -35,24 +35,25 @@ public class PantryController {
 
         List<Pantry> pantry = pantryDao.getAllPantryIngredientsByUserId(userId);
         return pantry;
-
     }
 
     @PostMapping(path = "/pantry/{userId}/ingredients")
     public void addIngredient(@PathVariable int userId, @RequestBody Ingredient ingredient) {
 
-        //System.out.println(ingredient.getIngredientName());
-
-       // save to database
-
         pantryDao.addIngredient(userId, ingredient.getIngredientName());
     }
 
+    @DeleteMapping(path = "/pantry/{userId}/ingredients/{ingredient}")
+    public void removeIngredient(@PathVariable int userId, @PathVariable String ingredient) {
 
-//    @DeleteMapping(path = "/pantry/{userId}")
-//    public void removeIngredient(@PathVariable int userId) {
-//
-//        pantryDao.removeIngredient(userId);
-//
-//    }
+<<<<<<< HEAD
+    @DeleteMapping(path = "/pantry/{userId}/ingredients")
+    public void removeIngredient(@PathVariable int userId, @RequestBody Ingredient ingredient) {
+
+        pantryDao.removeIngredient(userId, ingredient.getIngredientName());
+=======
+        pantryDao.removeIngredient(userId, ingredient);
+>>>>>>> main
+
+    }
 }

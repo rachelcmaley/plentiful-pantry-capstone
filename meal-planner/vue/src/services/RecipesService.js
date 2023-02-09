@@ -23,5 +23,14 @@ export default {
             recipeName: recipeName
         }
         return axios.post(`/recipes/${userId}`, body)
+    },
+
+    updateRecipe(userId, recipeId, mealDate, mealType) {
+        const body = {
+            recipeId: recipeId,
+            mealDate: mealDate,
+            mealType: mealType
+        }
+        return axios.put(`/recipes/${userId}`, body)
     }
 }

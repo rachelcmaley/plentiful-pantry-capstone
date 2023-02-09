@@ -143,6 +143,7 @@ export default {
       spoonacularService.searchRecipes(ingredients).then((response) => {
         this.recipes = response.data;
       });
+      
     });
     
 
@@ -158,22 +159,6 @@ export default {
     //     this.recipes = response.data;
     //   });
     // },
-
-    stringIngredients() {
-
-      if(this.ingredientsList.length == 1) {
-        this.ingredients = this.ingredientsList[0];
-      }
-
-      this.ingredients = this.ingredientsList.join(",");
-
-      // this.ingredientsList.forEach(item => {
-        
-      //   this.ingredients = this.ingredients + item;
-        
-      // });
-      
-    },
 
     showRecipe(id) {
         spoonacularService.getRecipeById(id).then((response) => {
