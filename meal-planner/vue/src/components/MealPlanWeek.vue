@@ -85,12 +85,12 @@ export default{
         "Dinner"
       ],
       mealPlanRecipes: [],
+      sortedMealPlanRecipes: [],
       test: ""
     };
   },
 created(){
   this.addToMealPlan()
-  
 },
 
 methods: {
@@ -98,13 +98,34 @@ methods: {
   RecipesService.getDummyRecipes()
   .then((response)=> {
     this.mealPlanRecipes = response.data;
-    // this.days.forEach(day =>{
-    //   this.meals.forEach(meal => {
-    //     const foundRecipe = this.mealPlanRecipes.find(recipe=>{
-    //       if(recipe.mealDay)
-    //     })
-    //   })
-    // })
+    this.days.forEach(day =>{
+      let foundrecipe = {
+        recipeName: "",
+        savedRecipeId: "",
+        userId: "",
+        recipeId: "",
+        mealDay:"",
+        mealType: ""
+      };
+      this.meals.forEach(meal => {
+        // const foundRecipe = this.mealPlanRecipes.find(recipe=>{
+        //   (recipe.mealDay == day && recipe.mealType == meal)
+            
+        // })
+        this.mealPlanRecipes.forEach(recipe => {
+          if(recipe.mealDay == day && recipe.mealType == meal){
+            foundrecipe.recipeName = recipe.recipeName;
+            foundrecipe.savedRecipeId = recipe.savedRecipeId;
+            foundrecipe.userId = recipe.userId;
+            foundrecipe.recipeId = recipe.recipeId;
+            foundrecipe.mealDay = recipe.mealDay;
+            foundrecipe.mealType = recipe.mealType;
+            this.sortedMealPlanRecipes.push(foundrecipe);t
+          }
+        })
+        //this.sortedMealPlanRecipes.push(foundRecipe);
+      })
+    })
   })
 }
 }

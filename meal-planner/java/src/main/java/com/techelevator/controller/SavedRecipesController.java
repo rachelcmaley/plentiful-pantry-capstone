@@ -5,6 +5,7 @@ import com.techelevator.model.SavedRecipes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -36,5 +37,11 @@ public class SavedRecipesController {
     {
         List<Integer> recipeIds = savedRecipesDao.getRecipeIdByUserId(userId);
         return recipeIds;
+    }
+
+    @PutMapping(path="recipes/{userId}")
+    public void updateSavedRecipes(@RequestBody SavedRecipes savedRecipes, @PathVariable int userId)
+    {
+        savedRecipesDao.updateSavedRecipes(userId,savedRecipes.getMealDay(),savedRecipes.getMealType(),savedRecipes.getRecipeName(),savedRecipes.getRecipeId());
     }
 }
