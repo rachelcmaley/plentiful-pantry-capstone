@@ -1,19 +1,19 @@
 <template>
-<div id="pantry-body">
+<div id="pantry-body" >
 
     <header>
         <NavBar></NavBar>
     </header>
     <div id="pantry">
         <section id="left-panel">
-            <div id="addpantry">
-        <AddToPantry></AddToPantry>
+            <div id="addpantry" >
+        <AddToPantry ></AddToPantry>
             </div>
-        <div id="scroll-ingredients">
+        <div id="scroll-ingredients" >
         <MyPantry></MyPantry>
         </div>
         </section>
-        <section id="right-panel">
+        <section id="right-panel" class="saved-recipe-wrapper">
             <RecipesYouCanMake></RecipesYouCanMake>
         </section>
 </div>
@@ -64,15 +64,15 @@ export default {
     border-top-right-radius: 10px;
 }
 #right-panel {
-    margin-top: 30px;
+    margin-top: 70px;
     margin-left: 10px;
-    background: white;
-    height: 100vh;
+    background: rgba(255, 255, 255, 0.719);
+    height: 70vh;
     width: 75vw;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow:hidden;
-    overflow-y: scroll;
+    overflow-x: scroll;
 }
 #add-pantry{
     margin: 5px;
@@ -82,11 +82,23 @@ export default {
     /* margin-left: 10px; */
     overflow: auto;
     overflow-y: scroll;
-    height: 100vh;
-    background: white;
+    width: 350px;
+    height: 600px;
+    background: rgb(255, 255, 255);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    margin-top: 20px;
+    margin-left: 45px;
+    padding-left: 15px;
+    color: green;
 }
 
+.saved-recipe-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+.saved-recipe-wrapper::-webkit-scrollbar-thumb {
+  background: #074733;
+  border-radius: 2rem;
+}
 
 </style>

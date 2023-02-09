@@ -61,6 +61,15 @@ public class JdbcSavedRecipesDao implements SavedRecipesDao {
         return recipeIds;
     }
 
+    @Override
+    public void updateSavedRecipes(int userId, String mealDay, String mealType, String recipeName, int recipeId)
+    {
+        String sql = "UPDATE saved_recipes "+
+                    "SET (recipe_name, recipe_id) = (?,?) "+
+                    "WHERE user_id=? AND meal_day = ? And meal_type =? ;";
+        jdbcTemplate.update(sql,recipeName,recipeId,userId,mealDay,mealType);
+    }
+
     private SavedRecipes mapRowToSavedRecipes(SqlRowSet rs) {
             SavedRecipes savedRecipes = new SavedRecipes();
             savedRecipes.setSavedRecipeId(rs.getInt("saved_recipe_id"));
