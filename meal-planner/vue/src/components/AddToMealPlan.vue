@@ -1,10 +1,9 @@
 <template>
   <div class="add-meal-content">
-    <!-- <h2 class="recipe-title">Add {{ recipeDetails.title }} to this Week</h2>
+    <h2 class="form-header">Add {{recipes.title}} to this Week</h2>
     <div class="recipe-details-img">
-        <img class="sgetti" v-bind:src="recipeDetails.image" />
-    </div> -->
-    <h2 class="form-header">Add Scgetti to this Week</h2>
+        <img class="sgetti" v-bind:src="recipes.image" />
+    </div>
     <img
       class="sgetti"
       v-bind:src="
@@ -20,31 +19,31 @@
             >
             <li class="list">
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Monday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Tuesday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Wednesday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Thursday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Friday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Saturday
               </ul>
               <ul class="radio">
-                <input type="radio" name="weekdays"/>
+                <input type="radio" v-model="mealDate" name="weekdays"/>
                 Sunday
               </ul>
             </li>
@@ -55,15 +54,15 @@
             >
             <li class="list">
               <ul class="radio">
-                <input type="radio" name="mealType"/>
+                <input type="radio" v-model="mealType" name="mealType"/>
                 Breakfast
               </ul>
               <ul class="radio">
-                <input type="radio" name="mealType"/>
+                <input type="radio" v-model="mealType" name="mealType"/>
                 Lunch
               </ul>
               <ul class="radio">
-                <input type="radio" name="mealType"/>
+                <input type="radio" v-model="mealType" name="mealType"/>
                 Dinner
               </ul>
             </li>
@@ -74,7 +73,7 @@
           <button type="button" class="cancel-btn" id="cancel-btn" @click="closeForm()">
             Cancel
           </button>
-          <button type="button" class="submit-btn" id="submit-btn">
+          <button type="submit" class="submit-btn" id="submit-btn">
             Submit
           </button>
         </div>
@@ -84,14 +83,36 @@
 </template>
 
 <script>
+import recipesService from "../services/RecipesService.js";
+
 export default {
-  props: ["form", "onClose"],
+  data() {
+    return {
+      recipeInfo: this.recipe,
+      mealDate: '',
+      mealType: ''
+    }
+  },
+
+  props: ["form", "recipe", "onClose"],
   
   methods: {
     closeForm() {
       this.onClose();
     },
   },
+
+  updateRecipe() {
+    const userId = this.$store.state.user.id;
+    recipesService
+    .updateRecipe(userId, this.recipeInfo.id, this.mealDate, this.mealType)
+    .then(() => {
+      this.mealDate = '';
+      this.mealType = '';
+      this.closeForm();
+    });
+  },
+
 };
 </script>
 
@@ -107,7 +128,7 @@ export default {
   width: 40%;
   height: 90%;
   overflow-y: scroll;
-  /* display: block; */
+  display: block;
   padding: 2rem 0;
 }
 

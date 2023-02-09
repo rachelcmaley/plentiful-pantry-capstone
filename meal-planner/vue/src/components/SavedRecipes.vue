@@ -134,7 +134,7 @@
         <RecipeDetails v-if="showDetails" :details="recipeDetails" :on-close="closeDetails"></RecipeDetails>
         
         <!-- POP UP ADD TO MEAL PLAN FORM -->
-        <AddToMealPlan v-if="showForm" :form="addToMealPlan" :on-close="closeForm"></AddToMealPlan>
+        <AddToMealPlan v-if="showForm" :form="addToMealPlan" :recipe="recipeInfo" :on-close="closeForm"></AddToMealPlan>
 
       </div>
     </div>
@@ -158,6 +158,7 @@ export default {
       searchWord: "",
       recipes: [],
       recipeDetails: null,
+      recipeInfo: null,
       showDetails: false,
       recipeIds: [],
       showForm: false,
