@@ -3,56 +3,56 @@
     <div>
       <h2 class="day" id="sunday">Sunday</h2>
       <div id="line">
-        <p id="fSu">{{ mealPlanRecipes[0].recipeName }}</p>
-        <p id="sSu">{{ mealPlanRecipes[1].recipeName }}</p>
-        <p id="tSu">{{ mealPlanRecipes[2].recipeName }}</p>
+        <p id="fSu">{{ getRecipe('sunday', 'breakfast') }}</p> <!-- goal is to add {{ $store.state.mealPlans.recipeName }} -->
+        <p id="sSu">{{ getRecipe('sunday', 'lunch') }}</p> <!-- but how to specify which day/mealType to display? -->
+        <p id="tSu">{{ getRecipe('sunday', 'dinner') }}</p>
       </div>
     </div>
     <div>
       <h2 class="day" id="monday">Monday</h2>
       <div id="line">
-        <p id="fMo">{{ mealPlanRecipes[3].recipeName }}</p>
-        <p id="sMo">{{ mealPlanRecipes[4].recipeName }}</p>
-        <p id="tMo">{{ mealPlanRecipes[5].recipeName }}</p>
+        <p id="fMo">{{ getRecipe('monday', 'breakfast') }}</p>
+        <p id="sMo">{{ getRecipe('monday', 'lunch') }}</p>
+        <p id="tMo">{{ getRecipe('monday', 'dinner') }}</p>
       </div>
     </div>
     <div>
       <h2 class="day" id="tuesday">Tuesday</h2>
       <div id="line">
-        <p id="fTu">{{ mealPlanRecipes[6].recipeName }}</p>
-        <p id="sTu">{{ mealPlanRecipes[7].recipeName }}</p>
-        <p id="tTu">{{ mealPlanRecipes[8].recipeName }}</p>
+        <p id="fTu">{{ getRecipe('tuesday', 'breakfast') }}</p>
+        <p id="sTu">{{ getRecipe('tuesday', 'lunch') }}</p>
+        <p id="tTu">{{ getRecipe('tuesday', 'dinner') }}</p>
       </div>
     </div>
     <div>
       <h2 class="day" id="wednesday">Wednesday</h2>
       <div id="line">
-        <p id="fWe">{{ mealPlanRecipes[9].recipeName }}</p>
-        <p id="sWe">{{ mealPlanRecipes[10].recipeName }}</p>
-        <p id="tWe">{{ mealPlanRecipes[11].recipeName }}</p>
+        <p id="fWe">{{ getRecipe('wednesday', 'breakfast') }}</p>
+        <p id="sWe">{{ getRecipe('wednesday', 'lunch') }}</p>
+        <p id="tWe">{{ getRecipe('wednesday', 'dinner') }}</p>
       </div>
     </div>
     <div>
       <h2 class="day" id="thursday">Thursday</h2>
       <div id="line">
-        <p id="fTh">{{ mealPlanRecipes[12].recipeName }}</p>
-        <p id="sTh">{{ mealPlanRecipes[13].recipeName }}</p>
-        <p id="tTh">{{ mealPlanRecipes[14].recipeName }}</p>
+        <p id="fTh">{{ getRecipe('thursday', 'breakfast') }}</p>
+        <p id="sTh">{{ getRecipe('thursday', 'lunch') }}</p>
+        <p id="tTh">{{ getRecipe('thursday', 'dinner') }}</p>
       </div>
     </div>
     <div>
       <h2 class="day" id="friday">Friday</h2>
       <div id="line">
-        <p id="fFr">{{ mealPlanRecipes[15].recipeName }}</p>
-        <p id="sFr">{{ mealPlanRecipes[16].recipeName }}</p>
-        <p id="tFr">{{ mealPlanRecipes[17].recipeName }}</p>
+        <p id="fFr">{{ getRecipe('friday', 'breakfast') }}</p>
+        <p id="sFr">{{ getRecipe('friday', 'lunch') }}</p>
+        <p id="tFr">{{ getRecipe('friday', 'dinner') }}</p>
       </div>
     </div>
     <div>
       <h2 class="day" id="saturday">Saturday</h2>
-      <p id="fSa">{{ mealPlanRecipes[18].recipeName }}</p>
-      <p id="sSa">{{ mealPlanRecipes[19].recipeName }}</p>
-      <p id="tSa">{{ mealPlanRecipes[20].recipeName }}</p>
+      <p id="fSa">{{ getRecipe('saturday', 'breakfast') }}</p>
+      <p id="sSa">{{ getRecipe('saturday', 'lunch') }}</p>
+      <p id="tSa">{{ getRecipe('saturday', 'dinner') }}</p>
     </div>
   </div>
 </template>
@@ -122,7 +122,17 @@ methods: {
       })
     })
   })
+},
+getRecipe(day, meal){
+  const userId = this.$store.state.user.id;
+  const recipes = this.$store.state.mealPlans.filter(plan => plan.userId == userId && plan.mealDate == day && plan.mealType == meal);
+
+  if(recipes.length > 0)
+    return recipes[0].recipeName;
+  else 
+    return "-";
 }
+
 }
 };
 </script>

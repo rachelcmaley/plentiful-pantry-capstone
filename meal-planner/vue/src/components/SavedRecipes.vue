@@ -14,127 +14,18 @@
                             <div class="recipe-name">
                                 <h4 class="recipe-card-title">{{recipe.title}}</h4>
                                 <button class="recipe-btn" @click="showRecipe(recipe.id)">Get Recipe</button>
-                                <button class="add-meal-btn" @click="showAddMealForm()">Add to Meal Plan</button>
+                                <button class="add-meal-btn" @click="showAddMealForm(recipe.id)">Add to Meal Plan</button>
                             </div>
                         </div>
             <!-- end of recipe box -->
-
-            <!-- test box 1 -->
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <div class="recipe-name">
-                <h3>Test</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-                <button class="add-meal-btn">Add to Meal Plan</button>
-              </div>
-            </div>
-            <!-- end of test box 1 -->
-            <!-- test box 2 -->
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <div class="recipe-name">
-                <h3>Test</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-                <button class="add-meal-btn">Add to Meal Plan</button>
-              </div>
-            </div>
-            <!-- end of test box 2 -->
-
-
-            <!-- test box 3 -->
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <div class="recipe-name">
-                <h3>Test</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-                <button class="add-meal-btn">Add to Meal Plan</button>
-              </div>
-            </div>
-            <!-- test box 3 -->
-
-
-            <!-- test box 4 -->
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <div class="recipe-name">
-                <h3>Test</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-                <button class="add-meal-btn">Add to Meal Plan</button>
-              </div>
-            </div>
-            <!-- test box 4 -->
-            <!-- test box 4 -->
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <div class="recipe-name">
-                <h3>Test</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-                <button class="add-meal-btn">Add to Meal Plan</button>
-              </div>
-            </div>
-            <!-- test box 4 -->
-            <!-- test box 4 -->
-            <div class="recipe-item">
-              <div class="meal-img">
-                <img
-                  class="sgetti"
-                  v-bind:src="
-                    require('C:/Users/Student/workspace/capstone-meal-planner/meal-planner/vue/src/assets/images/shakshuka.png')
-                  "
-                />
-              </div>
-              <div class="recipe-name">
-                <h3>Test</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-                <button class="add-meal-btn">Add to Meal Plan</button>
-              </div>
-            </div>
-            <!-- test box 4 -->
           </div>
         </div>
 
-
-
-        <!-- POP UP RECIPE DETAILS BOX -->
+        <!-- MODAL RECIPE DETAILS BOX -->
         <RecipeDetails v-if="showDetails" :details="recipeDetails" :on-close="closeDetails"></RecipeDetails>
         
-        <!-- POP UP ADD TO MEAL PLAN FORM -->
-        <AddToMealPlan v-if="showForm" :form="addToMealPlan" :recipe="recipeInfo" :on-close="closeForm"></AddToMealPlan>
+        <!-- MODAL ADD TO MEAL PLAN FORM -->
+        <AddToMealPlan v-if="showForm" :recipe="recipeInfo" :on-close="closeForm"></AddToMealPlan>
 
       </div>
     </div>
@@ -183,9 +74,25 @@ export default {
      
     },
 
-    
-
-    //first step: get recipe ID from database
+    showRecipe(id) {
+        spoonacularService.getRecipeById(id).then((response) => {
+          this.recipeDetails = response.data;
+        this.showDetails = true;
+      });
+    },
+    showAddMealForm(id) {
+        spoonacularService.getRecipeById(id).then((response) => {
+          this.recipeInfo = response.data;
+          console.log("IS THIS THING ON")
+        this.showForm = true;
+      });
+    },
+    closeForm() {
+      this.showForm = false;
+    },
+    closeDetails(){
+        this.showDetails = false;
+    },
     getRecipeId() {
       recipesService.getRecipeIdByUserId(this.$store.state.user.id).then((response) => {
         this.recipeIds = response.data;
@@ -196,21 +103,7 @@ export default {
         this.recipes = response.data;
       });
     },
-    showRecipe(id) {
-        spoonacularService.getRecipeById(id).then((response) => {
-        this.recipeDetails = response.data;
-        this.showDetails = true;
-      });
-    },
-    showAddMealForm() {
-      this.showForm = true;
-    },
-    closeForm() {
-      this.showForm = false;
-    },
-    closeDetails(){
-        this.showDetails = false;
-    }
+
   },
 };
 </script>
