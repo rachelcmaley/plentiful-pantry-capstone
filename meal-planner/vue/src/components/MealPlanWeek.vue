@@ -214,37 +214,31 @@ methods: {
 }
 #sunday{
   grid-area: sunday;
-  color:rgb(255, 140, 211);
 }
 #monday{
   grid-area: monday;
-  color: rgb(255, 93, 241);
 }
 #tuesday{
   grid-area: tuesday;
-  color: rgb(255, 30, 218);
 }
 #wednesday{
   grid-area: wednesday;
-  color: rgb(215, 0, 138);
 }
 #thursday{
   grid-area: thursday;
-  color: rgb(179, 0, 65);
 }
 #friday{
   grid-area: friday;
-  color:rgb(135, 0, 9);
 }
 #saturday{
   grid-area: saturday;
-  color: rgb(109, 7, 7);
 }
 
 .day{
   font-weight: bold;
   text-align: center;
   border-bottom: solid rgb(95, 156, 95) 3px;
+  color: green;
 }
 
 #line{
@@ -256,7 +250,7 @@ p{
 }
 
 #weekly-grid {
- background-color: rgba(255, 255, 255, 0.719);
+ background-color: rgb(221, 255, 231);
  border: solid rgb(95, 156, 95) 3px;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  border-radius: 20px;

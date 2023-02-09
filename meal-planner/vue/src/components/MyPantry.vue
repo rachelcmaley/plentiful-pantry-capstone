@@ -3,7 +3,7 @@
         <h2 id="pantryText">My Pantry</h2>
         <div class="ingredient-list">
             <div class="list-group">
-                <div v-for="ingredient in $store.state.pantry" :key="ingredient.userId" class="ingredient list-group-item">
+                <div v-for="ingredient in $store.state.pantry" :key="ingredient.id" class="ingredient list-group-item">
                     {{ ingredient.ingredientName }} <button type="button" class="btn-close" aria-label="Close" @click="deleteFromPantry(ingredient.ingredientName)"></button>
                 </div>
             </div>
@@ -41,10 +41,10 @@
 
         methods: {
             
-            deleteFromPantry(ingredientName) {
+            deleteFromPantry(userId) {
 
                 pantryService
-                .deleteIngredient(ingredientName)
+                .deleteIngredient(userId)
                 .then(() => {
                     this.reloadPantry()
                 })

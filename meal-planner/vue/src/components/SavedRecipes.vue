@@ -264,7 +264,7 @@ body {
   height: 54vh;
   padding-left: 1rem;
   padding-right: 1rem;
-  background: #FFFDFA;
+  background: #fffdfab4;
   /* opacity: .95; */
   text-align: center;
   overflow-y: scroll;
