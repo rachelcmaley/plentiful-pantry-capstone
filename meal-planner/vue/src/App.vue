@@ -58,7 +58,7 @@ html{
 
 .homePage
 {
-  background: url('assets/images/cheesecake.png') ;
+  background: url('assets/images/watermelon.jpg') ;
   background-size: cover;
   background-position: center;
   position: fixed;
@@ -99,7 +99,7 @@ html{
 }
 
 .mealPlannerPage{
-  background: url("assets/images/ramen.png");
+  background: url("assets/images/berriesAndDessert.png");
   background-size: cover;
   background-position: center;
   position: fixed;

@@ -18,7 +18,7 @@
             id="search-btn"
             @click="search"
           >
-            Test Search
+            Search
           </button>
         </div> -->
 
@@ -234,8 +234,8 @@ body {
   margin: 0 auto;
   width: 100vw;
   padding-right: 2rem;
-  background: rgb(255, 255, 255);
   text-align: center;
+  padding-top: 10px;
 }
 
 .recipe-search {
@@ -270,9 +270,9 @@ body {
 }
 
 .search-btn {
-  width: 55px;
-  height: 25px;
-  font-size: 0.75rem;
+  width: 90px;
+  height: 50px;
+  font-size: 19px;
   background: #ffb20f;
   color: rgb(78, 78, 78);
   border: none;

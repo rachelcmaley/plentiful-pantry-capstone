@@ -40,4 +40,15 @@ export default {
         #bottomPanel{
             height: 9px;
         }
+
+        #page-container{
+            background-image: url("../assets/images/berriesAndDessert.png");
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            overflow: no-repeat;
+        }
 </style>

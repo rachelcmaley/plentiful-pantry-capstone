@@ -9,4 +9,6 @@ public interface SavedRecipesDao {
     public void addRecipe(int userId, int recipeId, String recipeName);
 
     List<Integer> getRecipeIdByUserId(int userId);
+
+    public void updateSavedRecipes(int userId, String mealDay, String mealType, String recipeName, int recipeId);
 }
