@@ -18,18 +18,15 @@ export default {
 
     getPantryIngredients(userId) {
         
-
         let response = axios.get(`/pantry/${userId}`)
         console.log(response)
         return response;
 
-
-
     },
 
-    deleteIngredient(userId) {
+    deleteIngredient(userId, ingredientName) {
 
-        return axios.delete(`/pantry/${userId}`)
+        return axios.delete(`/pantry/${userId}/ingredients`, ingredientName)
 
     }
 

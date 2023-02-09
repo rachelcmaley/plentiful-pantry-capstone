@@ -41,10 +41,12 @@
 
         methods: {
             
-            deleteFromPantry(userId) {
+            deleteFromPantry(ingredientName) {
 
+
+                const userId = this.$store.state.user.id;
                 pantryService
-                .deleteIngredient(userId)
+                .deleteIngredient(userId, ingredientName)
                 .then(() => {
                     this.reloadPantry()
                 })

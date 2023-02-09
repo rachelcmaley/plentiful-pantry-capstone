@@ -81,7 +81,6 @@ public class JdbcPantryDao implements PantryDao {
     public void removeIngredient(int userId, String ingredientName) {
         String sql = "DELETE FROM user_ingredients WHERE ingredient_name = ?;";
 
-
         jdbcTemplate.update(sql, userId);
     }
 
