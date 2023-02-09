@@ -10,11 +10,11 @@
         <MealPlanWeek></MealPlanWeek>
         </main>
 
-        <aside>  
+        <aside id="myPantryHome">  
           <MyPantry></MyPantry>
         </aside>
 
-        <footer> 
+        <footer id="recRecipiesHome"> 
           <RecommendedRecipes></RecommendedRecipes>
         </footer>
 
@@ -61,7 +61,6 @@ header{
   height: 50px;
 }
 
-
 main{
   grid-area: mpw;
   width: 1600px;
@@ -69,23 +68,21 @@ main{
   margin-top: 25px;
 }
 
-aside{
+#myPantryHome{
   grid-area: pantry;
   margin-top: 25px;
   margin-left: 190px;
-  border: solid rgb(194, 174, 0) 3px;
-  background-color: rgb(255, 254, 184);
-  color: rgb(110, 110, 110);
-  font-family:  Arial, Helvetica, sans-serif;
-  font-style: italic;
-  text-decoration: underline;
-  text-decoration-color: lightblue;
+  border: solid rgb(0, 194, 113) 3px;
+  border-radius: 20px;
+  background-color: rgba(209, 255, 200, 0.788);
+  color: green;
+  font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-footer{
+#recRecipiesHome{
   grid-area: recipies;
   margin-top: 25px;
-  margin-left: 125px;
+  margin-left: 80px;
 }
 
 

@@ -9,7 +9,7 @@
             <div id="addpantry" >
         <AddToPantry ></AddToPantry>
             </div>
-        <div id="scroll-ingredients" >
+        <div id="scroll-ingredients" class="saved-recipe-wrapper">
         <MyPantry></MyPantry>
         </div>
         </section>
