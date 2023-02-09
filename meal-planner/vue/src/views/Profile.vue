@@ -1,11 +1,15 @@
 <template>
-    <div id="backgroundPicForProfileVue">
+    <div class="pfpElements" id="backgroundPicForProfileVue">
         <header>
             <NavBar></NavBar>
         </header>
-        
-        <ChooseProfileImage/>
-        
+        <div id="leftProfile"> 
+          <UserFoodInfo/>
+          <HelpfulDietInfo/>
+        </div>
+        <div id="pfpSection">
+          <ChooseProfileImage/>
+        </div>
     </div>
 </template>
 
@@ -13,12 +17,17 @@
 
 import NavBar from "../components/NavBar.vue";
 import ChooseProfileImage from "../components/ChooseProfileImage.vue";
+import UserFoodInfo from "../components/UserFoodInfo.vue"
+import HelpfulDietInfo from "../components/HelpfulDietInfo.vue"
 
 export default {
   name: "profile",
   components: {
     NavBar,
-   ChooseProfileImage
+   ChooseProfileImage,
+   UserFoodInfo,
+   HelpfulDietInfo,
+
   },
 
 };
@@ -39,6 +48,12 @@ export default {
   overflow: no-repeat;
 }
 
+#pfpElements{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  ""
+}
 
 
 </style>
