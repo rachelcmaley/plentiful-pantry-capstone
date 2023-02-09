@@ -4,7 +4,7 @@
         <div class="ingredient-list">
             <div class="list-group">
                 <div v-for="ingredient in $store.state.pantry" :key="ingredient.id" class="ingredient list-group-item">
-                    {{ ingredient.ingredientName }} <button type="button" class="btn-close" aria-label="Close" @click="deleteFromPantry(ingredient.ingredientName)"></button>
+                    {{ ingredient.ingredientName }} <button type="button" class="btn-close" aria-label="Close" @click="deleteFromPantry(ingredient)"></button>
                 </div>
             </div>
         </div>
@@ -35,19 +35,22 @@
                     this.$store.commit("LOAD_PANTRY", response.data);
 
                 });
+
             }
 
         },
 
         methods: {
             
-            deleteFromPantry(userId) {
-
+            deleteFromPantry(ingredient) {
+                
+                const userId = this.$store.state.user.id;
                 pantryService
-                .deleteIngredient(userId)
+                .deleteIngredient(userId, ingredient.ingredientName)
                 .then(() => {
                     this.reloadPantry()
                 })
+
 
             },
 

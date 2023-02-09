@@ -84,6 +84,7 @@ export default{
         "Lunch",
         "Dinner"
       ],
+       
       mealPlanRecipes: [],
       sortedMealPlanRecipes: [],
       test: ""
@@ -93,11 +94,21 @@ created(){
   this.addToMealPlan()
 },
 
+
 methods: {
   addToMealPlan() {
   RecipesService.getDummyRecipes()
   .then((response)=> {
     this.mealPlanRecipes = response.data;
+
+
+    this.days.forEach(day => {
+      this.meal
+
+        if(this.mealPlanRecipes.includes(day && this.meals[0])) this.sortedMealPlanRecipes.push
+      
+    });
+
     this.days.forEach(day =>{
       let foundrecipe = {
         recipeName: "",
@@ -120,7 +131,7 @@ methods: {
             foundrecipe.recipeId = recipe.recipeId;
             foundrecipe.mealDay = recipe.mealDay;
             foundrecipe.mealType = recipe.mealType;
-            this.sortedMealPlanRecipes.push(foundrecipe);t
+            this.sortedMealPlanRecipes.push(foundrecipe);
           }
         })
         //this.sortedMealPlanRecipes.push(foundRecipe);

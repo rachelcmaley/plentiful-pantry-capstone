@@ -21,7 +21,8 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     pageClass: 'homePage',
-    pantry:[]
+    pantry:[],
+    ingredientString:''
 
   },
   mutations: {
@@ -49,6 +50,7 @@ export default new Vuex.Store({
     LOAD_PANTRY(state, pantry)
     {
       state.pantry = pantry;
-    }
+    },
+
   }
 })
