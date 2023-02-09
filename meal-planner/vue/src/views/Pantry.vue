@@ -64,15 +64,15 @@ export default {
     border-top-right-radius: 10px;
 }
 #right-panel {
-    margin-top: 30px;
+    margin-top: 70px;
     margin-left: 10px;
     background: rgba(255, 255, 255, 0.719);
-    height: 100vh;
+    height: 70vh;
     width: 75vw;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow:hidden;
-    overflow-y: scroll;
+    overflow-x: scroll;
 }
 #add-pantry{
     margin: 5px;
