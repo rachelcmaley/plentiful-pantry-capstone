@@ -120,7 +120,7 @@ methods: {
             foundrecipe.recipeId = recipe.recipeId;
             foundrecipe.mealDay = recipe.mealDay;
             foundrecipe.mealType = recipe.mealType;
-            this.sortedMealPlanRecipes.push(foundrecipe);t
+            this.sortedMealPlanRecipes.push(foundrecipe);
           }
         })
         //this.sortedMealPlanRecipes.push(foundRecipe);

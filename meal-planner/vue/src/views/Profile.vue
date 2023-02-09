@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div id="backgroundPicForProfileVue">
         <header>
             <NavBar></NavBar>
         </header>
         
-        <ChooseProfilePicture/>
+        <ChooseProfileImage/>
         
     </div>
 </template>
@@ -12,15 +12,33 @@
 <script>
 
 import NavBar from "../components/NavBar.vue";
-import ChooseProfilePicture from "../components/ChooseProfileImage.vue";
+import ChooseProfileImage from "../components/ChooseProfileImage.vue";
 
 export default {
   name: "profile",
   components: {
     NavBar,
-   ChooseProfilePicture
+   ChooseProfileImage
   },
 
 };
 
 </script>
+
+
+<style>
+
+#backgroundPicForProfileVue{
+   background: url("../assets/images/garlicbutterchicken.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: no-repeat;
+}
+
+
+
+</style>

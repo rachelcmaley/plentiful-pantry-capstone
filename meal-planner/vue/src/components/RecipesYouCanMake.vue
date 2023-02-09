@@ -221,7 +221,7 @@ body {
 
 .title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 80px;
   text-align: start;
 }
 
