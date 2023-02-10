@@ -58,7 +58,7 @@ html{
 
 .homePage
 {
-  background: url('assets/images/watermelon.jpg') ;
+  background: url('assets/images/betterWatermelon.jpg') ;
   background-size: cover;
   background-position: center;
   position: fixed;

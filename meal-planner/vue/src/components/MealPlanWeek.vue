@@ -260,7 +260,7 @@ p {
 }
 
 #weekly-grid {
- background-color: rgb(221, 255, 231);
+ background-color: rgb(215, 253, 227);
  border: solid rgb(95, 156, 95) 3px;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  border-radius: 20px;

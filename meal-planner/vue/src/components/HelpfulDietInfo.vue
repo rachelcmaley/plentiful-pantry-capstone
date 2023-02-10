@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="healthInfo">
         SLKDFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
     </div>
 </template>
@@ -12,3 +12,11 @@ export default {
 }
 </script>
 
+<style >
+
+#healthInfo{
+    background-color: pink;
+}
+
+
+</style>
