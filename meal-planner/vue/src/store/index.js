@@ -24,7 +24,9 @@ export default new Vuex.Store({
     pantry:[],
     mealPlans:[],
 
+
   },
+  
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -42,7 +44,6 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-
     UPDATE_PAGE(state, page)
     {
       state.pageClass = page;
@@ -54,6 +55,14 @@ export default new Vuex.Store({
     ADD_MEAL_PLAN(state, mealPlan)
     {
       state.mealPlans.push(mealPlan);
+    },
+
+  },
+  getters: {
+
+    ingredientString (state) {
+      return state.pantry.map(ingredient => ingredient.ingredientName).join(',');
     }
   }
-})
+  
+});

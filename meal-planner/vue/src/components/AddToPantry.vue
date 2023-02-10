@@ -54,7 +54,6 @@ export default {
             .then(()=> {
                 this.ingredient="";
                 this.reloadPantry();
-                
             });
             // this.$router.push(`/pantry/${userId}`);
         },
@@ -66,11 +65,9 @@ export default {
             pantryPromise.then ((response) => {
 
                 this.$store.commit("LOAD_PANTRY", response.data);
-                
-            });
-        },
 
- 
+            });
+        }
     }
 };
 </script>
