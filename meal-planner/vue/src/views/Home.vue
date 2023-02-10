@@ -2,7 +2,7 @@
   <div>
       <div class="home-grid">
 
-        <header>
+        <header >
           <NavBar></NavBar>
         </header>
 
@@ -71,18 +71,22 @@ main{
 #myPantryHome{
   grid-area: pantry;
   margin-top: 25px;
-  margin-left: 190px;
+  margin-left: 160px;
   border: solid rgb(0, 194, 113) 3px;
   border-radius: 20px;
   background-color: rgba(209, 255, 200, 0.788);
   color: green;
+  height:430px;
+  width: 300px;
   font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+
 
 #recRecipiesHome{
   grid-area: recipies;
   margin-top: 25px;
-  margin-left: 80px;
+  margin-left: 30px;
 }
 
 

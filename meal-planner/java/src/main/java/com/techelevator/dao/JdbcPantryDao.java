@@ -83,11 +83,9 @@ public class JdbcPantryDao implements PantryDao {
                 "WHERE user_id = ? " +
                 "AND ingredient_name = ?;";
 
-<<<<<<< HEAD
-        jdbcTemplate.update(sql, userId);
-=======
+
         jdbcTemplate.update(sql, userId, ingredientName);
->>>>>>> main
+
     }
 
     private Ingredient mapRowToIngredient(SqlRowSet rs) {

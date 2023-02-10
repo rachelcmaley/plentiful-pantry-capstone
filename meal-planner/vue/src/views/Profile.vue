@@ -1,13 +1,15 @@
 <template>
     <div class="pfpElements" id="backgroundPicForProfileVue">
-        <header>
+        <header id="navProfile">
             <NavBar></NavBar>
         </header>
-        <div id="leftProfile"> 
-          <UserFoodInfo/>
+          <div id="questions">
+            <UserFoodInfo/>
+          </div>
+        <div id="helpInfo"> 
           <HelpfulDietInfo/>
         </div>
-        <div id="pfpSection">
+        <div id="chooseImage">
           <ChooseProfileImage/>
         </div>
     </div>
@@ -17,13 +19,13 @@
 
 import NavBar from "../components/NavBar.vue";
 import ChooseProfileImage from "../components/ChooseProfileImage.vue";
-import UserFoodInfo from "../components/UserFoodInfo.vue"
+import UserFoodInfo from "../components/UserQuestions.vue"
 import HelpfulDietInfo from "../components/HelpfulDietInfo.vue"
 
 export default {
   name: "profile",
   components: {
-    NavBar,
+   NavBar,
    ChooseProfileImage,
    UserFoodInfo,
    HelpfulDietInfo,
@@ -38,7 +40,7 @@ export default {
 <style>
 
 #backgroundPicForProfileVue{
-   background: url("../assets/images/garlicbutterchicken.jpg");
+  background: url("../assets/images/garlicbutterchicken.jpg");
   background-size: cover;
   background-position: center;
   position: fixed;
@@ -48,12 +50,44 @@ export default {
   overflow: no-repeat;
 }
 
-#pfpElements{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-  ""
+.pfpElements{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "qp qp pfp"
+    "fp fp pfp" 
+  
 }
+
+#navProfile{
+  grid-area: nav;
+}
+
+#questions{
+  grid-area: qp;
+
+}
+
+#helpInfo{
+  grid-area: fp;
+  
+}
+
+#chooseImage{
+  grid-area: pfp;
+  margin-left: 120px;
+  background-color: white;
+  border: solid green 5px;
+  border-radius: 20px;
+  padding-left: 30px;
+
+  padding-top: 20px;
+  height: 500px;
+  width: 450px;
+}
+
+
 
 
 </style>

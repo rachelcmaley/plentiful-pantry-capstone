@@ -12,8 +12,8 @@
     background: rgba(255, 255, 255, 0.836);
     border: solid rgb(95, 156, 95) 3px;
     border-radius: 10px;
-    height: 400px;
-    width: 1130px;
+    height: 425px;
+    width: 1250px;
 }
 
 #subTitle{
@@ -28,8 +28,8 @@
 }
 
 #underlineRecRecipe{
-    border-bottom: solid rgb(95, 156, 95);
-    width: 950px;
+    border-bottom: solid #0a6b53;
+    width: 1200px;
     margin-left: 20px;
 
 }

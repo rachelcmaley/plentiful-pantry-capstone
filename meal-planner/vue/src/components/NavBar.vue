@@ -23,9 +23,11 @@ export default {
 #link{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
-    border: solid green 2px;
+    border: solid green 4px;
     border-radius: 10px;
-    background-color: white;
+    color: green;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
     padding: 10px 20px;
 }
 
