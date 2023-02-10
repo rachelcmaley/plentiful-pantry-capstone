@@ -76,12 +76,11 @@ export default {
 
 #chooseImage{
   grid-area: pfp;
-  margin-left: 120px;
   background-color: white;
   border: solid green 5px;
   border-radius: 20px;
   padding-left: 30px;
-
+  margin-top:80px;
   padding-top: 20px;
   height: 500px;
   width: 450px;
