@@ -24,13 +24,13 @@
             <h1 id="dietAnswer"  v-show="dietQuestion == ''"> </h1>
             <h1 id="dietAnswer" class="ketoFriendly" v-show="dietQuestion == 'Keto Friendly'">🍖Keto Friendly🍖</h1>
             <h1 id="dietAnswer" class="noCarbs" v-show="dietQuestion == 'No Carbs'">🥦No Carbs🥦</h1>
-            <h1 id="dietAnswer" class="noSugar" v-show="dietQuestion == 'No Carbs'">💗No Sugar💗</h1>
+            <h1 id="dietAnswer" class="noSugar" v-show="dietQuestion == 'No Sugar'">💗No Sugar💗</h1>
             <div></div>
             <select id="optionBarQD" v-model="dietQuestion">
                 <option disabled value="" >Please select one</option>
                 <option>Keto Friendly </option>
                 <option>No Carbs</option>
-                <option>No sugar</option>
+                <option>No Sugar</option>
             </select>
         </div>
 
@@ -39,7 +39,9 @@
 </template>
 
 <script>
+
 export default {
+    name: "UserQuestions",
     data () {
         return {
             goalAnswer: "",

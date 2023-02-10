@@ -1,13 +1,19 @@
 <template>
     <div id="healthInfo">
-        <h1 v-show="ab == 'No Carbs'"></h1>
+        <h1 v-if="goalAnswer == 'Loose weight' && dietQuestion == 'Keto Friendly'">
+            <text v-show="articleA1"  id="a1"> dsssssssssss</text>
+        </h1>
     </div>
 </template>
 
+
 <script>
+
+
 export default {
-    setup() {
-        
+    data() {
+        return{
+        }
     },
 }
 </script>
@@ -24,5 +30,8 @@ export default {
     margin-bottom: 40px;
 }
 
+#a1{
+    background-color: white;
+}
 
 </style>
