@@ -44,16 +44,9 @@ public class PantryController {
     }
 
     @DeleteMapping(path = "/pantry/{userId}/ingredients/{ingredient}")
-    public void removeIngredient(@PathVariable int userId, @PathVariable String ingredient) {
-
-<<<<<<< HEAD
-    @DeleteMapping(path = "/pantry/{userId}/ingredients")
-    public void removeIngredient(@PathVariable int userId, @RequestBody Ingredient ingredient) {
+    public void removeIngredient(@PathVariable int userId, @PathVariable Ingredient ingredient) {
 
         pantryDao.removeIngredient(userId, ingredient.getIngredientName());
-=======
-        pantryDao.removeIngredient(userId, ingredient);
->>>>>>> main
 
     }
 }

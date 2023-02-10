@@ -24,6 +24,7 @@
             };
         },
 
+        
         created () {
             if(this.$store.state.pantry.length == 0)
             {
@@ -35,6 +36,7 @@
                     this.$store.commit("LOAD_PANTRY", response.data);
 
                 });
+                
 
             }
 
