@@ -25,7 +25,7 @@
         <div class="recipe-result">
           <div id="recipe">
             <!-- recipe box -->
-            <div class="recipe-item" v-for="recipe in recipes" :key="recipe.id">
+            <div class="recipe-item" v-for="recipe in $store.state.recipes" :key="recipe.id">
                             <div class="meal-img">
                                 <img class='sgetti' v-bind:src="recipe.image">
                             </div>
@@ -118,6 +118,7 @@
 import spoonacularService from "../services/SpoonacularService.js";
 import RecipeDetails from "../components/RecipeDetails.vue";
 import pantryService from "../services/PantryService.js";
+import {mapGetters} from 'vuex'
 
 export default {
   components: {
@@ -134,20 +135,27 @@ export default {
     };
   
   },
-  created() {
+  computed: {
 
-    pantryService.getPantryIngredients(this.$store.state.user.id).then((response) => {
-      const ingredientList = response.data.map(ingredient => ingredient.ingredientName);
-      const ingredients = ingredientList.join(',');
-
-      spoonacularService.searchRecipes(ingredients).then((response) => {
-        this.recipes = response.data;
-      });
-      
-    });
-    
+    ...mapGetters ([
+      'ingredientSearch'
+    ])
 
   },
+  created() {
+
+    const stringIngredients = this.$store.state.pantry.map(ingredient => ingredient.ingredientName).join(',');
+
+    const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
+
+    pantryPromise.then ((response) => {
+      this.$store.commit("LOAD_PANTRY", response.data);
+
+      spoonacularService.searchRecipes(stringIngredients).then((response) => {
+        this.$store.commit("LOAD_RECIPES", response.data);
+      });
+    });
+  },    
   methods: {
     // getIngredients() {
     //   pantryService.getPantryIngredients(this.$store.state.user.id).then((response) => {

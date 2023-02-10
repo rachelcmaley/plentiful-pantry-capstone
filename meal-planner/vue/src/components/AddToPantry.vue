@@ -9,7 +9,7 @@
                         <input v-model="ingredient" list="search-ingredient" type="text" class ="form-control" placeholder="Add Ingredient"/>
                         <label for="text" class="form-label">Ingredient</label>
                         <datalist id = "search-ingredient">
-                            <option v-for="ingredient in ingredients" :key="ingredient.ingredientId"> {{ingredient.ingredientName}} </option>
+                            <option v-for="ingredient in ingredients" :key="ingredient.id"> {{ingredient.ingredientName}} </option>
                         </datalist>
                     </div>
                 </div>
@@ -26,6 +26,8 @@
 
 <script>
 import pantryService from "../services/PantryService.js";
+import spoonacularService from "../services/SpoonacularService.js";
+import { mapGetters } from 'vuex'
 
 export default {
     data() {
@@ -34,6 +36,13 @@ export default {
             ingredients: [],
             // pantryIngredients: []
         };
+    },
+    computed: {
+
+        ...mapGetters([
+            'ingredientString'
+        ])
+
     },
     created() {
         pantryService.getIngredients().then(response => {
@@ -54,6 +63,7 @@ export default {
             .then(()=> {
                 this.ingredient="";
                 this.reloadPantry();
+                this.reloadRecipes();
             });
             // this.$router.push(`/pantry/${userId}`);
         },
@@ -67,6 +77,19 @@ export default {
                 this.$store.commit("LOAD_PANTRY", response.data);
 
             });
+        },
+
+        reloadRecipes()
+        {
+            const stringIngredients = this.$store.state.pantry.map(ingredient => ingredient.ingredientName).join(',')
+
+            const spoonacularPromise = spoonacularService.searchRecipes(stringIngredients)
+
+            spoonacularPromise.then ((response) => {
+
+                this.$store.commit("LOAD_RECIPES", response.data);
+            })
+
         }
     }
 };
