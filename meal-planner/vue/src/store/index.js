@@ -23,6 +23,8 @@ export default new Vuex.Store({
     pageClass: 'homePage',
     pantry:[],
     mealPlans:[],
+    recipes:[],
+    stringIngredients:[]
 
 
   },
@@ -56,11 +58,16 @@ export default new Vuex.Store({
     {
       state.mealPlans.push(mealPlan);
     },
+    LOAD_RECIPES(state, recipes)
+    {
+      state.recipes = recipes;
+    }
+
 
   },
   getters: {
 
-    ingredientString (state) {
+    ingredientString: state => {
       return state.pantry.map(ingredient => ingredient.ingredientName).join(',');
     }
   }

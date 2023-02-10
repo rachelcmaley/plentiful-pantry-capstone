@@ -18,12 +18,21 @@
 <script>
 
     import pantryService from '../services/PantryService.js';
+    import spoonacularService from "../services/SpoonacularService.js";
+    import { mapGetters } from 'vuex'
 
     export default {
         name: 'my-pantry',
         data () {
             return {
             };
+        },
+        computed: {
+
+            ...mapGetters([
+                'ingredientString'
+            ])
+
         },
 
         
@@ -38,7 +47,13 @@
                     this.$store.commit("LOAD_PANTRY", response.data);
 
                 });
-                
+
+                // const spoonacularPromise = spoonacularService.searchRecipes(this.ingredientString)
+
+                // spoonacularPromise.then ((response) => {
+
+                //     this.$store.commit("LOAD_RECIPES", response.data);
+                // });
 
             }
 
@@ -46,20 +61,21 @@
 
         methods: {
             
-            deleteFromPantry(ingredientName) {
+            deleteFromPantry(ingredient) {
 
 
                 const userId = this.$store.state.user.id;
                 pantryService
-                .deleteIngredient(userId, ingredientName)
+                .deleteIngredient(userId, ingredient.ingredientName)
                 .then(() => {
-                    this.reloadPantry()
-                })
+                    this.reloadPantry();
+                    this.reloadRecipes();
+                });
 
 
             },
 
-             reloadPantry() {   
+            reloadPantry() {   
 
                 const pantryPromise = pantryService.getPantryIngredients(this.$store.state.user.id);
 
@@ -67,6 +83,19 @@
 
                     this.$store.commit("LOAD_PANTRY", response.data);
 
+                });
+
+            },
+
+            reloadRecipes()
+            {
+                const stringIngredients = this.$store.state.pantry.map(ingredient => ingredient.ingredientName).join(',')
+
+                const spoonacularPromise = spoonacularService.searchRecipes(stringIngredients)
+
+                spoonacularPromise.then ((response) => {
+
+                    this.$store.commit("LOAD_RECIPES", response.data);
                 });
 
             }
